@@ -4,8 +4,7 @@
 6 Status LED (Read)
 
 # bottom
-Sensor
-Sensor
+2x Sensor
 
 Clock
 # blue

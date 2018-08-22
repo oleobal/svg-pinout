@@ -41,8 +41,7 @@ Here is the description for the diagram from earlier (`examples/simple.txt`) :
 6 Status LED (Read)
 
 # bottom
-Sensor
-Sensor
+2x Sensor
 
 Clock
 # blue

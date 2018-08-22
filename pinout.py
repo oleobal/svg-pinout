@@ -36,6 +36,9 @@ So either a name or a number and a name.
 Instead of a number, you can also specify a range, like this :
 0-7 I/O
 This range is inclusive.
+Alternatively, specify a number of pins, like this :
+8x I/O
+They'll be numbered automatically.
 
 Pins with no number are automatically assigned one.
 Pins with no color are black.
@@ -75,20 +78,36 @@ for line in args.infile:
 	
 	words = line.split()
 	try:
+		# pin number
 		nb = int(words[0])
-		currentHighestNumberPlusOne = nb+1
-		pins[currentSection].append((nb, line[len(words[0])+1:], currentColor))
+		if currentHighestNumberPlusOne < nb+1:
+			currentHighestNumberPlusOne = nb+1
+		pins[currentSection].append((nb, line[len(words[0]):].strip(), currentColor))
 	except ValueError:
 		try:
+			# range
 			nbs = words[0].split("-")
 			nbStart = int(nbs[0])
 			nbEnd = int(nbs[-1])
 			for n in range(nbStart, nbEnd+1):
-				pins[currentSection].append((n, line[len(words[0])+1:], currentColor))
-			currentHighestNumberPlusOne = nbEnd+2
+				pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
+			if currentHighestNumberPlusOne < nbEnd+2:
+				currentHighestNumberPlusOne = nbEnd+2
 		except ValueError:
-			pins[currentSection].append((currentHighestNumberPlusOne, line, currentColor))
-			currentHighestNumberPlusOne+=1
+		# can't help but feel this organisation is not as elegant as it could be
+			try:
+				# repetition
+				if words[0][-1] != "x":
+					raise ValueError("whatever")
+				nb = int(words[0][:-1])
+				for i in range(nb):
+					pins[currentSection].append((currentHighestNumberPlusOne+i, line[len(words[0]):].strip(), currentColor))
+				currentHighestNumberPlusOne+=i+1
+			except ValueError:
+				# nothing
+				pins[currentSection].append((currentHighestNumberPlusOne, line, currentColor))
+				currentHighestNumberPlusOne+=1
+			
 
 
 if args.verbose:
