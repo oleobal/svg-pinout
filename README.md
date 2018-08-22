@@ -1,5 +1,7 @@
 ## SVG-pinout
 
+[This script is available online.](http://tools.richeli.eu/pinout)
+
 This is a very simple script that takes in the description of pins and produces a diagram in SVG format.
 
 In case you are not aware, SVG is :

@@ -61,6 +61,8 @@ for line in args.infile:
 	if line == "":
 		continue
 	if line[0] == "#":
+		if len(line) == 1:
+			continue
 		if line[1] == "#":
 			continue
 		words = line[1:].split()
