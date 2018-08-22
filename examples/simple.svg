@@ -1,0 +1,52 @@
+<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<rect x='50' y='150' width='150' height='45' fill='white' stroke-width='2' stroke='black'/>
+<line x1='62' y1='150' x2='62' y2='145' stroke='black' stroke-width='2'/>
+<text x='57' y='162' font-family='monospace' fill='black'>1</text>
+<text x='62' y='145' transform='rotate(-45 62 145)' font-family='monospace' fill='black'>USB</text>
+
+<line x1='87' y1='150' x2='87' y2='145' stroke='black' stroke-width='2'/>
+<text x='82' y='162' font-family='monospace' fill='black'>2</text>
+<text x='87' y='145' transform='rotate(-45 87 145)' font-family='monospace' fill='black'>USB</text>
+
+<line x1='112' y1='150' x2='112' y2='145' stroke='black' stroke-width='2'/>
+<text x='107' y='162' font-family='monospace' fill='black'>3</text>
+<text x='112' y='145' transform='rotate(-45 112 145)' font-family='monospace' fill='black'>USB</text>
+
+<line x1='137' y1='150' x2='137' y2='145' stroke='black' stroke-width='2'/>
+<text x='132' y='162' font-family='monospace' fill='black'>4</text>
+<text x='137' y='145' transform='rotate(-45 137 145)' font-family='monospace' fill='black'>USB</text>
+
+<line x1='162' y1='150' x2='162' y2='145' stroke='black' stroke-width='2'/>
+<text x='157' y='162' font-family='monospace' fill='black'>5</text>
+<text x='162' y='145' transform='rotate(-45 162 145)' font-family='monospace' fill='black'>Status LED (Write)</text>
+
+<line x1='187' y1='150' x2='187' y2='145' stroke='black' stroke-width='2'/>
+<text x='182' y='162' font-family='monospace' fill='black'>6</text>
+<text x='187' y='145' transform='rotate(-45 187 145)' font-family='monospace' fill='black'>Status LED (Read)</text>
+
+<line x1='62' y1='195' x2='62' y2='200' stroke='black' stroke-width='2'/>
+<text x='57' y='190' font-family='monospace' fill='black'>7</text>
+<text x='62' y='207' transform='rotate(45 62 207)' font-family='monospace' fill='black'>Sensor</text>
+
+<line x1='87' y1='195' x2='87' y2='200' stroke='black' stroke-width='2'/>
+<text x='82' y='190' font-family='monospace' fill='black'>8</text>
+<text x='87' y='207' transform='rotate(45 87 207)' font-family='monospace' fill='black'>Sensor</text>
+
+<line x1='112' y1='195' x2='112' y2='200' stroke='black' stroke-width='2'/>
+<text x='107' y='190' font-family='monospace' fill='black'>9</text>
+<text x='112' y='207' transform='rotate(45 112 207)' font-family='monospace' fill='black'>Clock</text>
+
+<line x1='137' y1='195' x2='137' y2='200' stroke='blue' stroke-width='2'/>
+<text x='132' y='190' font-family='monospace' fill='blue'>10</text>
+<text x='137' y='207' transform='rotate(45 137 207)' font-family='monospace' fill='blue'>VSS</text>
+
+<line x1='162' y1='195' x2='162' y2='200' stroke='blue' stroke-width='2'/>
+<text x='157' y='190' font-family='monospace' fill='blue'>11</text>
+<text x='162' y='207' transform='rotate(45 162 207)' font-family='monospace' fill='blue'>VDD</text>
+
+<line x1='187' y1='195' x2='187' y2='200' stroke='blue' stroke-width='2'/>
+<text x='182' y='190' font-family='monospace' fill='blue'>12</text>
+<text x='187' y='207' transform='rotate(45 187 207)' font-family='monospace' fill='blue'>GND</text>
+
+
+</svg>

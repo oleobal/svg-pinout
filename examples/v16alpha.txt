@@ -1,0 +1,53 @@
+# The (fictional) v16alpha processor pinout
+# in a way that conveniently shows different features
+
+
+# top
+0 Clock
+1 Error
+2 Error
+3 Error
+4 Error
+5 Error
+6 Program load control
+7 Program load control
+8-15 Program load
+
+# bottom
+
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+I/O
+
+
+
+# As you can see, single word 'comments' are also instructions, either
+# sequences or colors.
+# To avoid this for sure, I can use
+## double
+## hash
+## signs
+# which prevent any processing and are 'true' comments.
+
+
+# blue
+
+# top
+Alimentation
+
+# bottom
+Ground
+

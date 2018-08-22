@@ -1,0 +1,14 @@
+# top
+1-4 USB
+5 Status LED (Write)
+6 Status LED (Read)
+
+# bottom
+Sensor
+Sensor
+
+Clock
+# blue
+VSS
+VDD
+GND
