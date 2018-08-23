@@ -12,8 +12,12 @@ import argparse
 import sys
 
 argparser = argparse.ArgumentParser(description="Generates SVG pinouts based on text descriptions (see -d).")
-argparser.add_argument('-d', '--describeFormat', action='store_true', help='explain the pinout description format and exit', default=False)
+argparser.add_argument('-d', '--describe-format', dest='describeFormat', action='store_true', help='explain the pinout description format and exit', default=False)
 argparser.add_argument('-v', '--verbose', action='store_true', help='print pins to stderr', default=False)
+svgTagsGroup = argparser.add_mutually_exclusive_group(required=False)
+svgTagsGroup.add_argument('--tags', dest='svgTags', action='store_true', help='include SVG tags around the output (default)')
+svgTagsGroup.add_argument('--no-tags', dest='svgTags', action='store_false', help='do not include SVG tags')
+argparser.set_defaults(svgTags=True)
 argparser.add_argument('infile', help='what file to read a pinout description in', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
 argparser.add_argument('outfile', help='what file to write the SVG output in', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
 
@@ -253,6 +257,7 @@ while i < len(pins["left"]):
 	i+=1
 
 
-result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
+if args.svgTags:
+	result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
 
 args.outfile.write(result)
