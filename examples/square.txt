@@ -1,0 +1,31 @@
+# TOP
+
+4x USB
+
+
+# BOTTOM
+
+Clock
+VSS
+VDD
+GND
+
+# Right
+
+# blue
+Ready
+
+# green
+Reading
+Writing
+
+# red
+Error
+
+# left
+# black
+
+Interrupt
+Reset
+Hold
+Test

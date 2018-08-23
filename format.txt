@@ -1,0 +1,29 @@
+Formatting :
+
+Four sections : top, bottom, left, right, for where you want the pins to be.
+To start a section, write its name (case-insensitive )with a # in front :
+pin descriptions that follow will belong to that section.
+Sections can be called multiple times.
+
+Pins can be :
+  ground pin
+  1 ground pin
+So either a name or a number and a name.
+
+Instead of a number, you can also specify an (inclusive) range, like this :
+  0-7 I/O
+Alternatively, specify a number of pins, like this :
+  8x I/O
+They'll be numbered automatically.
+
+Pins with no number are automatically assigned one.
+Pins with no section are divided between top and bottom, to varying results.
+Pins with no color are black.
+
+That's right, you can specify color. It works like sections :
+  # blue
+will color everything after it blue. You can use any CSS color name or code.
+
+Empty line and lines starting with # that are more than one word (whitespace
+notwithstanding) are ignored. To provide for a sure way of writing comments,
+lines starting with ## are always ignored.

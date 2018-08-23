@@ -21,37 +21,8 @@ args = argparser.parse_args()
 
 # originally I overloaded Action, but I couldn't make it work.
 if args.describeFormat:
-	print("""\
-Formatting :
-
-Four sections : top, bottom, left, right, for where you want the pins to be.
-To start a section, write its name (case-insensitive )with a # in front :
-pin descriptions that follow will belong to that section.
-Sections can be called multiple times.
-
-Pins can be :
-  ground pin
-  1 ground pin
-So either a name or a number and a name.
-
-Instead of a number, you can also specify an (inclusive) range, like this :
-  0-7 I/O
-Alternatively, specify a number of pins, like this :
-  8x I/O
-They'll be numbered automatically.
-
-Pins with no number are automatically assigned one.
-Pins with no section are divided between top and bottom, to varying results.
-Pins with no color are black.
-
-That's right, you can specify color. It works like sections :
-  # blue
-will color everything after it blue. You can use any CSS color name or code.
-
-Empty line and lines starting with # that are more than one word (whitespace
-notwithstanding) are ignored. To provide for a sure way of writing comments,
-lines starting with ## are always ignored.
-""")
+	with open("format.txt", "r") as f:
+		print(f.read())
 	sys.exit()
 
 pins = {"top":[], "bottom":[], "left":[], "right":[], "default":[]}
@@ -118,11 +89,42 @@ if args.verbose:
 
 fontFamily = "monospace"
 
-widthPerPin = 25
-heightPerPin = 15
+# yeah, sucks, doesn't it
+# best heuristics
+# for the uneducated, this means guesses
+charHeight=10
+charWidth = 9
 
-basex = 50
-basey = 150
+widthPerPin = 25
+heightPerPin = 22
+
+
+basex = 10
+
+longestLeftWordLen = 0
+for i in pins["left"]:
+	if len(i[1]) > longestLeftWordLen:
+		longestLeftWordLen = len(i[1])
+basex += longestLeftWordLen*charWidth
+
+basey = 10
+
+# a  bit more complicated, because diagonals
+# trigonometry, tho
+longestUpWordLen = 0
+for i in pins["top"]:
+	if len(i[1]) > longestUpWordLen:
+		longestUpWordLen = len(i[1])
+
+from math import tan, ceil
+basey+=ceil(tan(3.14/4)*(longestUpWordLen*charWidth))
+
+
+
+# really, I would draw a bounding box and restrict to that, or something.
+# but I can't seem to be able to with those tools. It's as if using a
+# tools without DOM manipulation is bad for manipulating the DOM
+
 
 result = ""
 
@@ -130,12 +132,16 @@ pinWidth = max(len(pins["top"]), len(pins["bottom"]))
 pinHeight = max(len(pins["left"]), len(pins["right"]))
 
 rectWidth = pinWidth*widthPerPin
-rectHeight = (3+pinHeight)*heightPerPin
+rectHeight = (2+pinHeight)*heightPerPin
 
-result+="<rect x='{}' y='{}' width='{}' height='{}' fill='white' stroke-width='2' stroke='black'/>\n".format(basex, basey, rectWidth , rectHeight)
+result+="<rect x='{}' y='{}' width='{}' height='{}' fill='white' stroke-width='2' stroke='black'/>\n\n".format(basex, basey, rectWidth , rectHeight)
 
 # yeah I know it's disgusting
 # TODO refactor
+
+textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n"
+textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}'>{text}</text>\n"
+textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}'>{text}</text>\n\n"
 
 i = 0
 while i < len(pins["top"]):
@@ -144,9 +150,9 @@ while i < len(pins["top"]):
 	x2 = x1
 	y2 = y1-5
 	color = pins["top"][i][2]
-	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(x1,y1,x1,y2, color)
-	result+="<text x='{x}' y='{y}' font-family='{font}' fill='{color}'>{text}</text>\n".format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color)
-	result+="<text x='{x}' y='{y}' transform='rotate(-45 {x} {y})' font-family='{font}' fill='{color}'>{text}</text>\n\n".format(x=x1,y=y1-5, text=pins["top"][i][1], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color)
+	result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color)
+	result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color=color)
 	
 	i+=1
 
@@ -157,11 +163,38 @@ while i < len(pins["bottom"]):
 	x2 = x1
 	y2 = y1+5
 	color = pins["bottom"][i][2]
-	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(x1,y1,x1,y2, color)
-	result+="<text x='{x}' y='{y}' font-family='{font}' fill='{color}'>{text}</text>\n".format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color)
-	result+="<text x='{x}' y='{y}' transform='rotate(45 {x} {y})' font-family='{font}' fill='{color}'>{text}</text>\n\n".format(x=x1,y=y1+12, text=pins["bottom"][i][1], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color)
+	result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color)
+	result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color=color)
 	
 	i+=1
+
+i=0
+while i < len(pins["right"]):
+	x1 = basex+rectWidth
+	y1 = basey+heightPerPin+(heightPerPin//2) + i*heightPerPin
+	x2 = x1+5
+	y2 = y1
+	color = pins["right"][i][2]
+	result+=textLine.format(x1,y1,x2,y2, color)
+	result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color)
+	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color)
+	
+	i+=1
+
+i=0
+while i < len(pins["left"]):
+	x1 = basex
+	y1 = basey+heightPerPin+(heightPerPin//2) + i*heightPerPin
+	x2 = x1-5
+	y2 = y1
+	color = pins["left"][i][2]
+	result+=textLine.format(x1,y1,x2,y2, color)
+	result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color)
+	labelLen = len(pins["left"][i][1])*charWidth
+	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color)
+	i+=1
+
 
 result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
 
