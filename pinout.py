@@ -27,6 +27,8 @@ if args.describeFormat:
 
 pins = {"top":[], "bottom":[], "left":[], "right":[], "default":[]}
 
+marks = []
+
 currentSection="default"
 currentHighestNumberPlusOne=0
 currentColor="black"
@@ -43,6 +45,8 @@ for line in args.infile:
 		if len(words) == 1 :
 			if words[0].lower() in ("top", "bottom", "left", "right"):
 				currentSection = words[0].lower()
+			elif words[0].lower() == "mark" :
+				marks.append(currentSection)
 			else:
 				currentColor = words[0]
 		continue
@@ -131,10 +135,63 @@ result = ""
 pinWidth = max(len(pins["top"]), len(pins["bottom"]))
 pinHeight = max(len(pins["left"]), len(pins["right"]))
 
-rectWidth = pinWidth*widthPerPin
+rectWidth = pinWidth*widthPerPin + (pinWidth//2)
 rectHeight = (2+pinHeight)*heightPerPin
 
 result+="<rect x='{}' y='{}' width='{}' height='{}' fill='white' stroke-width='2' stroke='black'/>\n\n".format(basex, basey, rectWidth , rectHeight)
+
+## marks
+
+
+if "top" in marks:
+	startx = basex+(rectWidth//2)-5
+	starty = basey
+	endx = basex+(rectWidth//2)+5
+	endy = basey
+	result+="""\
+<path d="M{sx} {sy}
+		A 5 5 0 0 0 {ex} {ey}"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+
+if "bottom" in marks:
+	startx = basex+(rectWidth//2)-5
+	starty = basey+rectHeight
+	endx = basex+(rectWidth//2)+5
+	endy = basey+rectHeight
+	result+="""\
+<path d="M{sx} {sy}
+		A 5 5 0 0 1 {ex} {ey}"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+
+if "right" in marks:
+	startx = basex+rectWidth
+	starty = basey+(rectHeight//2) - 5
+	endx = basex+rectWidth
+	endy = basey+(rectHeight//2) + 5
+	result+="""\
+<path d="M{sx} {sy}
+		A 5 5 0 0 0 {ex} {ey}"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+
+if "left" in marks:
+	startx = basex
+	starty = basey+(rectHeight//2) - 5
+	endx = basex
+	endy = basey+(rectHeight//2) + 5
+	result+="""\
+<path d="M{sx} {sy}
+		A 5 5 0 0 1 {ex} {ey}"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+
+## pins 
 
 # yeah I know it's disgusting
 # TODO refactor

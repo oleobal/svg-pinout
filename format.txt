@@ -24,6 +24,8 @@ That's right, you can specify color. It works like sections :
   # blue
 will color everything after it blue. You can use any CSS color name or code.
 
+You can add an alignment mark to a section by calling `# mark`.
+
 Empty line and lines starting with # that are more than one word (whitespace
 notwithstanding) are ignored. To provide for a sure way of writing comments,
 lines starting with ## are always ignored.

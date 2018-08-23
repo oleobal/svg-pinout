@@ -31,7 +31,8 @@ the text files. In summary :
  - a list of pins, with optional number
  - one can enter a range of pins to avoid repeatedly writing the same names,
    or a repetition
- - `#`-marked sections identify position (top, bottom, left, right) and color
+ - `#`-marked sections identify position (top, bottom, left, right),
+   alignment mark, and color
 
  
 Here is the description for the diagram from earlier (`examples/simple.txt`) :
@@ -49,4 +50,7 @@ Clock
 VSS
 VDD
 GND
+
+# left
+# mark
 ```

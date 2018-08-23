@@ -11,3 +11,6 @@ Clock
 VSS
 VDD
 GND
+
+# left
+# mark
