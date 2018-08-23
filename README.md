@@ -1,10 +1,11 @@
 ## SVG-pinout
 
-[This script is available online.](http://tools.richeli.eu/pinout)
+[This tool is available online.](http://tools.richeli.eu/pinout)
 
-This is a very simple script that takes in the description of pins and produces a diagram in SVG format.
+This is a simple script that takes in the description of pins and produces
+a diagram in SVG format.
 
-In case you are not aware, SVG is :
+In case you were not aware, SVG is :
  - able to be resized losslessly
  - machine-readable, with selectable text
  - very light
@@ -12,29 +13,20 @@ In case you are not aware, SVG is :
 This makes it ideal for diagrams !
 
 Here is an example of produced diagram :
-
 <img src="./examples/simple.svg" width="100%" height="300">
 
-### Usage
+### Description format
 
-Needs Python 3 to run. The command that produced the earlier diagram was :
-
-`python .\pinout.py .\examples\simple.txt .\examples\simple.svg`
-
-On Unix-like systems (Linux, etc), it would be :
-
-`./pinout.py examples/simple.txt examples/simple.svg`
-
-
-Help is available with the `-h` option. The `-d` option details the format for
-the text files. In summary :
+In summary :
  - a list of pins, with optional number
  - one can enter a range of pins to avoid repeatedly writing the same names,
    or a repetition
  - `#`-marked sections identify position (top, bottom, left, right),
    alignment mark, and color
 
- 
+I call them "descriptions" and not "code", because they are meant to be
+human-readable, close to what you'd write on a piece of paper.
+   
 Here is the description for the diagram from earlier (`examples/simple.txt`) :
 ```
 # Top
@@ -54,3 +46,22 @@ GND
 # left
 # mark
 ```
+
+You can find out the details with the `-d` option or by reading
+[this file](format.txt).
+
+### Usage
+
+As noted earlier, a version is available online. To run your own, you'll just
+needs Python 3.
+
+The command that produced the earlier diagram was :
+`python.exe .\pinout.py .\examples\simple.txt .\examples\simple.svg`
+
+That was Windows, obviously.
+
+On Linux (and other Unix systems), it would be closer to :
+`python3 pinout.py examples/simple.txt examples/simple.svg`
+
+Help is available with the `-h` option :
+`python pinout.py -h`

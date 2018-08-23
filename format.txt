@@ -1,7 +1,7 @@
 Formatting :
 
 Four sections : top, bottom, left, right, for where you want the pins to be.
-To start a section, write its name (case-insensitive )with a # in front :
+To start a section, write its name (case-insensitive) with a # in front :
 pin descriptions that follow will belong to that section.
 Sections can be called multiple times.
 
