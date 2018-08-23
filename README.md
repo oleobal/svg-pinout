@@ -9,7 +9,7 @@ In case you are not aware, SVG is :
  - machine-readable, with selectable text
  - very light
 
-This makes it ideal for diagrams.
+This makes it ideal for diagrams !
 
 Here is an example of produced diagram :
 
@@ -29,18 +29,19 @@ On Unix-like systems (Linux, etc), it would be :
 Help is available with the `-h` option. The `-d` option details the format for
 the text files. In summary :
  - a list of pins, with optional number
- - one can enter a range of pins to avoid repeatedly writing the same names
+ - one can enter a range of pins to avoid repeatedly writing the same names,
+   or a repetition
  - `#`-marked sections identify position (top, bottom, left, right) and color
 
  
 Here is the description for the diagram from earlier (`examples/simple.txt`) :
 ```
-# top
+# Top
 1-4 USB
 5 Status LED (Write)
 6 Status LED (Read)
 
-# bottom
+# Bottom
 2x Sensor
 
 Clock

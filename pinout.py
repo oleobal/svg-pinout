@@ -25,32 +25,32 @@ if args.describeFormat:
 Formatting :
 
 Four sections : top, bottom, left, right, for where you want the pins to be.
-To start a section, write its name with a # in front. Pin descriptions that
-follow will belong to that section. Sections can be called multiple times.
+To start a section, write its name (case-insensitive )with a # in front :
+pin descriptions that follow will belong to that section.
+Sections can be called multiple times.
 
 Pins can be :
-ground pin
-1 ground pin
+  ground pin
+  1 ground pin
 So either a name or a number and a name.
 
-Instead of a number, you can also specify a range, like this :
-0-7 I/O
-This range is inclusive.
+Instead of a number, you can also specify an (inclusive) range, like this :
+  0-7 I/O
 Alternatively, specify a number of pins, like this :
-8x I/O
+  8x I/O
 They'll be numbered automatically.
 
 Pins with no number are automatically assigned one.
-Pins with no color are black.
 Pins with no section are divided between top and bottom, to varying results.
+Pins with no color are black.
 
 That's right, you can specify color. It works like sections :
-# blue
-will color everything after it blue.
+  # blue
+will color everything after it blue. You can use any CSS color name or code.
 
 Empty line and lines starting with # that are more than one word (whitespace
 notwithstanding) are ignored. To provide for a sure way of writing comments,
-line starting with ## are always ignored.
+lines starting with ## are always ignored.
 """)
 	sys.exit()
 
@@ -70,8 +70,8 @@ for line in args.infile:
 			continue
 		words = line[1:].split()
 		if len(words) == 1 :
-			if words[0] in ("top", "bottom", "left", "right"):
-				currentSection = words[0]
+			if words[0].lower() in ("top", "bottom", "left", "right"):
+				currentSection = words[0].lower()
 			else:
 				currentColor = words[0]
 		continue
@@ -91,8 +91,8 @@ for line in args.infile:
 			nbEnd = int(nbs[-1])
 			for n in range(nbStart, nbEnd+1):
 				pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
-			if currentHighestNumberPlusOne < nbEnd+2:
-				currentHighestNumberPlusOne = nbEnd+2
+			if currentHighestNumberPlusOne < nbEnd+1:
+				currentHighestNumberPlusOne = nbEnd+1
 		except ValueError:
 		# can't help but feel this organisation is not as elegant as it could be
 			try:
@@ -102,7 +102,7 @@ for line in args.infile:
 				nb = int(words[0][:-1])
 				for i in range(nb):
 					pins[currentSection].append((currentHighestNumberPlusOne+i, line[len(words[0]):].strip(), currentColor))
-				currentHighestNumberPlusOne+=i+1
+				currentHighestNumberPlusOne+=nb
 			except ValueError:
 				# nothing
 				pins[currentSection].append((currentHighestNumberPlusOne, line, currentColor))
