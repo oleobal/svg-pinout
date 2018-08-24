@@ -23,6 +23,7 @@ Pins with no color are black.
 That's right, you can specify color. It works like sections :
   # blue
 will color everything after it blue. You can use any CSS color name or code.
+You can go back to the default color (likely black or white) with `# nocolor`.
 
 You can add an alignment mark to a section by calling `# mark`.
 

@@ -2,7 +2,6 @@
 """
 produces a SVG file with described pinout
 
-Left and right are not done yet.
 Default is not done yet.
 Pins above 99 will run into one another.
 
@@ -18,6 +17,11 @@ svgTagsGroup = argparser.add_mutually_exclusive_group(required=False)
 svgTagsGroup.add_argument('--tags', dest='svgTags', action='store_true', help='include SVG tags around the output (default)')
 svgTagsGroup.add_argument('--no-tags', dest='svgTags', action='store_false', help='do not include SVG tags')
 argparser.set_defaults(svgTags=True)
+argparser.add_argument('-b', '--black', action='store_true', help='draw white on black', default=False)
+argparser.add_argument('-l', '--lighten', action='store_true', help='attempt to automatically lighten colors', default=False)
+"""
+not grouped with -b due to just stupid method (overlaying with a transparent white element)
+"""
 argparser.add_argument('infile', help='what file to read a pinout description in', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
 argparser.add_argument('outfile', help='what file to write the SVG output in', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
 
@@ -33,9 +37,16 @@ pins = {"top":[], "bottom":[], "left":[], "right":[], "default":[]}
 
 marks = []
 
+if args.black :
+	strokeColor = "white"
+	bgColor = "black"
+else:
+	strokeColor = "black"
+	bgColor = "white"
+
 currentSection="default"
 currentHighestNumberPlusOne=0
-currentColor="black"
+currentColor=strokeColor
 for line in args.infile:
 	line = line.strip()
 	if line == "":
@@ -51,6 +62,8 @@ for line in args.infile:
 				currentSection = words[0].lower()
 			elif words[0].lower() == "mark" :
 				marks.append(currentSection)
+			elif words[0].lower() == "nocolor" :
+				currentColor = strokeColor
 			else:
 				currentColor = words[0]
 		continue
@@ -142,7 +155,7 @@ pinHeight = max(len(pins["left"]), len(pins["right"]))
 rectWidth = pinWidth*widthPerPin + (pinWidth//2)
 rectHeight = (2+pinHeight)*heightPerPin
 
-result+="<rect x='{}' y='{}' width='{}' height='{}' fill='white' stroke-width='2' stroke='black'/>\n\n".format(basex, basey, rectWidth , rectHeight)
+result+="<rect x='{}' y='{}' width='{}' height='{}' fill='{}' stroke-width='2' stroke='{}'/>\n\n".format(basex, basey, rectWidth , rectHeight, bgColor, strokeColor)
 
 ## marks
 
@@ -155,9 +168,9 @@ if "top" in marks:
 	result+="""\
 <path d="M{sx} {sy}
 		A 5 5 0 0 0 {ex} {ey}"
-		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+""".format(sx=startx, sy=starty, ex=endx, ey=endy,color=strokeColor)
 
 if "bottom" in marks:
 	startx = basex+(rectWidth//2)-5
@@ -167,9 +180,9 @@ if "bottom" in marks:
 	result+="""\
 <path d="M{sx} {sy}
 		A 5 5 0 0 1 {ex} {ey}"
-		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "right" in marks:
 	startx = basex+rectWidth
@@ -179,9 +192,9 @@ if "right" in marks:
 	result+="""\
 <path d="M{sx} {sy}
 		A 5 5 0 0 0 {ex} {ey}"
-		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "left" in marks:
 	startx = basex
@@ -191,18 +204,18 @@ if "left" in marks:
 	result+="""\
 <path d="M{sx} {sy}
 		A 5 5 0 0 1 {ex} {ey}"
-		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy)
+""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 ## pins 
 
 # yeah I know it's disgusting
 # TODO refactor
 
-textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n"
-textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}'>{text}</text>\n"
-textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}'>{text}</text>\n\n"
+textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2' {add}/>\n"
+textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{text} </text>\n"
+textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}' {add}>{text}</text>\n\n"
 
 i = 0
 while i < len(pins["top"]):
@@ -211,9 +224,14 @@ while i < len(pins["top"]):
 	x2 = x1
 	y2 = y1-5
 	color = pins["top"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color)
-	result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color)
-	result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color, add="")
+	result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color, add="")
+	result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color=color, add="")
+	
+	if args.lighten and color!= "white" :
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
+		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
 	
 	i+=1
 
@@ -224,10 +242,14 @@ while i < len(pins["bottom"]):
 	x2 = x1
 	y2 = y1+5
 	color = pins["bottom"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color)
-	result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color)
-	result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color, add="")
+	result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color, add="")
+	result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color=color, add="")
 	
+	if args.lighten and color!= "white" :
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
+		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
 	i+=1
 
 i=0
@@ -237,9 +259,14 @@ while i < len(pins["right"]):
 	x2 = x1+5
 	y2 = y1
 	color = pins["right"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color)
-	result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color)
-	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color, add="")
+	result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
+	
+	if args.lighten and color!= "white" :
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8'")
+		result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
 	
 	i+=1
 
@@ -250,14 +277,23 @@ while i < len(pins["left"]):
 	x2 = x1-5
 	y2 = y1
 	color = pins["left"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color)
-	result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color)
+	result+=textLine.format(x1,y1,x2,y2, color, add="")
+	result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
 	labelLen = len(pins["left"][i][1])*charWidth
-	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color)
+	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="")
+	
+	if args.lighten and color!= "white" :
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
+		result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+	
 	i+=1
 
 
 if args.svgTags:
-	result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
+	if args.black :
+		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+"<rect width='100%' height='100%' fill='black'/>\n"+result+"\n</svg>\n"
+	else:
+		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
 
 args.outfile.write(result)

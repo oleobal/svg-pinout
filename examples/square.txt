@@ -23,7 +23,7 @@ Writing
 Error
 
 # left
-# black
+# nocolor
 
 Interrupt
 Reset
