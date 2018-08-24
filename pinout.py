@@ -17,10 +17,17 @@ svgTagsGroup = argparser.add_mutually_exclusive_group(required=False)
 svgTagsGroup.add_argument('--tags', dest='svgTags', action='store_true', help='include SVG tags around the output (default)')
 svgTagsGroup.add_argument('--no-tags', dest='svgTags', action='store_false', help='do not include SVG tags')
 argparser.set_defaults(svgTags=True)
-argparser.add_argument('-b', '--black', action='store_true', help='draw white on black', default=False)
-argparser.add_argument('-l', '--lighten', action='store_true', help='attempt to automatically lighten colors', default=False)
+argparser.add_argument('-b', '--background', type=str, help='use this background color (default: none)', default=None)
 """
-not grouped with -b due to just stupid method (overlaying with a transparent white element)
+Background is a rectangle of width/height=100% with class='pinout-bg-rect'
+"""
+argparser.add_argument('-f', '--foreground', type=str, help='use this foreground color (default: black)', default="black")
+argparser.add_argument('-l', '--lighten', action='store_true', help='automatically lighten colors')
+"""
+Stupid method (overlaying with a transparent white element)
+Only used on pins and their labels
+Skipped if already white
+Given class='pinout-lighten-overlay' for easier stripping
 """
 argparser.add_argument('infile', help='what file to read a pinout description in', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
 argparser.add_argument('outfile', help='what file to write the SVG output in', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
@@ -37,11 +44,11 @@ pins = {"top":[], "bottom":[], "left":[], "right":[], "default":[]}
 
 marks = []
 
-if args.black :
-	strokeColor = "white"
-	bgColor = "black"
+strokeColor = args.foreground
+
+if args.background is not None :
+	bgColor = args.background
 else:
-	strokeColor = "black"
 	bgColor = "white"
 
 currentSection="default"
@@ -229,9 +236,9 @@ while i < len(pins["top"]):
 	result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
-		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
-		result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
@@ -247,9 +254,9 @@ while i < len(pins["bottom"]):
 	result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
-		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
-		result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	i+=1
 
 i=0
@@ -264,9 +271,9 @@ while i < len(pins["right"]):
 	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8'")
-		result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
-		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
@@ -283,16 +290,16 @@ while i < len(pins["left"]):
 	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='overlay'")
-		result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
-		result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='overlay'")
+		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
 
 if args.svgTags:
-	if args.black :
-		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+"<rect width='100%' height='100%' fill='black'/>\n"+result+"\n</svg>\n"
+	if args.background is not None:
+		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+"<rect width='100%' height='100%' fill='{}' class='pinout-bg-rect'/>\n".format(args.background)+result+"\n</svg>\n"
 	else:
 		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
 
