@@ -17,7 +17,7 @@ Alternatively, specify a number of pins, like this :
 They'll be numbered automatically.
 
 Pins with no number are automatically assigned one.
-Pins with no section are divided between top and bottom, to varying results.
+Pins with no section are on the top.
 Pins with no color are black.
 
 That's right, you can specify color. It works like sections :

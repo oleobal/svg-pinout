@@ -40,7 +40,7 @@ if args.describeFormat:
 		print(f.read())
 	sys.exit()
 
-pins = {"top":[], "bottom":[], "left":[], "right":[], "default":[]}
+pins = {"top":[], "bottom":[], "left":[], "right":[]}
 
 marks = []
 
@@ -51,7 +51,7 @@ if args.background is not None :
 else:
 	bgColor = "white"
 
-currentSection="default"
+currentSection="top"
 currentHighestNumberPlusOne=0
 currentColor=strokeColor
 for line in args.infile:
