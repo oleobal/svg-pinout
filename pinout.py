@@ -297,10 +297,10 @@ while i < len(pins["left"]):
 	i+=1
 
 
+
+if args.background is not None:
+	result = "<rect width='100%' height='100%' fill='{}' class='pinout-bg-rect'/>\n".format(args.background)+result
 if args.svgTags:
-	if args.background is not None:
-		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+"<rect width='100%' height='100%' fill='{}' class='pinout-bg-rect'/>\n".format(args.background)+result+"\n</svg>\n"
-	else:
-		result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
+	result = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\n"+result+"\n</svg>\n"
 
 args.outfile.write(result)
