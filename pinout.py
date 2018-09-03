@@ -159,8 +159,17 @@ result = ""
 pinWidth = max(len(pins["top"]), len(pins["bottom"]))
 pinHeight = max(len(pins["left"]), len(pins["right"]))
 
-rectWidth = pinWidth*widthPerPin + (pinWidth//2)
-rectHeight = (2+pinHeight)*heightPerPin
+rectWidth  = pinWidth*widthPerPin
+rectHeight = pinHeight*heightPerPin
+
+if len(pins["top"]) > 0 :
+	rectHeight+=heightPerPin
+if len(pins["bottom"]) > 0 :
+	rectHeight+=heightPerPin
+if len(pins["left"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
+	rectWidth +=widthPerPin
+if len(pins["right"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
+	rectWidth +=widthPerPin
 
 result+="<rect x='{}' y='{}' width='{}' height='{}' fill='{}' stroke-width='2' stroke='{}'/>\n\n".format(basex, basey, rectWidth , rectHeight, bgColor, strokeColor)
 
@@ -221,7 +230,7 @@ if "left" in marks:
 # TODO refactor
 
 textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2' {add}/>\n"
-textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{text} </text>\n"
+textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{text}</text>\n"
 textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}' {add}>{text}</text>\n\n"
 
 i = 0
@@ -262,17 +271,25 @@ while i < len(pins["bottom"]):
 i=0
 while i < len(pins["right"]):
 	x1 = basex+rectWidth
-	y1 = basey+heightPerPin+(heightPerPin//2) + i*heightPerPin
+	y1 = basey+(heightPerPin//2)+ i*heightPerPin
+	if len(pins["top"]) > 0:
+		y1+=heightPerPin
 	x2 = x1+5
 	y2 = y1
 	color = pins["right"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+	if pins["right"][i][0] < 10 :
+		result+=textNumber.format(x=x1-widthPerPin+charWidth, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+	else:
+		result+=textNumber.format(x=x1-widthPerPin          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		if pins["right"][i][0] < 10 :
+			result+=textNumber.format(x=x1-widthPerPin+charWidth, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		else:
+			result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
@@ -280,7 +297,9 @@ while i < len(pins["right"]):
 i=0
 while i < len(pins["left"]):
 	x1 = basex
-	y1 = basey+heightPerPin+(heightPerPin//2) + i*heightPerPin
+	y1 = basey+(heightPerPin//2)+ i*heightPerPin
+	if len(pins["top"]) > 0:
+		y1+=heightPerPin
 	x2 = x1-5
 	y2 = y1
 	color = pins["left"][i][2]

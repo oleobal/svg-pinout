@@ -1,0 +1,12 @@
+## only has left/right sections
+
+# left
+
+4x USB
+
+# right
+
+Reset
+Status
+Vin
+GND
