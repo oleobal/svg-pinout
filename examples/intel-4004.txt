@@ -1,0 +1,30 @@
+# Intel 4004
+
+# The very first microprocessor ever commercialized.
+# The Intel 8008 was in development earlier, but since Intel did not care
+# at the time (they were more into memory), they were slacking.
+
+# The 4004 was part of the MCS-4 family, state-of-the-art chips for a new
+# calculator for the Japanese company Busicom.
+# Intel did no work for months, and hired Federico Faggin to work on it the
+# day just before the client came to visit. He proceded to work on the project
+# with maximum effort, but nowadays he's not even mentioned on the 4004 page
+# on Intel's website.
+
+# top
+# mark
+
+# left
+
+1-4 Data bus
+5  Vss
+6-7 clock
+8 Sync
+
+# right
+
+16 Reset
+15 Test
+14 CM-ROM
+13 Vdd
+12-9 CM-RAM

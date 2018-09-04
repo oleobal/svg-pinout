@@ -1,0 +1,23 @@
+# Texas Instruments LM324N quad operational amplifier
+# (14-pin package)
+
+# left
+# mark
+
+# bottom
+1 1OUT
+2 1IN-
+3 1IN+
+4 Vcc
+5 2IN+
+6 2IN-
+7 2OUT
+
+# top
+14 4OUT
+13 4IN-
+12 4IN+
+11 GND
+10 3IN+
+9 3IN-
+8 3OUT

@@ -1,0 +1,65 @@
+<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<rect x='10' y='46' width='175' height='44' fill='white' stroke-width='2' stroke='black'/>
+
+<path d="M10 63
+		A 5 5 0 0 1 10 73"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+<line x1='22' y1='46' x2='22' y2='41' stroke='black' stroke-width='2' />
+<text x='17' y='58' font-family='monospace' fill='black' >14</text>
+<text x='22' y='41' transform='rotate(-45 22 41)' font-family='monospace' fill='black' >4OUT</text>
+
+<line x1='47' y1='46' x2='47' y2='41' stroke='black' stroke-width='2' />
+<text x='42' y='58' font-family='monospace' fill='black' >13</text>
+<text x='47' y='41' transform='rotate(-45 47 41)' font-family='monospace' fill='black' >4IN-</text>
+
+<line x1='72' y1='46' x2='72' y2='41' stroke='black' stroke-width='2' />
+<text x='67' y='58' font-family='monospace' fill='black' >12</text>
+<text x='72' y='41' transform='rotate(-45 72 41)' font-family='monospace' fill='black' >4IN+</text>
+
+<line x1='97' y1='46' x2='97' y2='41' stroke='black' stroke-width='2' />
+<text x='92' y='58' font-family='monospace' fill='black' >11</text>
+<text x='97' y='41' transform='rotate(-45 97 41)' font-family='monospace' fill='black' >GND</text>
+
+<line x1='122' y1='46' x2='122' y2='41' stroke='black' stroke-width='2' />
+<text x='117' y='58' font-family='monospace' fill='black' >10</text>
+<text x='122' y='41' transform='rotate(-45 122 41)' font-family='monospace' fill='black' >3IN+</text>
+
+<line x1='147' y1='46' x2='147' y2='41' stroke='black' stroke-width='2' />
+<text x='142' y='58' font-family='monospace' fill='black' >9</text>
+<text x='147' y='41' transform='rotate(-45 147 41)' font-family='monospace' fill='black' >3IN-</text>
+
+<line x1='172' y1='46' x2='172' y2='41' stroke='black' stroke-width='2' />
+<text x='167' y='58' font-family='monospace' fill='black' >8</text>
+<text x='172' y='41' transform='rotate(-45 172 41)' font-family='monospace' fill='black' >3OUT</text>
+
+<line x1='22' y1='90' x2='22' y2='95' stroke='black' stroke-width='2' />
+<text x='17' y='85' font-family='monospace' fill='black' >1</text>
+<text x='22' y='102' transform='rotate(45 22 102)' font-family='monospace' fill='black' >1OUT</text>
+
+<line x1='47' y1='90' x2='47' y2='95' stroke='black' stroke-width='2' />
+<text x='42' y='85' font-family='monospace' fill='black' >2</text>
+<text x='47' y='102' transform='rotate(45 47 102)' font-family='monospace' fill='black' >1IN-</text>
+
+<line x1='72' y1='90' x2='72' y2='95' stroke='black' stroke-width='2' />
+<text x='67' y='85' font-family='monospace' fill='black' >3</text>
+<text x='72' y='102' transform='rotate(45 72 102)' font-family='monospace' fill='black' >1IN+</text>
+
+<line x1='97' y1='90' x2='97' y2='95' stroke='black' stroke-width='2' />
+<text x='92' y='85' font-family='monospace' fill='black' >4</text>
+<text x='97' y='102' transform='rotate(45 97 102)' font-family='monospace' fill='black' >Vcc</text>
+
+<line x1='122' y1='90' x2='122' y2='95' stroke='black' stroke-width='2' />
+<text x='117' y='85' font-family='monospace' fill='black' >5</text>
+<text x='122' y='102' transform='rotate(45 122 102)' font-family='monospace' fill='black' >2IN+</text>
+
+<line x1='147' y1='90' x2='147' y2='95' stroke='black' stroke-width='2' />
+<text x='142' y='85' font-family='monospace' fill='black' >6</text>
+<text x='147' y='102' transform='rotate(45 147 102)' font-family='monospace' fill='black' >2IN-</text>
+
+<line x1='172' y1='90' x2='172' y2='95' stroke='black' stroke-width='2' />
+<text x='167' y='85' font-family='monospace' fill='black' >7</text>
+<text x='172' y='102' transform='rotate(45 172 102)' font-family='monospace' fill='black' >2OUT</text>
+
+
+</svg>

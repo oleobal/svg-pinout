@@ -88,10 +88,18 @@ for line in args.infile:
 			nbs = words[0].split("-")
 			nbStart = int(nbs[0])
 			nbEnd = int(nbs[-1])
-			for n in range(nbStart, nbEnd+1):
-				pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
-			if currentHighestNumberPlusOne < nbEnd+1:
-				currentHighestNumberPlusOne = nbEnd+1
+			if nbStart < nbEnd : # forwards range
+				for n in range(nbStart, nbEnd+1):
+					pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
+				if currentHighestNumberPlusOne < nbEnd+1:
+					currentHighestNumberPlusOne = nbEnd+1
+			else: # backwards range
+				nbStart, nbEnd = nbEnd, nbStart
+				for n in reversed(range(nbStart, nbEnd+1)):
+					pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
+				if currentHighestNumberPlusOne < nbEnd+1:
+					currentHighestNumberPlusOne = nbEnd+1
+				
 		except ValueError:
 		# can't help but feel this organisation is not as elegant as it could be
 			try:
@@ -279,17 +287,17 @@ while i < len(pins["right"]):
 	color = pins["right"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	if pins["right"][i][0] < 10 :
-		result+=textNumber.format(x=x1-widthPerPin+charWidth, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+		result+=textNumber.format(x=x1-charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	else:
-		result+=textNumber.format(x=x1-widthPerPin          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+		result+=textNumber.format(x=x1-2*charWidth-2          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		if pins["right"][i][0] < 10 :
-			result+=textNumber.format(x=x1-widthPerPin+charWidth, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+			result+=textNumber.format(x=x1-charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		else:
-			result+=textNumber.format(x=x1-widthPerPin, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+			result+=textNumber.format(x=x1-2*charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
@@ -304,13 +312,13 @@ while i < len(pins["left"]):
 	y2 = y1
 	color = pins["left"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
+	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
 	labelLen = len(pins["left"][i][1])*charWidth
 	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textNumber.format(x=x1+6, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1

@@ -1,0 +1,48 @@
+# Yamaha YM2612
+# A frequency modulation sound synthesis integrated circuit
+
+# Notably used in the Sega Megadrive.
+# Which, as it happens, was known for bad sound. Oh well.
+
+# left
+# mark
+
+
+# bottom
+1 GND
+# bidirectional data bus
+# blue
+2 D0
+3 D1
+4 D2
+5 D3
+6 D4
+7 D5
+8 D6
+9 D7
+# nocolor
+# not connected
+10 NC
+# reset
+11 /IC
+12 GND
+
+# top
+24 CLK
+23 VCC
+# analog Vcc
+22 A. VCC
+# left analog output
+21 MOL
+# right analog output
+20 MOR
+# analog ground
+19 A. GND
+18 A1
+17 A0
+16 /RD
+15 /WR
+# chip select
+14 /CS
+# interrupt request
+13 /IRQ

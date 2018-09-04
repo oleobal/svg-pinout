@@ -1,0 +1,33 @@
+# Motorola 6800
+
+# The 6800 was similar to the Intel 8080. Unfortunately for both of them,
+# Federico Faggin quit Intel around the same time to found Zilog, and released
+# the Z80 soon after, which was better than both.
+
+# It is still the obvious and significant processor to the Motorola 68000
+
+# top
+# mark
+
+# left
+1 Vss
+2 Halt
+3 Phase 1
+4 IRA
+5 VMA
+6 NMI
+7 BA
+8 Vcc
+9-20 A
+
+# right
+40 Reset
+39 TSC
+38 Not connected
+37 Phase 2
+36 DBE
+35 Not connected
+34 R/W
+33-26 D
+25-22 A
+21 VSS

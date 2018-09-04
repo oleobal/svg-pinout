@@ -1,40 +1,36 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
 <rect x='37' y='10' width='50' height='88' fill='white' stroke-width='2' stroke='black'/>
 
-<path d="M57 10
-		A 5 5 0 0 0 67 10"
-		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
-
 <line x1='87' y1='21' x2='92' y2='21' stroke='black' stroke-width='2' />
-<text x='71' y='26' font-family='monospace' fill='black' >4</text>
+<text x='76' y='26' font-family='monospace' fill='black' >4</text>
 <text x='93' y='26' transform='rotate(0 93 26)' font-family='monospace' fill='black' >Reset</text>
 
 <line x1='87' y1='43' x2='92' y2='43' stroke='black' stroke-width='2' />
-<text x='71' y='48' font-family='monospace' fill='black' >5</text>
+<text x='76' y='48' font-family='monospace' fill='black' >5</text>
 <text x='93' y='48' transform='rotate(0 93 48)' font-family='monospace' fill='black' >Status</text>
 
 <line x1='87' y1='65' x2='92' y2='65' stroke='black' stroke-width='2' />
-<text x='71' y='70' font-family='monospace' fill='black' >6</text>
+<text x='76' y='70' font-family='monospace' fill='black' >6</text>
 <text x='93' y='70' transform='rotate(0 93 70)' font-family='monospace' fill='black' >Vin</text>
 
 <line x1='87' y1='87' x2='92' y2='87' stroke='black' stroke-width='2' />
-<text x='71' y='92' font-family='monospace' fill='black' >7</text>
+<text x='76' y='92' font-family='monospace' fill='black' >7</text>
 <text x='93' y='92' transform='rotate(0 93 92)' font-family='monospace' fill='black' >GND</text>
 
 <line x1='37' y1='21' x2='32' y2='21' stroke='black' stroke-width='2' />
-<text x='43' y='26' font-family='monospace' fill='black' >0</text>
+<text x='40' y='26' font-family='monospace' fill='black' >0</text>
 <text x='4' y='26' transform='rotate(0 4 26)' font-family='monospace' fill='black' >USB</text>
 
 <line x1='37' y1='43' x2='32' y2='43' stroke='black' stroke-width='2' />
-<text x='43' y='48' font-family='monospace' fill='black' >1</text>
+<text x='40' y='48' font-family='monospace' fill='black' >1</text>
 <text x='4' y='48' transform='rotate(0 4 48)' font-family='monospace' fill='black' >USB</text>
 
 <line x1='37' y1='65' x2='32' y2='65' stroke='black' stroke-width='2' />
-<text x='43' y='70' font-family='monospace' fill='black' >2</text>
+<text x='40' y='70' font-family='monospace' fill='black' >2</text>
 <text x='4' y='70' transform='rotate(0 4 70)' font-family='monospace' fill='black' >USB</text>
 
 <line x1='37' y1='87' x2='32' y2='87' stroke='black' stroke-width='2' />
-<text x='43' y='92' font-family='monospace' fill='black' >3</text>
+<text x='40' y='92' font-family='monospace' fill='black' >3</text>
 <text x='4' y='92' transform='rotate(0 4 92)' font-family='monospace' fill='black' >USB</text>
 
 

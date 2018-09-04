@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<rect x='109' y='100' width='25' height='110' fill='white' stroke-width='2' stroke='black'/>
+
+<path d="M116 210
+		A 5 5 0 0 1 126 210"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+<line x1='121' y1='100' x2='121' y2='95' stroke='black' stroke-width='2' />
+<text x='116' y='112' font-family='monospace' fill='black' >5</text>
+<text x='121' y='95' transform='rotate(-45 121 95)' font-family='monospace' fill='black' >Heater (2)</text>
+
+<line x1='134' y1='133' x2='139' y2='133' stroke='black' stroke-width='2' />
+<text x='123' y='138' font-family='monospace' fill='black' >6</text>
+<text x='140' y='138' transform='rotate(0 140 138)' font-family='monospace' fill='black' >Anode (1)</text>
+
+<line x1='134' y1='155' x2='139' y2='155' stroke='black' stroke-width='2' />
+<text x='123' y='160' font-family='monospace' fill='black' >7</text>
+<text x='140' y='160' transform='rotate(0 140 160)' font-family='monospace' fill='black' >Grid (1)</text>
+
+<line x1='134' y1='177' x2='139' y2='177' stroke='black' stroke-width='2' />
+<text x='123' y='182' font-family='monospace' fill='black' >8</text>
+<text x='140' y='182' transform='rotate(0 140 182)' font-family='monospace' fill='black' >Cathode (1)</text>
+
+<line x1='134' y1='199' x2='139' y2='199' stroke='black' stroke-width='2' />
+<text x='123' y='204' font-family='monospace' fill='black' >9</text>
+<text x='140' y='204' transform='rotate(0 140 204)' font-family='monospace' fill='black' >Heater center tap</text>
+
+<line x1='109' y1='133' x2='104' y2='133' stroke='black' stroke-width='2' />
+<text x='112' y='138' font-family='monospace' fill='black' >1</text>
+<text x='22' y='138' transform='rotate(0 22 138)' font-family='monospace' fill='black' >Anode (2)</text>
+
+<line x1='109' y1='155' x2='104' y2='155' stroke='black' stroke-width='2' />
+<text x='112' y='160' font-family='monospace' fill='black' >2</text>
+<text x='31' y='160' transform='rotate(0 31 160)' font-family='monospace' fill='black' >Grid (2)</text>
+
+<line x1='109' y1='177' x2='104' y2='177' stroke='black' stroke-width='2' />
+<text x='112' y='182' font-family='monospace' fill='black' >3</text>
+<text x='4' y='182' transform='rotate(0 4 182)' font-family='monospace' fill='black' >Cathode (2)</text>
+
+<line x1='109' y1='199' x2='104' y2='199' stroke='black' stroke-width='2' />
+<text x='112' y='204' font-family='monospace' fill='black' >4</text>
+<text x='13' y='204' transform='rotate(0 13 204)' font-family='monospace' fill='black' >Heater (2)</text>
+
+
+</svg>
