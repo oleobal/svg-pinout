@@ -1,10 +1,13 @@
 # Motorola 6800
 
-# The 6800 was similar to the Intel 8080. Unfortunately for both of them,
-# Federico Faggin quit Intel around the same time to found Zilog, and released
+# The 6800 was similar to the Intel 8080.
+# Unfortunately for both of them, Federico Faggin quit Intel
+# around the same time to found Zilog, and released
 # the Z80 soon after, which was better than both.
 
-# It is still the obvious and significant processor to the Motorola 68000
+# It is still the obvious and significant predecessor
+# to the Motorola 68000, which was and still is widely
+# used in various devices.
 
 # top
 # mark

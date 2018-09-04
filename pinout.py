@@ -129,7 +129,7 @@ fontFamily = "monospace"
 # best heuristics
 # for the uneducated, this means guesses
 charHeight=10
-charWidth = 9
+charWidth = 7.5
 
 widthPerPin = 25
 heightPerPin = 22
