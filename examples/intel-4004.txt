@@ -6,12 +6,13 @@
 # they were slacking.
 
 # The 4004 was part of the MCS-4 family, state-of-the-art
-# chips for a new calculator for the Japanese company Busicom.
-# Intel did no work for months, and hired Federico Faggin
-# to work on it the day just before the client came to visit.
+# chips for a new calculator for the Japanese company
+# Busicom.
+# Intel did no work for months, and hired Federico Faggin to
+# work on it the day just before the client came to visit.
 # He proceeded to work on the project with maximum effort,
-# but nowadays he's not even mentioned on the 4004 page
-# on Intel's website.
+# but nowadays he's not even mentioned on the 4004 page on
+# Intel's website.
 
 # top
 # mark

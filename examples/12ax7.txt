@@ -3,10 +3,11 @@
 
 # The 12AX7 works like a modern transistor.
 # The grid would be the base, the cathode the collector,
-# and the anode the emitter. (or is it reversed ? I never remember)
+# and the anode the emitter.
+# (or is it reversed ? I never remember)
 
-# But you first need to heat the cathode with the Heater pins.
-# (the Heater center tap allows you to supply it in either 12 or 6V)
+# But first heat the cathode with the Heater pins.
+# (the center tap allows you to supply it in 12 or 6V)
 # Also, it costs like 10 bucks.
 # Transistors are better.
 
