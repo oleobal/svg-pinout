@@ -13,9 +13,9 @@
 <text x='92' y='48' font-family='monospace' fill='black' >39</text>
 <text x='115' y='48' transform='rotate(0 115 48)' font-family='monospace' fill='black'  >TSC</text>
 
-<line x1='109' y1='65' x2='114' y2='65' stroke='black' stroke-width='2' />
-<text x='92' y='70' font-family='monospace' fill='black' >38</text>
-<text x='115' y='70' transform='rotate(0 115 70)' font-family='monospace' fill='black'  >Not connected</text>
+<line x1='109' y1='65' x2='114' y2='65' stroke='#A00' stroke-width='2' />
+<text x='92' y='70' font-family='monospace' fill='#A00' >38</text>
+<text x='115' y='70' transform='rotate(0 115 70)' font-family='monospace' fill='#A00'  >Not connected</text>
 
 <line x1='109' y1='87' x2='114' y2='87' stroke='black' stroke-width='2' />
 <text x='92' y='92' font-family='monospace' fill='black' >37</text>
@@ -25,65 +25,65 @@
 <text x='92' y='114' font-family='monospace' fill='black' >36</text>
 <text x='115' y='114' transform='rotate(0 115 114)' font-family='monospace' fill='black'  >DBE</text>
 
-<line x1='109' y1='131' x2='114' y2='131' stroke='black' stroke-width='2' />
-<text x='92' y='136' font-family='monospace' fill='black' >35</text>
-<text x='115' y='136' transform='rotate(0 115 136)' font-family='monospace' fill='black'  >Not connected</text>
+<line x1='109' y1='131' x2='114' y2='131' stroke='#A00' stroke-width='2' />
+<text x='92' y='136' font-family='monospace' fill='#A00' >35</text>
+<text x='115' y='136' transform='rotate(0 115 136)' font-family='monospace' fill='#A00'  >Not connected</text>
 
 <line x1='109' y1='153' x2='114' y2='153' stroke='black' stroke-width='2' />
 <text x='92' y='158' font-family='monospace' fill='black' >34</text>
 <text x='115' y='158' transform='rotate(0 115 158)' font-family='monospace' fill='black'  >R/W</text>
 
-<line x1='109' y1='175' x2='114' y2='175' stroke='black' stroke-width='2' />
-<text x='92' y='180' font-family='monospace' fill='black' >33</text>
-<text x='115' y='180' transform='rotate(0 115 180)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='175' x2='114' y2='175' stroke='#00A' stroke-width='2' />
+<text x='92' y='180' font-family='monospace' fill='#00A' >33</text>
+<text x='115' y='180' transform='rotate(0 115 180)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>0</tspan></text>
 
-<line x1='109' y1='197' x2='114' y2='197' stroke='black' stroke-width='2' />
-<text x='92' y='202' font-family='monospace' fill='black' >32</text>
-<text x='115' y='202' transform='rotate(0 115 202)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='197' x2='114' y2='197' stroke='#00A' stroke-width='2' />
+<text x='92' y='202' font-family='monospace' fill='#00A' >32</text>
+<text x='115' y='202' transform='rotate(0 115 202)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>1</tspan></text>
 
-<line x1='109' y1='219' x2='114' y2='219' stroke='black' stroke-width='2' />
-<text x='92' y='224' font-family='monospace' fill='black' >31</text>
-<text x='115' y='224' transform='rotate(0 115 224)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='219' x2='114' y2='219' stroke='#00A' stroke-width='2' />
+<text x='92' y='224' font-family='monospace' fill='#00A' >31</text>
+<text x='115' y='224' transform='rotate(0 115 224)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>2</tspan></text>
 
-<line x1='109' y1='241' x2='114' y2='241' stroke='black' stroke-width='2' />
-<text x='92' y='246' font-family='monospace' fill='black' >30</text>
-<text x='115' y='246' transform='rotate(0 115 246)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='241' x2='114' y2='241' stroke='#00A' stroke-width='2' />
+<text x='92' y='246' font-family='monospace' fill='#00A' >30</text>
+<text x='115' y='246' transform='rotate(0 115 246)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>3</tspan></text>
 
-<line x1='109' y1='263' x2='114' y2='263' stroke='black' stroke-width='2' />
-<text x='92' y='268' font-family='monospace' fill='black' >29</text>
-<text x='115' y='268' transform='rotate(0 115 268)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='263' x2='114' y2='263' stroke='#00A' stroke-width='2' />
+<text x='92' y='268' font-family='monospace' fill='#00A' >29</text>
+<text x='115' y='268' transform='rotate(0 115 268)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>4</tspan></text>
 
-<line x1='109' y1='285' x2='114' y2='285' stroke='black' stroke-width='2' />
-<text x='92' y='290' font-family='monospace' fill='black' >28</text>
-<text x='115' y='290' transform='rotate(0 115 290)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='285' x2='114' y2='285' stroke='#00A' stroke-width='2' />
+<text x='92' y='290' font-family='monospace' fill='#00A' >28</text>
+<text x='115' y='290' transform='rotate(0 115 290)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>5</tspan></text>
 
-<line x1='109' y1='307' x2='114' y2='307' stroke='black' stroke-width='2' />
-<text x='92' y='312' font-family='monospace' fill='black' >27</text>
-<text x='115' y='312' transform='rotate(0 115 312)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='307' x2='114' y2='307' stroke='#00A' stroke-width='2' />
+<text x='92' y='312' font-family='monospace' fill='#00A' >27</text>
+<text x='115' y='312' transform='rotate(0 115 312)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>6</tspan></text>
 
-<line x1='109' y1='329' x2='114' y2='329' stroke='black' stroke-width='2' />
-<text x='92' y='334' font-family='monospace' fill='black' >26</text>
-<text x='115' y='334' transform='rotate(0 115 334)' font-family='monospace' fill='black'  >D</text>
+<line x1='109' y1='329' x2='114' y2='329' stroke='#00A' stroke-width='2' />
+<text x='92' y='334' font-family='monospace' fill='#00A' >26</text>
+<text x='115' y='334' transform='rotate(0 115 334)' font-family='monospace' fill='#00A'  >D<tspan dy='5'>7</tspan></text>
 
-<line x1='109' y1='351' x2='114' y2='351' stroke='black' stroke-width='2' />
-<text x='92' y='356' font-family='monospace' fill='black' >25</text>
-<text x='115' y='356' transform='rotate(0 115 356)' font-family='monospace' fill='black'  >A</text>
+<line x1='109' y1='351' x2='114' y2='351' stroke='#0A0' stroke-width='2' />
+<text x='92' y='356' font-family='monospace' fill='#0A0' >25</text>
+<text x='115' y='356' transform='rotate(0 115 356)' font-family='monospace' fill='#0A0'  >A<tspan dy='5'>15</tspan></text>
 
-<line x1='109' y1='373' x2='114' y2='373' stroke='black' stroke-width='2' />
-<text x='92' y='378' font-family='monospace' fill='black' >24</text>
-<text x='115' y='378' transform='rotate(0 115 378)' font-family='monospace' fill='black'  >A</text>
+<line x1='109' y1='373' x2='114' y2='373' stroke='#0A0' stroke-width='2' />
+<text x='92' y='378' font-family='monospace' fill='#0A0' >24</text>
+<text x='115' y='378' transform='rotate(0 115 378)' font-family='monospace' fill='#0A0'  >A<tspan dy='5'>14</tspan></text>
 
-<line x1='109' y1='395' x2='114' y2='395' stroke='black' stroke-width='2' />
-<text x='92' y='400' font-family='monospace' fill='black' >23</text>
-<text x='115' y='400' transform='rotate(0 115 400)' font-family='monospace' fill='black'  >A</text>
+<line x1='109' y1='395' x2='114' y2='395' stroke='#0A0' stroke-width='2' />
+<text x='92' y='400' font-family='monospace' fill='#0A0' >23</text>
+<text x='115' y='400' transform='rotate(0 115 400)' font-family='monospace' fill='#0A0'  >A<tspan dy='5'>13</tspan></text>
 
-<line x1='109' y1='417' x2='114' y2='417' stroke='black' stroke-width='2' />
-<text x='92' y='422' font-family='monospace' fill='black' >22</text>
-<text x='115' y='422' transform='rotate(0 115 422)' font-family='monospace' fill='black'  >A</text>
+<line x1='109' y1='417' x2='114' y2='417' stroke='#0A0' stroke-width='2' />
+<text x='92' y='422' font-family='monospace' fill='#0A0' >22</text>
+<text x='115' y='422' transform='rotate(0 115 422)' font-family='monospace' fill='#0A0'  >A<tspan dy='5'>12</tspan></text>
 
-<line x1='109' y1='439' x2='114' y2='439' stroke='black' stroke-width='2' />
-<text x='92' y='444' font-family='monospace' fill='black' >21</text>
-<text x='115' y='444' transform='rotate(0 115 444)' font-family='monospace' fill='black'  >V<tspan dy='5'>SS</tspan></text>
+<line x1='109' y1='439' x2='114' y2='439' stroke='#0A0' stroke-width='2' />
+<text x='92' y='444' font-family='monospace' fill='#0A0' >21</text>
+<text x='115' y='444' transform='rotate(0 115 444)' font-family='monospace' fill='#0A0'  >V<tspan dy='5'>SS</tspan></text>
 
 <line x1='59' y1='21' x2='54' y2='21' stroke='black' stroke-width='2' />
 <text x='62' y='26' font-family='monospace' fill='black' >1</text>
@@ -117,53 +117,53 @@
 <text x='62' y='180' font-family='monospace' fill='black' >8</text>
 <text x='32' y='180' transform='rotate(0 32 180)' font-family='monospace' fill='black'  textLength='21'>V<tspan dy='5'>CC</tspan></text>
 
-<line x1='59' y1='197' x2='54' y2='197' stroke='black' stroke-width='2' />
-<text x='62' y='202' font-family='monospace' fill='black' >9</text>
-<text x='46' y='202' transform='rotate(0 46 202)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='197' x2='54' y2='197' stroke='#0A0' stroke-width='2' />
+<text x='62' y='202' font-family='monospace' fill='#0A0' >9</text>
+<text x='39' y='202' transform='rotate(0 39 202)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>0</tspan></text>
 
-<line x1='59' y1='219' x2='54' y2='219' stroke='black' stroke-width='2' />
-<text x='62' y='224' font-family='monospace' fill='black' >10</text>
-<text x='46' y='224' transform='rotate(0 46 224)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='219' x2='54' y2='219' stroke='#0A0' stroke-width='2' />
+<text x='62' y='224' font-family='monospace' fill='#0A0' >10</text>
+<text x='39' y='224' transform='rotate(0 39 224)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>1</tspan></text>
 
-<line x1='59' y1='241' x2='54' y2='241' stroke='black' stroke-width='2' />
-<text x='62' y='246' font-family='monospace' fill='black' >11</text>
-<text x='46' y='246' transform='rotate(0 46 246)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='241' x2='54' y2='241' stroke='#0A0' stroke-width='2' />
+<text x='62' y='246' font-family='monospace' fill='#0A0' >11</text>
+<text x='39' y='246' transform='rotate(0 39 246)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>2</tspan></text>
 
-<line x1='59' y1='263' x2='54' y2='263' stroke='black' stroke-width='2' />
-<text x='62' y='268' font-family='monospace' fill='black' >12</text>
-<text x='46' y='268' transform='rotate(0 46 268)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='263' x2='54' y2='263' stroke='#0A0' stroke-width='2' />
+<text x='62' y='268' font-family='monospace' fill='#0A0' >12</text>
+<text x='39' y='268' transform='rotate(0 39 268)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>3</tspan></text>
 
-<line x1='59' y1='285' x2='54' y2='285' stroke='black' stroke-width='2' />
-<text x='62' y='290' font-family='monospace' fill='black' >13</text>
-<text x='46' y='290' transform='rotate(0 46 290)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='285' x2='54' y2='285' stroke='#0A0' stroke-width='2' />
+<text x='62' y='290' font-family='monospace' fill='#0A0' >13</text>
+<text x='39' y='290' transform='rotate(0 39 290)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>4</tspan></text>
 
-<line x1='59' y1='307' x2='54' y2='307' stroke='black' stroke-width='2' />
-<text x='62' y='312' font-family='monospace' fill='black' >14</text>
-<text x='46' y='312' transform='rotate(0 46 312)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='307' x2='54' y2='307' stroke='#0A0' stroke-width='2' />
+<text x='62' y='312' font-family='monospace' fill='#0A0' >14</text>
+<text x='39' y='312' transform='rotate(0 39 312)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>5</tspan></text>
 
-<line x1='59' y1='329' x2='54' y2='329' stroke='black' stroke-width='2' />
-<text x='62' y='334' font-family='monospace' fill='black' >15</text>
-<text x='46' y='334' transform='rotate(0 46 334)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='329' x2='54' y2='329' stroke='#0A0' stroke-width='2' />
+<text x='62' y='334' font-family='monospace' fill='#0A0' >15</text>
+<text x='39' y='334' transform='rotate(0 39 334)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>6</tspan></text>
 
-<line x1='59' y1='351' x2='54' y2='351' stroke='black' stroke-width='2' />
-<text x='62' y='356' font-family='monospace' fill='black' >16</text>
-<text x='46' y='356' transform='rotate(0 46 356)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='351' x2='54' y2='351' stroke='#0A0' stroke-width='2' />
+<text x='62' y='356' font-family='monospace' fill='#0A0' >16</text>
+<text x='39' y='356' transform='rotate(0 39 356)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>7</tspan></text>
 
-<line x1='59' y1='373' x2='54' y2='373' stroke='black' stroke-width='2' />
-<text x='62' y='378' font-family='monospace' fill='black' >17</text>
-<text x='46' y='378' transform='rotate(0 46 378)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='373' x2='54' y2='373' stroke='#0A0' stroke-width='2' />
+<text x='62' y='378' font-family='monospace' fill='#0A0' >17</text>
+<text x='39' y='378' transform='rotate(0 39 378)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>8</tspan></text>
 
-<line x1='59' y1='395' x2='54' y2='395' stroke='black' stroke-width='2' />
-<text x='62' y='400' font-family='monospace' fill='black' >18</text>
-<text x='46' y='400' transform='rotate(0 46 400)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='395' x2='54' y2='395' stroke='#0A0' stroke-width='2' />
+<text x='62' y='400' font-family='monospace' fill='#0A0' >18</text>
+<text x='39' y='400' transform='rotate(0 39 400)' font-family='monospace' fill='#0A0'  textLength='14'>A<tspan dy='5'>9</tspan></text>
 
-<line x1='59' y1='417' x2='54' y2='417' stroke='black' stroke-width='2' />
-<text x='62' y='422' font-family='monospace' fill='black' >19</text>
-<text x='46' y='422' transform='rotate(0 46 422)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='417' x2='54' y2='417' stroke='#0A0' stroke-width='2' />
+<text x='62' y='422' font-family='monospace' fill='#0A0' >19</text>
+<text x='32' y='422' transform='rotate(0 32 422)' font-family='monospace' fill='#0A0'  textLength='21'>A<tspan dy='5'>10</tspan></text>
 
-<line x1='59' y1='439' x2='54' y2='439' stroke='black' stroke-width='2' />
-<text x='62' y='444' font-family='monospace' fill='black' >20</text>
-<text x='46' y='444' transform='rotate(0 46 444)' font-family='monospace' fill='black'  textLength='7'>A</text>
+<line x1='59' y1='439' x2='54' y2='439' stroke='#0A0' stroke-width='2' />
+<text x='62' y='444' font-family='monospace' fill='#0A0' >20</text>
+<text x='32' y='444' transform='rotate(0 32 444)' font-family='monospace' fill='#0A0'  textLength='21'>A<tspan dy='5'>11</tspan></text>
 
 
 </svg>
