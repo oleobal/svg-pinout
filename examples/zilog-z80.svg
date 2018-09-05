@@ -1,88 +1,88 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='50' y='10' width='50' height='440' fill='white' stroke-width='2' stroke='black'/>
+<rect x='50' y='10' width='50' height='440' fill='none' stroke-width='2' stroke='black'/>
 
 <path d="M70 10
 		A 5 5 0 0 0 80 10"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='100' y1='21' x2='105' y2='21' stroke='blue' stroke-width='2' />
-<text x='82' y='26' font-family='monospace' fill='blue' >40</text>
+<text x='81' y='26' font-family='monospace' fill='blue' >40</text>
 <text x='106' y='26' transform='rotate(0 106 26)' font-family='monospace' fill='blue' >A10</text>
 
 <line x1='100' y1='43' x2='105' y2='43' stroke='blue' stroke-width='2' />
-<text x='82' y='48' font-family='monospace' fill='blue' >39</text>
+<text x='81' y='48' font-family='monospace' fill='blue' >39</text>
 <text x='106' y='48' transform='rotate(0 106 48)' font-family='monospace' fill='blue' >A9</text>
 
 <line x1='100' y1='65' x2='105' y2='65' stroke='blue' stroke-width='2' />
-<text x='82' y='70' font-family='monospace' fill='blue' >38</text>
+<text x='81' y='70' font-family='monospace' fill='blue' >38</text>
 <text x='106' y='70' transform='rotate(0 106 70)' font-family='monospace' fill='blue' >A6</text>
 
 <line x1='100' y1='87' x2='105' y2='87' stroke='blue' stroke-width='2' />
-<text x='82' y='92' font-family='monospace' fill='blue' >37</text>
+<text x='81' y='92' font-family='monospace' fill='blue' >37</text>
 <text x='106' y='92' transform='rotate(0 106 92)' font-family='monospace' fill='blue' >A7</text>
 
 <line x1='100' y1='109' x2='105' y2='109' stroke='blue' stroke-width='2' />
-<text x='82' y='114' font-family='monospace' fill='blue' >36</text>
+<text x='81' y='114' font-family='monospace' fill='blue' >36</text>
 <text x='106' y='114' transform='rotate(0 106 114)' font-family='monospace' fill='blue' >A6</text>
 
 <line x1='100' y1='131' x2='105' y2='131' stroke='blue' stroke-width='2' />
-<text x='82' y='136' font-family='monospace' fill='blue' >35</text>
+<text x='81' y='136' font-family='monospace' fill='blue' >35</text>
 <text x='106' y='136' transform='rotate(0 106 136)' font-family='monospace' fill='blue' >A5</text>
 
 <line x1='100' y1='153' x2='105' y2='153' stroke='blue' stroke-width='2' />
-<text x='82' y='158' font-family='monospace' fill='blue' >34</text>
+<text x='81' y='158' font-family='monospace' fill='blue' >34</text>
 <text x='106' y='158' transform='rotate(0 106 158)' font-family='monospace' fill='blue' >A4</text>
 
 <line x1='100' y1='175' x2='105' y2='175' stroke='blue' stroke-width='2' />
-<text x='82' y='180' font-family='monospace' fill='blue' >33</text>
+<text x='81' y='180' font-family='monospace' fill='blue' >33</text>
 <text x='106' y='180' transform='rotate(0 106 180)' font-family='monospace' fill='blue' >A3</text>
 
 <line x1='100' y1='197' x2='105' y2='197' stroke='blue' stroke-width='2' />
-<text x='82' y='202' font-family='monospace' fill='blue' >32</text>
+<text x='81' y='202' font-family='monospace' fill='blue' >32</text>
 <text x='106' y='202' transform='rotate(0 106 202)' font-family='monospace' fill='blue' >A2</text>
 
 <line x1='100' y1='219' x2='105' y2='219' stroke='blue' stroke-width='2' />
-<text x='82' y='224' font-family='monospace' fill='blue' >31</text>
+<text x='81' y='224' font-family='monospace' fill='blue' >31</text>
 <text x='106' y='224' transform='rotate(0 106 224)' font-family='monospace' fill='blue' >A1</text>
 
 <line x1='100' y1='241' x2='105' y2='241' stroke='blue' stroke-width='2' />
-<text x='82' y='246' font-family='monospace' fill='blue' >30</text>
+<text x='81' y='246' font-family='monospace' fill='blue' >30</text>
 <text x='106' y='246' transform='rotate(0 106 246)' font-family='monospace' fill='blue' >A0</text>
 
 <line x1='100' y1='263' x2='105' y2='263' stroke='black' stroke-width='2' />
-<text x='82' y='268' font-family='monospace' fill='black' >29</text>
+<text x='81' y='268' font-family='monospace' fill='black' >29</text>
 <text x='106' y='268' transform='rotate(0 106 268)' font-family='monospace' fill='black' >GND</text>
 
 <line x1='100' y1='285' x2='105' y2='285' stroke='black' stroke-width='2' />
-<text x='82' y='290' font-family='monospace' fill='black' >28</text>
+<text x='81' y='290' font-family='monospace' fill='black' >28</text>
 <text x='106' y='290' transform='rotate(0 106 290)' font-family='monospace' fill='black' >/RFSH</text>
 
 <line x1='100' y1='307' x2='105' y2='307' stroke='black' stroke-width='2' />
-<text x='82' y='312' font-family='monospace' fill='black' >27</text>
+<text x='81' y='312' font-family='monospace' fill='black' >27</text>
 <text x='106' y='312' transform='rotate(0 106 312)' font-family='monospace' fill='black' >/M1</text>
 
 <line x1='100' y1='329' x2='105' y2='329' stroke='black' stroke-width='2' />
-<text x='82' y='334' font-family='monospace' fill='black' >26</text>
+<text x='81' y='334' font-family='monospace' fill='black' >26</text>
 <text x='106' y='334' transform='rotate(0 106 334)' font-family='monospace' fill='black' >/RESET</text>
 
 <line x1='100' y1='351' x2='105' y2='351' stroke='black' stroke-width='2' />
-<text x='82' y='356' font-family='monospace' fill='black' >25</text>
+<text x='81' y='356' font-family='monospace' fill='black' >25</text>
 <text x='106' y='356' transform='rotate(0 106 356)' font-family='monospace' fill='black' >/BUSREQ</text>
 
 <line x1='100' y1='373' x2='105' y2='373' stroke='black' stroke-width='2' />
-<text x='82' y='378' font-family='monospace' fill='black' >24</text>
+<text x='81' y='378' font-family='monospace' fill='black' >24</text>
 <text x='106' y='378' transform='rotate(0 106 378)' font-family='monospace' fill='black' >/WAIT</text>
 
 <line x1='100' y1='395' x2='105' y2='395' stroke='black' stroke-width='2' />
-<text x='82' y='400' font-family='monospace' fill='black' >23</text>
+<text x='81' y='400' font-family='monospace' fill='black' >23</text>
 <text x='106' y='400' transform='rotate(0 106 400)' font-family='monospace' fill='black' >/BUSACK</text>
 
 <line x1='100' y1='417' x2='105' y2='417' stroke='black' stroke-width='2' />
-<text x='82' y='422' font-family='monospace' fill='black' >22</text>
+<text x='81' y='422' font-family='monospace' fill='black' >22</text>
 <text x='106' y='422' transform='rotate(0 106 422)' font-family='monospace' fill='black' >/WR</text>
 
 <line x1='100' y1='439' x2='105' y2='439' stroke='black' stroke-width='2' />
-<text x='82' y='444' font-family='monospace' fill='black' >21</text>
+<text x='81' y='444' font-family='monospace' fill='black' >21</text>
 <text x='106' y='444' transform='rotate(0 106 444)' font-family='monospace' fill='black' >/RD</text>
 
 <line x1='50' y1='21' x2='45' y2='21' stroke='blue' stroke-width='2' />

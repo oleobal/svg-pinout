@@ -49,7 +49,7 @@ strokeColor = args.foreground
 if args.background is not None :
 	bgColor = args.background
 else:
-	bgColor = "white"
+	bgColor = "none"
 
 currentSection="top"
 currentHighestNumberPlusOne=0
@@ -287,17 +287,17 @@ while i < len(pins["right"]):
 	color = pins["right"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	if pins["right"][i][0] < 10 :
-		result+=textNumber.format(x=x1-charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+		result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	else:
-		result+=textNumber.format(x=x1-2*charWidth-2          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
+		result+=textNumber.format(x=x1-2*charWidth-3          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		if pins["right"][i][0] < 10 :
-			result+=textNumber.format(x=x1-charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		else:
-			result+=textNumber.format(x=x1-2*charWidth-2, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+			result+=textNumber.format(x=x1-2*charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
