@@ -152,7 +152,7 @@ fontFamily = "monospace"
 # best heuristics
 # for the uneducated, this means guesses
 charHeight=10
-charWidth = 8
+charWidth = 7
 
 widthPerPin = 25
 heightPerPin = 22
@@ -279,7 +279,34 @@ def labelPinCommon(pin, color=None):
 	if "not" in pin[3]:
 		toAdd+="style='text-decoration: overline'"
 	
-	t = textLabel.format(x="{x}", y="{y}", angle="{angle}", text=pin[1], font=fontFamily, color=color, add=toAdd+" {add}")
+	p = pin[1]
+	text = ""
+	
+	i = 0
+	while i < len(pin[1]):
+		if p[i] in ("_", "^"):
+			if p[i] == "_" :
+				text+="<tspan dy='5'>"
+			elif p[i] == "^":
+				text+="<tspan dy='-5'>"
+			i+=1
+			while i < len(pin[1]) and p[i] != " ":
+				if p[i] == "\\":
+					i+=1
+					text+=p[i]
+				else:
+					text+=p[i]
+				i+=1
+			text+="</tspan>"
+		elif p[i] == "\\":
+			i+=1
+			text+=p[i]
+		else:
+			text+=p[i]
+			
+		i+=1
+	
+	t = textLabel.format(x="{x}", y="{y}", angle="{angle}", text=text, font=fontFamily, color=color, add=toAdd+" {add}")
 	
 	return t
 
@@ -355,8 +382,8 @@ while i < len(pins["left"]):
 	color = pins["left"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
-	labelLen = len(pins["left"][i][1])*charWidth
-	result+=labelPinCommon(pins["left"][i]).format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"'")
+	labelLen = len(pins["left"][i][1].translate({ord("_"):"",ord("\\"):"", ord("^"):""}))*charWidth
+	result+=labelPinCommon(pins["left"][i]).format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(labelLen)+"'")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")

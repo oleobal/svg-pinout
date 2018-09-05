@@ -13,14 +13,14 @@
 # mark
 
 # left
-1 Vss
+1 V_SS
 2 Halt
 3 Phase 1
 4 IRA
 5 VMA
 6 NMI
 7 BA
-8 Vcc
+8 V_CC
 9-20 A
 
 # right
@@ -33,4 +33,4 @@
 34 R/W
 33-26 D
 25-22 A
-21 VSS
+21 V_SS

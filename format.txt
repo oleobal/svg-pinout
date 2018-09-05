@@ -29,6 +29,10 @@ You can add an alignment mark to a section by calling `# mark`.
 
 It is possible to add formatting to pin names :
   `12 /RESET` will be represented with an overline (active on low).
+  `14 V_SS` will represent SS as subscript
+  `16 10e^15` will represent 15 as superscript
+The backslash escapes the special characters :
+  `14 V\_SS` will print 'V_SS'
 
 Empty lines and lines starting with # that are more than one word (whitespace
 after and before notwithstanding) are ignored.
