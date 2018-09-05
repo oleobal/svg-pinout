@@ -361,7 +361,7 @@ while i < len(pins["left"]):
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["right"][i], color="white").format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["left"][i], color="white").format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"' fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
