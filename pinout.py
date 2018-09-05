@@ -51,6 +51,24 @@ if args.background is not None :
 else:
 	bgColor = "none"
 
+def processWord(word):
+	"""
+	to manage not, arrows, indices..
+	returns (processed text, list of features as strings)
+	"""
+	features = []
+	
+	leadingSymbols = ["/"]
+	
+	while word[0] in leadingSymbols:
+		sym = word[0]
+		word = word[1:]
+		
+		if sym == "/":
+			features.append("not")
+			
+	return (word, features)
+
 currentSection="top"
 currentHighestNumberPlusOne=0
 currentColor=strokeColor
@@ -81,7 +99,8 @@ for line in args.infile:
 		nb = int(words[0])
 		if currentHighestNumberPlusOne < nb+1:
 			currentHighestNumberPlusOne = nb+1
-		pins[currentSection].append((nb, line[len(words[0]):].strip(), currentColor))
+		p = processWord(line[len(words[0]):].strip())
+		pins[currentSection].append((nb, p[0], currentColor, p[1]))
 	except ValueError:
 		try:
 			# range
@@ -89,14 +108,16 @@ for line in args.infile:
 			nbStart = int(nbs[0])
 			nbEnd = int(nbs[-1])
 			if nbStart < nbEnd : # forwards range
+				p = processWord(line[len(words[0]):].strip())
 				for n in range(nbStart, nbEnd+1):
-					pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
+					pins[currentSection].append((n, p[0], currentColor, p[1]))
 				if currentHighestNumberPlusOne < nbEnd+1:
 					currentHighestNumberPlusOne = nbEnd+1
 			else: # backwards range
 				nbStart, nbEnd = nbEnd, nbStart
+				p = processWord(line[len(words[0]):].strip())
 				for n in reversed(range(nbStart, nbEnd+1)):
-					pins[currentSection].append((n, line[len(words[0]):].strip(), currentColor))
+					pins[currentSection].append((n, p[0], currentColor, p[1]))
 				if currentHighestNumberPlusOne < nbEnd+1:
 					currentHighestNumberPlusOne = nbEnd+1
 				
@@ -107,12 +128,14 @@ for line in args.infile:
 				if words[0][-1] != "x":
 					raise ValueError("whatever")
 				nb = int(words[0][:-1])
+				p = processWord(line[len(words[0]):].strip())
 				for i in range(nb):
-					pins[currentSection].append((currentHighestNumberPlusOne+i, line[len(words[0]):].strip(), currentColor))
+					pins[currentSection].append((currentHighestNumberPlusOne+i, p[0], currentColor, p[1]))
 				currentHighestNumberPlusOne+=nb
 			except ValueError:
 				# nothing
-				pins[currentSection].append((currentHighestNumberPlusOne, line, currentColor))
+				p = processWord(line)
+				pins[currentSection].append((currentHighestNumberPlusOne, p[0], currentColor, p[1]))
 				currentHighestNumberPlusOne+=1
 			
 
@@ -241,6 +264,25 @@ textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2' {
 textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{text}</text>\n"
 textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}' {add}>{text}</text>\n\n"
 
+
+def labelPinCommon(pin, color=None):
+	"""
+		if color is set, it will be used instead of the pin color
+	"""
+	global textLabel
+	global fontFamily
+	
+	if color is None:
+		color = pin[2]
+	
+	toAdd=""
+	if "not" in pin[3]:
+		toAdd+="style='text-decoration: overline'"
+	
+	t = textLabel.format(x="{x}", y="{y}", angle="{angle}", text=pin[1], font=fontFamily, color=color, add=toAdd+" {add}")
+	
+	return t
+
 i = 0
 while i < len(pins["top"]):
 	x1 = basex+widthPerPin//2 + i*(widthPerPin)
@@ -250,12 +292,12 @@ while i < len(pins["top"]):
 	color = pins["top"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color, add="")
-	result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color=color, add="")
+	result+=labelPinCommon(pins["top"][i]).format(x=x1,y=y1-5, angle=-45, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textLabel.format(x=x1,y=y1-5, angle=-45, text=pins["top"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["top"][i], color="white").format(x=x1,y=y1-5, angle=-45, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
@@ -268,12 +310,12 @@ while i < len(pins["bottom"]):
 	color = pins["bottom"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color, add="")
-	result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color=color, add="")
+	result+=labelPinCommon(pins["bottom"][i]).format(x=x1,y=y1+12, angle=45, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textLabel.format(x=x1,y=y1+12, angle=45, text=pins["bottom"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["bottom"][i], color="white").format(x=x1,y=y1+12, angle=45, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	i+=1
 
 i=0
@@ -290,7 +332,7 @@ while i < len(pins["right"]):
 		result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
 	else:
 		result+=textNumber.format(x=x1-2*charWidth-3          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
-	result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color=color, add="")
+	result+=labelPinCommon(pins["right"][i]).format(x=x1+6, y=y1+(charHeight//2), angle=0, add="")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
@@ -298,7 +340,7 @@ while i < len(pins["right"]):
 			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 		else:
 			result+=textNumber.format(x=x1-2*charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textLabel.format(x=x1+6, y=y1+(charHeight//2), angle=0, text=pins["right"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["right"][i], color="white").format(x=x1+6, y=y1+(charHeight//2), angle=0, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 
@@ -314,12 +356,12 @@ while i < len(pins["left"]):
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
 	labelLen = len(pins["left"][i][1])*charWidth
-	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"'")
+	result+=labelPinCommon(pins["left"][i]).format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"'")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["right"][i], color="white").format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 

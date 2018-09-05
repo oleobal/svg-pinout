@@ -7,51 +7,51 @@
 
 <line x1='22' y1='154' x2='22' y2='149' stroke='black' stroke-width='2' />
 <text x='17' y='166' font-family='monospace' fill='black' >1</text>
-<text x='22' y='149' transform='rotate(-45 22 149)' font-family='monospace' fill='black' >USB</text>
+<text x='22' y='149' transform='rotate(-45 22 149)' font-family='monospace' fill='black'  >USB</text>
 
 <line x1='47' y1='154' x2='47' y2='149' stroke='black' stroke-width='2' />
 <text x='42' y='166' font-family='monospace' fill='black' >2</text>
-<text x='47' y='149' transform='rotate(-45 47 149)' font-family='monospace' fill='black' >USB</text>
+<text x='47' y='149' transform='rotate(-45 47 149)' font-family='monospace' fill='black'  >USB</text>
 
 <line x1='72' y1='154' x2='72' y2='149' stroke='black' stroke-width='2' />
 <text x='67' y='166' font-family='monospace' fill='black' >3</text>
-<text x='72' y='149' transform='rotate(-45 72 149)' font-family='monospace' fill='black' >USB</text>
+<text x='72' y='149' transform='rotate(-45 72 149)' font-family='monospace' fill='black'  >USB</text>
 
 <line x1='97' y1='154' x2='97' y2='149' stroke='black' stroke-width='2' />
 <text x='92' y='166' font-family='monospace' fill='black' >4</text>
-<text x='97' y='149' transform='rotate(-45 97 149)' font-family='monospace' fill='black' >USB</text>
+<text x='97' y='149' transform='rotate(-45 97 149)' font-family='monospace' fill='black'  >USB</text>
 
 <line x1='122' y1='154' x2='122' y2='149' stroke='black' stroke-width='2' />
 <text x='117' y='166' font-family='monospace' fill='black' >5</text>
-<text x='122' y='149' transform='rotate(-45 122 149)' font-family='monospace' fill='black' >Status LED (Write)</text>
+<text x='122' y='149' transform='rotate(-45 122 149)' font-family='monospace' fill='black'  >Status LED (Write)</text>
 
 <line x1='147' y1='154' x2='147' y2='149' stroke='black' stroke-width='2' />
 <text x='142' y='166' font-family='monospace' fill='black' >6</text>
-<text x='147' y='149' transform='rotate(-45 147 149)' font-family='monospace' fill='black' >Status LED (Read)</text>
+<text x='147' y='149' transform='rotate(-45 147 149)' font-family='monospace' fill='black'  >Status LED (Read)</text>
 
 <line x1='22' y1='198' x2='22' y2='203' stroke='black' stroke-width='2' />
 <text x='17' y='193' font-family='monospace' fill='black' >7</text>
-<text x='22' y='210' transform='rotate(45 22 210)' font-family='monospace' fill='black' >Sensor</text>
+<text x='22' y='210' transform='rotate(45 22 210)' font-family='monospace' fill='black'  >Sensor</text>
 
 <line x1='47' y1='198' x2='47' y2='203' stroke='black' stroke-width='2' />
 <text x='42' y='193' font-family='monospace' fill='black' >8</text>
-<text x='47' y='210' transform='rotate(45 47 210)' font-family='monospace' fill='black' >Sensor</text>
+<text x='47' y='210' transform='rotate(45 47 210)' font-family='monospace' fill='black'  >Sensor</text>
 
 <line x1='72' y1='198' x2='72' y2='203' stroke='black' stroke-width='2' />
 <text x='67' y='193' font-family='monospace' fill='black' >9</text>
-<text x='72' y='210' transform='rotate(45 72 210)' font-family='monospace' fill='black' >Clock</text>
+<text x='72' y='210' transform='rotate(45 72 210)' font-family='monospace' fill='black'  >Clock</text>
 
 <line x1='97' y1='198' x2='97' y2='203' stroke='blue' stroke-width='2' />
 <text x='92' y='193' font-family='monospace' fill='blue' >10</text>
-<text x='97' y='210' transform='rotate(45 97 210)' font-family='monospace' fill='blue' >VSS</text>
+<text x='97' y='210' transform='rotate(45 97 210)' font-family='monospace' fill='blue'  >VSS</text>
 
 <line x1='122' y1='198' x2='122' y2='203' stroke='blue' stroke-width='2' />
 <text x='117' y='193' font-family='monospace' fill='blue' >11</text>
-<text x='122' y='210' transform='rotate(45 122 210)' font-family='monospace' fill='blue' >VDD</text>
+<text x='122' y='210' transform='rotate(45 122 210)' font-family='monospace' fill='blue'  >VDD</text>
 
 <line x1='147' y1='198' x2='147' y2='203' stroke='blue' stroke-width='2' />
 <text x='142' y='193' font-family='monospace' fill='blue' >12</text>
-<text x='147' y='210' transform='rotate(45 147 210)' font-family='monospace' fill='blue' >GND</text>
+<text x='147' y='210' transform='rotate(45 147 210)' font-family='monospace' fill='blue'  >GND</text>
 
 
 </svg>

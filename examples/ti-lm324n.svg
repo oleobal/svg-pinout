@@ -7,59 +7,59 @@
 
 <line x1='22' y1='42' x2='22' y2='37' stroke='darkred' stroke-width='2' />
 <text x='17' y='54' font-family='monospace' fill='darkred' >14</text>
-<text x='22' y='37' transform='rotate(-45 22 37)' font-family='monospace' fill='darkred' >4OUT</text>
+<text x='22' y='37' transform='rotate(-45 22 37)' font-family='monospace' fill='darkred'  >4OUT</text>
 
 <line x1='47' y1='42' x2='47' y2='37' stroke='darkred' stroke-width='2' />
 <text x='42' y='54' font-family='monospace' fill='darkred' >13</text>
-<text x='47' y='37' transform='rotate(-45 47 37)' font-family='monospace' fill='darkred' >4IN-</text>
+<text x='47' y='37' transform='rotate(-45 47 37)' font-family='monospace' fill='darkred'  >4IN-</text>
 
 <line x1='72' y1='42' x2='72' y2='37' stroke='darkred' stroke-width='2' />
 <text x='67' y='54' font-family='monospace' fill='darkred' >12</text>
-<text x='72' y='37' transform='rotate(-45 72 37)' font-family='monospace' fill='darkred' >4IN+</text>
+<text x='72' y='37' transform='rotate(-45 72 37)' font-family='monospace' fill='darkred'  >4IN+</text>
 
 <line x1='97' y1='42' x2='97' y2='37' stroke='black' stroke-width='2' />
 <text x='92' y='54' font-family='monospace' fill='black' >11</text>
-<text x='97' y='37' transform='rotate(-45 97 37)' font-family='monospace' fill='black' >GND</text>
+<text x='97' y='37' transform='rotate(-45 97 37)' font-family='monospace' fill='black'  >GND</text>
 
 <line x1='122' y1='42' x2='122' y2='37' stroke='darkorange' stroke-width='2' />
 <text x='117' y='54' font-family='monospace' fill='darkorange' >10</text>
-<text x='122' y='37' transform='rotate(-45 122 37)' font-family='monospace' fill='darkorange' >3IN+</text>
+<text x='122' y='37' transform='rotate(-45 122 37)' font-family='monospace' fill='darkorange'  >3IN+</text>
 
 <line x1='147' y1='42' x2='147' y2='37' stroke='darkorange' stroke-width='2' />
 <text x='142' y='54' font-family='monospace' fill='darkorange' >9</text>
-<text x='147' y='37' transform='rotate(-45 147 37)' font-family='monospace' fill='darkorange' >3IN-</text>
+<text x='147' y='37' transform='rotate(-45 147 37)' font-family='monospace' fill='darkorange'  >3IN-</text>
 
 <line x1='172' y1='42' x2='172' y2='37' stroke='darkorange' stroke-width='2' />
 <text x='167' y='54' font-family='monospace' fill='darkorange' >8</text>
-<text x='172' y='37' transform='rotate(-45 172 37)' font-family='monospace' fill='darkorange' >3OUT</text>
+<text x='172' y='37' transform='rotate(-45 172 37)' font-family='monospace' fill='darkorange'  >3OUT</text>
 
 <line x1='22' y1='86' x2='22' y2='91' stroke='blue' stroke-width='2' />
 <text x='17' y='81' font-family='monospace' fill='blue' >1</text>
-<text x='22' y='98' transform='rotate(45 22 98)' font-family='monospace' fill='blue' >1OUT</text>
+<text x='22' y='98' transform='rotate(45 22 98)' font-family='monospace' fill='blue'  >1OUT</text>
 
 <line x1='47' y1='86' x2='47' y2='91' stroke='blue' stroke-width='2' />
 <text x='42' y='81' font-family='monospace' fill='blue' >2</text>
-<text x='47' y='98' transform='rotate(45 47 98)' font-family='monospace' fill='blue' >1IN-</text>
+<text x='47' y='98' transform='rotate(45 47 98)' font-family='monospace' fill='blue'  >1IN-</text>
 
 <line x1='72' y1='86' x2='72' y2='91' stroke='blue' stroke-width='2' />
 <text x='67' y='81' font-family='monospace' fill='blue' >3</text>
-<text x='72' y='98' transform='rotate(45 72 98)' font-family='monospace' fill='blue' >1IN+</text>
+<text x='72' y='98' transform='rotate(45 72 98)' font-family='monospace' fill='blue'  >1IN+</text>
 
 <line x1='97' y1='86' x2='97' y2='91' stroke='black' stroke-width='2' />
 <text x='92' y='81' font-family='monospace' fill='black' >4</text>
-<text x='97' y='98' transform='rotate(45 97 98)' font-family='monospace' fill='black' >Vcc</text>
+<text x='97' y='98' transform='rotate(45 97 98)' font-family='monospace' fill='black'  >Vcc</text>
 
 <line x1='122' y1='86' x2='122' y2='91' stroke='darkgreen' stroke-width='2' />
 <text x='117' y='81' font-family='monospace' fill='darkgreen' >5</text>
-<text x='122' y='98' transform='rotate(45 122 98)' font-family='monospace' fill='darkgreen' >2IN+</text>
+<text x='122' y='98' transform='rotate(45 122 98)' font-family='monospace' fill='darkgreen'  >2IN+</text>
 
 <line x1='147' y1='86' x2='147' y2='91' stroke='darkgreen' stroke-width='2' />
 <text x='142' y='81' font-family='monospace' fill='darkgreen' >6</text>
-<text x='147' y='98' transform='rotate(45 147 98)' font-family='monospace' fill='darkgreen' >2IN-</text>
+<text x='147' y='98' transform='rotate(45 147 98)' font-family='monospace' fill='darkgreen'  >2IN-</text>
 
 <line x1='172' y1='86' x2='172' y2='91' stroke='darkgreen' stroke-width='2' />
 <text x='167' y='81' font-family='monospace' fill='darkgreen' >7</text>
-<text x='172' y='98' transform='rotate(45 172 98)' font-family='monospace' fill='darkgreen' >2OUT</text>
+<text x='172' y='98' transform='rotate(45 172 98)' font-family='monospace' fill='darkgreen'  >2OUT</text>
 
 
 </svg>
