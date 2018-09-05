@@ -129,7 +129,7 @@ fontFamily = "monospace"
 # best heuristics
 # for the uneducated, this means guesses
 charHeight=10
-charWidth = 7.5
+charWidth = 8
 
 widthPerPin = 25
 heightPerPin = 22
@@ -314,7 +314,7 @@ while i < len(pins["left"]):
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
 	labelLen = len(pins["left"][i][1])*charWidth
-	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="")
+	result+=textLabel.format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, text=pins["left"][i][1], font=fontFamily, color=color, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"'")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")

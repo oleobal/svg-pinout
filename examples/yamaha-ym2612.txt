@@ -23,7 +23,7 @@
 # nocolor
 # not connected
 10 NC
-# reset
+# reset pin
 11 /IC
 12 GND
 
