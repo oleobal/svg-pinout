@@ -13,35 +13,41 @@ In case you were not aware, SVG is :
 This makes it ideal for diagrams !
 
 Here is an example of produced diagram :
-<img src="./examples/simple.svg" width="100%" height="300">
+<img src="./examples/simple.svg" width="100%" height="350">
 
 ### Description format
 
 In summary :
- - a list of pins, with optional number
- - one can enter a range of pins to avoid repeatedly writing the same names,
-   or a repetition
+ - a list of pins
  - `#`-marked sections identify position (top, bottom, left, right),
-   alignment mark, and color
+   title, alignment mark, and color
 
 I call them "descriptions" and not "code", because they are meant to be
 human-readable, close to what you'd write on a piece of paper.
    
 Here is the description for the diagram from earlier (`examples/simple.txt`) :
 ```
-# Top
-1-4 USB
-5 Status LED (Write)
-6 Status LED (Read)
+# title
+Example chip
+深圳市电
 
-# Bottom
-2x Sensor
+# bottom
+1 Status LED (W)
+2 Status LED (R)
 
 Clock
 # blue
-VSS
-VDD
+V_SS
+V_DD
 GND
+
+# top
+
+# red
+12-9 USB
+# nocolor
+8 /Sensor
+7 Sensor (better)
 
 # left
 # mark

@@ -241,7 +241,12 @@ if len(title["text"]) > 0 :
 	titlex = basex+rectWidth//2
 	titley = basey+rectHeight//2
 	result+="<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' alignment-baseline='central' text-anchor='middle' font-family='{font}'>\n".format(x=titlex, y=titley, angle=title["angle"], font=fontFamily)
-	result+="\t<tspan x='{x}' dy='{dy}em'>{text}</tspan>\n".format(x=titlex, dy=-(len(title["text"])/2-1), text=title["text"][0])
+	alignDelta = 0
+	if title["angle"] == 0:
+		alignDelta = +0.3
+	# the -0.3 is heuristics. On most fonts, the characters proper
+	# are only the bottom 2/3 of the em.
+	result+="\t<tspan x='{x}' dy='{dy}em'>{text}</tspan>\n".format(x=titlex, dy=-(len(title["text"])/2-1+alignDelta), text=title["text"][0])
 	for i in range(1,len(title["text"])):
 		result+="\t<tspan x='{x}' dy='1em'>{text}</tspan>\n".format(x=titlex, text=title["text"][i])
 	result+="</text>\n\n"

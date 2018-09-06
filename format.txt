@@ -15,6 +15,7 @@ Instead of a number, you can also specify an (inclusive) range, like this :
 Alternatively, specify a number of pins, like this :
   8x I/O
 They'll be numbered automatically.
+(for now, auto numbering is always left to right and top to bottom)
 
 Pins with no number are automatically assigned one.
 Pins with no section are on the top.
@@ -26,6 +27,7 @@ will color everything after it blue. You can use any CSS color name or code.
 You can go back to the default color (likely black or white) with `# nocolor`.
 
 You can add an alignment mark to a section by calling `# mark`.
+You can also add a title with `# title`, just write it on the following lines.
 
 It is possible to add formatting to pin names :
   `12 /RESET` will be represented with an overline (active on low).
@@ -33,6 +35,8 @@ It is possible to add formatting to pin names :
   `16 10e^15` will represent 15 as superscript
 The backslash escapes the special characters :
   `14 V\_SS` will print 'V_SS'
+ 
+
 
 Empty lines and lines starting with # that are more than one word (whitespace
 after and before notwithstanding) are ignored.

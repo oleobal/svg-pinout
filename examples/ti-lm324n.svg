@@ -2,7 +2,7 @@
 <rect x='20' y='52' width='175' height='59' fill='none' stroke-width='2' stroke='black'/>
 
 <text x='107' y='81' transform='rotate(0 107 81)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
-	<tspan x='107' dy='0.5em'>TI LM324N</tspan>
+	<tspan x='107' dy='0.2em'>TI LM324N</tspan>
 </text>
 
 <path d="M20 76

@@ -2,7 +2,7 @@
 <rect x='20' y='76' width='300' height='74' fill='none' stroke-width='2' stroke='black'/>
 
 <text x='170' y='113' transform='rotate(0 170 113)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
-	<tspan x='170' dy='-0.0em'>Yamaha</tspan>
+	<tspan x='170' dy='-0.3em'>Yamaha</tspan>
 	<tspan x='170' dy='1em'>YM2612</tspan>
 </text>
 
