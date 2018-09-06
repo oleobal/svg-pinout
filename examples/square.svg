@@ -1,69 +1,69 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='73' y='31' width='100' height='132' fill='none' stroke-width='2' stroke='black'/>
+<rect x='92' y='44' width='100' height='132' fill='none' stroke-width='2' stroke='black'/>
 
-<line x1='85' y1='31' x2='85' y2='26' stroke='black' stroke-width='2' />
-<text x='80' y='43' font-family='monospace' fill='black' >0</text>
-<text x='85' y='26' transform='rotate(-45 85 26)' font-family='monospace' fill='black'  >USB</text>
+<line x1='104' y1='44' x2='104' y2='39' stroke='black' stroke-width='2' />
+<text x='99' y='56' font-family='monospace' fill='black' >0</text>
+<text x='104' y='39' transform='rotate(-45 104 39)' font-family='monospace' fill='black'  >USB</text>
 
-<line x1='110' y1='31' x2='110' y2='26' stroke='black' stroke-width='2' />
-<text x='105' y='43' font-family='monospace' fill='black' >1</text>
-<text x='110' y='26' transform='rotate(-45 110 26)' font-family='monospace' fill='black'  >USB</text>
+<line x1='129' y1='44' x2='129' y2='39' stroke='black' stroke-width='2' />
+<text x='124' y='56' font-family='monospace' fill='black' >1</text>
+<text x='129' y='39' transform='rotate(-45 129 39)' font-family='monospace' fill='black'  >USB</text>
 
-<line x1='135' y1='31' x2='135' y2='26' stroke='black' stroke-width='2' />
-<text x='130' y='43' font-family='monospace' fill='black' >2</text>
-<text x='135' y='26' transform='rotate(-45 135 26)' font-family='monospace' fill='black'  >USB</text>
+<line x1='154' y1='44' x2='154' y2='39' stroke='black' stroke-width='2' />
+<text x='149' y='56' font-family='monospace' fill='black' >2</text>
+<text x='154' y='39' transform='rotate(-45 154 39)' font-family='monospace' fill='black'  >USB</text>
 
-<line x1='160' y1='31' x2='160' y2='26' stroke='black' stroke-width='2' />
-<text x='155' y='43' font-family='monospace' fill='black' >3</text>
-<text x='160' y='26' transform='rotate(-45 160 26)' font-family='monospace' fill='black'  >USB</text>
+<line x1='179' y1='44' x2='179' y2='39' stroke='black' stroke-width='2' />
+<text x='174' y='56' font-family='monospace' fill='black' >3</text>
+<text x='179' y='39' transform='rotate(-45 179 39)' font-family='monospace' fill='black'  >USB</text>
 
-<line x1='85' y1='163' x2='85' y2='168' stroke='black' stroke-width='2' />
-<text x='80' y='158' font-family='monospace' fill='black' >4</text>
-<text x='85' y='175' transform='rotate(45 85 175)' font-family='monospace' fill='black'  >Clock</text>
+<line x1='104' y1='176' x2='104' y2='181' stroke='black' stroke-width='2' />
+<text x='99' y='171' font-family='monospace' fill='black' >4</text>
+<text x='104' y='188' transform='rotate(45 104 188)' font-family='monospace' fill='black'  >Clock</text>
 
-<line x1='110' y1='163' x2='110' y2='168' stroke='black' stroke-width='2' />
-<text x='105' y='158' font-family='monospace' fill='black' >5</text>
-<text x='110' y='175' transform='rotate(45 110 175)' font-family='monospace' fill='black'  >VSS</text>
+<line x1='129' y1='176' x2='129' y2='181' stroke='black' stroke-width='2' />
+<text x='124' y='171' font-family='monospace' fill='black' >5</text>
+<text x='129' y='188' transform='rotate(45 129 188)' font-family='monospace' fill='black'  >VSS</text>
 
-<line x1='135' y1='163' x2='135' y2='168' stroke='black' stroke-width='2' />
-<text x='130' y='158' font-family='monospace' fill='black' >6</text>
-<text x='135' y='175' transform='rotate(45 135 175)' font-family='monospace' fill='black'  >VDD</text>
+<line x1='154' y1='176' x2='154' y2='181' stroke='black' stroke-width='2' />
+<text x='149' y='171' font-family='monospace' fill='black' >6</text>
+<text x='154' y='188' transform='rotate(45 154 188)' font-family='monospace' fill='black'  >VDD</text>
 
-<line x1='160' y1='163' x2='160' y2='168' stroke='black' stroke-width='2' />
-<text x='155' y='158' font-family='monospace' fill='black' >7</text>
-<text x='160' y='175' transform='rotate(45 160 175)' font-family='monospace' fill='black'  >GND</text>
+<line x1='179' y1='176' x2='179' y2='181' stroke='black' stroke-width='2' />
+<text x='174' y='171' font-family='monospace' fill='black' >7</text>
+<text x='179' y='188' transform='rotate(45 179 188)' font-family='monospace' fill='black'  >GND</text>
 
-<line x1='173' y1='64' x2='178' y2='64' stroke='blue' stroke-width='2' />
-<text x='163' y='69' font-family='monospace' fill='blue' >8</text>
-<text x='179' y='69' transform='rotate(0 179 69)' font-family='monospace' fill='blue'  >Ready</text>
+<line x1='192' y1='77' x2='197' y2='77' stroke='blue' stroke-width='2' />
+<text x='181' y='82' font-family='monospace' fill='blue' >8</text>
+<text x='198' y='84' transform='rotate(0 198 84)' font-family='monospace' fill='blue'  >Ready</text>
 
-<line x1='173' y1='86' x2='178' y2='86' stroke='green' stroke-width='2' />
-<text x='163' y='91' font-family='monospace' fill='green' >9</text>
-<text x='179' y='91' transform='rotate(0 179 91)' font-family='monospace' fill='green'  >Reading</text>
+<line x1='192' y1='99' x2='197' y2='99' stroke='green' stroke-width='2' />
+<text x='181' y='104' font-family='monospace' fill='green' >9</text>
+<text x='198' y='106' transform='rotate(0 198 106)' font-family='monospace' fill='green'  >Reading</text>
 
-<line x1='173' y1='108' x2='178' y2='108' stroke='green' stroke-width='2' />
-<text x='156' y='113' font-family='monospace' fill='green' >10</text>
-<text x='179' y='113' transform='rotate(0 179 113)' font-family='monospace' fill='green'  >Writing</text>
+<line x1='192' y1='121' x2='197' y2='121' stroke='green' stroke-width='2' />
+<text x='173' y='126' font-family='monospace' fill='green' >10</text>
+<text x='198' y='128' transform='rotate(0 198 128)' font-family='monospace' fill='green'  >Writing</text>
 
-<line x1='173' y1='130' x2='178' y2='130' stroke='red' stroke-width='2' />
-<text x='156' y='135' font-family='monospace' fill='red' >11</text>
-<text x='179' y='135' transform='rotate(0 179 135)' font-family='monospace' fill='red'  >Error</text>
+<line x1='192' y1='143' x2='197' y2='143' stroke='red' stroke-width='2' />
+<text x='173' y='148' font-family='monospace' fill='red' >11</text>
+<text x='198' y='150' transform='rotate(0 198 150)' font-family='monospace' fill='red'  >Error</text>
 
-<line x1='73' y1='64' x2='68' y2='64' stroke='black' stroke-width='2' />
-<text x='76' y='69' font-family='monospace' fill='black' >12</text>
-<text x='4' y='69' transform='rotate(0 4 69)' font-family='monospace' fill='black'  textLength='63'>Interrupt</text>
+<line x1='92' y1='77' x2='87' y2='77' stroke='black' stroke-width='2' />
+<text x='95' y='82' font-family='monospace' fill='black' >12</text>
+<text x='86' y='84' transform='rotate(0 86 84)' font-family='monospace' fill='black'  text-anchor='end'>Interrupt</text>
 
-<line x1='73' y1='86' x2='68' y2='86' stroke='black' stroke-width='2' />
-<text x='76' y='91' font-family='monospace' fill='black' >13</text>
-<text x='32' y='91' transform='rotate(0 32 91)' font-family='monospace' fill='black'  textLength='35'>Reset</text>
+<line x1='92' y1='99' x2='87' y2='99' stroke='black' stroke-width='2' />
+<text x='95' y='104' font-family='monospace' fill='black' >13</text>
+<text x='86' y='106' transform='rotate(0 86 106)' font-family='monospace' fill='black'  text-anchor='end'>Reset</text>
 
-<line x1='73' y1='108' x2='68' y2='108' stroke='black' stroke-width='2' />
-<text x='76' y='113' font-family='monospace' fill='black' >14</text>
-<text x='39' y='113' transform='rotate(0 39 113)' font-family='monospace' fill='black'  textLength='28'>Hold</text>
+<line x1='92' y1='121' x2='87' y2='121' stroke='black' stroke-width='2' />
+<text x='95' y='126' font-family='monospace' fill='black' >14</text>
+<text x='86' y='128' transform='rotate(0 86 128)' font-family='monospace' fill='black'  text-anchor='end'>Hold</text>
 
-<line x1='73' y1='130' x2='68' y2='130' stroke='black' stroke-width='2' />
-<text x='76' y='135' font-family='monospace' fill='black' >15</text>
-<text x='39' y='135' transform='rotate(0 39 135)' font-family='monospace' fill='black'  textLength='28'>Test</text>
+<line x1='92' y1='143' x2='87' y2='143' stroke='black' stroke-width='2' />
+<text x='95' y='148' font-family='monospace' fill='black' >15</text>
+<text x='86' y='150' transform='rotate(0 86 150)' font-family='monospace' fill='black'  text-anchor='end'>Test</text>
 
 
 </svg>

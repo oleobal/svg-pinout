@@ -11,13 +11,18 @@
 # Also, it costs like 10 bucks.
 # Transistors are better.
 
+# TITLE
+
+12AX7
+
+
 # LEFT
 1 Anode (2)
 2 Grid (2)
 3 Cathode (2)
 4 Heater (2)
 # TOP
-5 Heater (2)
+5 Heater (1)
 
 # RIGHT
 6 Anode (1)

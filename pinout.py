@@ -46,7 +46,7 @@ marks = []
 
 strokeColor = args.foreground
 
-title={"text":"",
+title={"text":[],
 	"width":0,
 	"height":0,
 	"angle":0}
@@ -100,7 +100,7 @@ for line in args.infile:
 	
 	if currentSection == "title":
 		if line != "":
-			title["text"]+=line+"\n"
+			title["text"].append(line)
 		continue
 	
 	words = line.split()
@@ -166,14 +166,17 @@ fontFamily = "monospace"
 # yeah, sucks, doesn't it
 # best heuristics
 # for the uneducated, this means guesses
-charHeight=12
-charWidth = 7
+
+# on MS EDge I measured 10 pt height letters
+# with 15pt em
+charHeight=15
+charWidth = 8
 
 widthPerPin = 25
 heightPerPin = 22
 
 
-basex = 10
+basex = 20
 
 longestLeftWordLen = 0
 for i in pins["left"]:
@@ -181,7 +184,7 @@ for i in pins["left"]:
 		longestLeftWordLen = len(i[1])
 basex += longestLeftWordLen*charWidth
 
-basey = 10
+basey = 20
 
 # a  bit more complicated, because diagonals
 # trigonometry, tho
@@ -217,32 +220,31 @@ if len(pins["left"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
 if len(pins["right"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
 	rectWidth +=widthPerPin
 
-for i in title["text"].split("\n"):
+for i in title["text"]:
 	if len(i)*charWidth > title["width"]:
 		title["width"] = len(i)*charWidth
-title["height"] = charHeight*(title["text"].count("\n"))
+title["height"] = charHeight*(len(title["text"]))
 
 if rectHeight > rectWidth:
 	title["angle"] = -90
 	rectWidth+=title["height"]
 else:
 	title["angle"] = 0
-	rectWidth+=title["width"]
+	rectHeight+=title["height"]
 
 result+="<rect x='{}' y='{}' width='{}' height='{}' fill='{}' stroke-width='2' stroke='{}'/>\n\n".format(basex, basey, rectWidth , rectHeight, bgColor, strokeColor)
 
 
 ## title
 
-if title["text"] != "" :
+if len(title["text"]) > 0 :
 	titlex = basex+rectWidth//2
 	titley = basey+rectHeight//2
 	result+="<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' alignment-baseline='central' text-anchor='middle' font-family='{font}'>\n".format(x=titlex, y=titley, angle=title["angle"], font=fontFamily)
-	lines = title["text"].split("\n")
-	result+="\t<tspan x='{x}' dy='{dy}em'>{text}</tspan>\n".format(x=titlex, dy=-(len(lines)/2-1), text=lines[0])
-	for i in range(1,len(lines)):
-		result+="\t<tspan x='{x}' dy='1em'>{text}</tspan>\n".format(x=titlex, text=lines[i])
-	result+="</text>\n"
+	result+="\t<tspan x='{x}' dy='{dy}em'>{text}</tspan>\n".format(x=titlex, dy=-(len(title["text"])/2-1), text=title["text"][0])
+	for i in range(1,len(title["text"])):
+		result+="\t<tspan x='{x}' dy='1em'>{text}</tspan>\n".format(x=titlex, text=title["text"][i])
+	result+="</text>\n\n"
 
 
 ## marks
@@ -423,13 +425,12 @@ while i < len(pins["left"]):
 	color = pins["left"][i][2]
 	result+=textLine.format(x1,y1,x2,y2, color, add="")
 	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
-	labelLen = len(pins["left"][i][1].translate({ord("_"):"",ord("\\"):"", ord("^"):""}))*charWidth
-	result+=labelPinCommon(pins["left"][i]).format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(labelLen)+"'")
+	result+=labelPinCommon(pins["left"][i]).format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end'")
 	
 	if args.lighten and color!= "white" :
 		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
 		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["left"][i], color="white").format(x=x1-6-labelLen, y=y1+(charHeight//2), angle=0, add="textLength='"+str(len(pins["left"][i][1])*charWidth)+"' fill-opacity='0.8' class='pinout-lighten-overlay'")
+		result+=labelPinCommon(pins["left"][i], color="white").format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end'"+"' fill-opacity='0.8' class='pinout-lighten-overlay'")
 	
 	i+=1
 

@@ -4,6 +4,9 @@
 # Notably used in the Sega Megadrive.
 # Which, as it happens, was known for bad sound. Oh well.
 
+# title
+Yamaha
+YM2612
 # left
 # mark
 

@@ -9,6 +9,9 @@
 # to the Motorola 68000, which was and still is widely
 # used in various devices.
 
+# title
+Motorola 6800
+
 # top
 # mark
 
