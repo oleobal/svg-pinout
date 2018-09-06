@@ -46,6 +46,11 @@ marks = []
 
 strokeColor = args.foreground
 
+title={"text":"",
+	"width":0,
+	"height":0,
+	"angle":0}
+
 if args.background is not None :
 	bgColor = args.background
 else:
@@ -83,7 +88,7 @@ for line in args.infile:
 			continue
 		words = line[1:].split()
 		if len(words) == 1 :
-			if words[0].lower() in ("top", "bottom", "left", "right"):
+			if words[0].lower() in ("top", "bottom", "left", "right", "title"):
 				currentSection = words[0].lower()
 			elif words[0].lower() == "mark" :
 				marks.append(currentSection)
@@ -93,7 +98,13 @@ for line in args.infile:
 				currentColor = words[0]
 		continue
 	
+	if currentSection == "title":
+		if line != "":
+			title["text"]+=line+"\n"
+		continue
+	
 	words = line.split()
+	
 	try:
 		# pin number
 		nb = int(words[0])
@@ -142,16 +153,20 @@ for line in args.infile:
 
 if args.verbose:
 	import pprint
+	print("== TITLE ==", file=sys.stderr)
+	print(pprint.pformat(title), file=sys.stderr)
+	print("== MARKS ==", file=sys.stderr)
+	print(marks, file=sys.stderr)
+	print("== PINS  ==", file=sys.stderr)
 	print(pprint.pformat(pins), file=sys.stderr)
 	
-
-
+ 
 fontFamily = "monospace"
 
 # yeah, sucks, doesn't it
 # best heuristics
 # for the uneducated, this means guesses
-charHeight=10
+charHeight=12
 charWidth = 7
 
 widthPerPin = 25
@@ -202,7 +217,33 @@ if len(pins["left"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
 if len(pins["right"]) > 0 and max(len(pins["top"]), len(pins["bottom"])) == 0 :
 	rectWidth +=widthPerPin
 
+for i in title["text"].split("\n"):
+	if len(i)*charWidth > title["width"]:
+		title["width"] = len(i)*charWidth
+title["height"] = charHeight*(title["text"].count("\n"))
+
+if rectHeight > rectWidth:
+	title["angle"] = -90
+	rectWidth+=title["height"]
+else:
+	title["angle"] = 0
+	rectWidth+=title["width"]
+
 result+="<rect x='{}' y='{}' width='{}' height='{}' fill='{}' stroke-width='2' stroke='{}'/>\n\n".format(basex, basey, rectWidth , rectHeight, bgColor, strokeColor)
+
+
+## title
+
+if title["text"] != "" :
+	titlex = basex+rectWidth//2
+	titley = basey+rectHeight//2
+	result+="<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' alignment-baseline='central' text-anchor='middle' font-family='{font}'>\n".format(x=titlex, y=titley, angle=title["angle"], font=fontFamily)
+	lines = title["text"].split("\n")
+	result+="\t<tspan x='{x}' dy='{dy}em'>{text}</tspan>\n".format(x=titlex, dy=-(len(lines)/2-1), text=lines[0])
+	for i in range(1,len(lines)):
+		result+="\t<tspan x='{x}' dy='1em'>{text}</tspan>\n".format(x=titlex, text=lines[i])
+	result+="</text>\n"
+
 
 ## marks
 

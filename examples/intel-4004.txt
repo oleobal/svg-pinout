@@ -14,6 +14,9 @@
 # but nowadays he's not even mentioned on the 4004 page on
 # Intel's website.
 
+# title
+Intel
+4004
 # top
 # mark
 
