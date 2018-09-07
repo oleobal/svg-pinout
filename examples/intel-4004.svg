@@ -5,8 +5,8 @@
 	<tspan x='116' dy='0.5em'>Intel 4004</tspan>
 </text>
 
-<path d="M111 20
-		A 5 5 0 0 0 121 20"
+<path d="M106 20
+		A 10 10 0 0 0 126 20"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='149' y1='31' x2='154' y2='31' stroke='black' stroke-width='2' />

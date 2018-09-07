@@ -5,8 +5,8 @@
 	<tspan x='84' dy='0.5em'>Zilog Z80</tspan>
 </text>
 
-<path d="M79 20
-		A 5 5 0 0 0 89 20"
+<path d="M74 20
+		A 10 10 0 0 0 94 20"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='117' y1='31' x2='122' y2='31' stroke='blue' stroke-width='2' />

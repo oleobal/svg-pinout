@@ -5,8 +5,8 @@
 	<tspan x='156' dy='0.5em'>Motorola 6800</tspan>
 </text>
 
-<path d="M151 20
-		A 5 5 0 0 0 161 20"
+<path d="M146 20
+		A 10 10 0 0 0 166 20"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='189' y1='31' x2='194' y2='31' stroke='black' stroke-width='2' />

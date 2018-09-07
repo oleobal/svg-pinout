@@ -5,8 +5,8 @@
 	<tspan x='128' dy='0.5em'>12AX7</tspan>
 </text>
 
-<path d="M123 210
-		A 5 5 0 0 1 133 210"
+<path d="M118 210
+		A 10 10 0 0 1 138 210"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='120' y1='100' x2='120' y2='95' stroke='black' stroke-width='2' />

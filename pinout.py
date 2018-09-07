@@ -260,49 +260,49 @@ if len(title["text"]) > 0 :
 
 
 if "top" in marks:
-	startx = basex+(rectWidth//2)-5
+	startx = basex+(rectWidth//2)-10
 	starty = basey
-	endx = basex+(rectWidth//2)+5
+	endx = basex+(rectWidth//2)+10
 	endy = basey
 	result+="""\
 <path d="M{sx} {sy}
-		A 5 5 0 0 0 {ex} {ey}"
+		A 10 10 0 0 0 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
 """.format(sx=startx, sy=starty, ex=endx, ey=endy,color=strokeColor)
 
 if "bottom" in marks:
-	startx = basex+(rectWidth//2)-5
+	startx = basex+(rectWidth//2)-10
 	starty = basey+rectHeight
-	endx = basex+(rectWidth//2)+5
+	endx = basex+(rectWidth//2)+10
 	endy = basey+rectHeight
 	result+="""\
 <path d="M{sx} {sy}
-		A 5 5 0 0 1 {ex} {ey}"
+		A 10 10 0 0 1 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
 """.format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "right" in marks:
 	startx = basex+rectWidth
-	starty = basey+(rectHeight//2) - 5
+	starty = basey+(rectHeight//2) - 10
 	endx = basex+rectWidth
-	endy = basey+(rectHeight//2) + 5
+	endy = basey+(rectHeight//2) + 10
 	result+="""\
 <path d="M{sx} {sy}
-		A 5 5 0 0 0 {ex} {ey}"
+		A 10 10 0 0 0 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
 """.format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "left" in marks:
 	startx = basex
-	starty = basey+(rectHeight//2) - 5
+	starty = basey+(rectHeight//2) - 10
 	endx = basex
-	endy = basey+(rectHeight//2) + 5
+	endy = basey+(rectHeight//2) + 10
 	result+="""\
 <path d="M{sx} {sy}
-		A 5 5 0 0 1 {ex} {ey}"
+		A 10 10 0 0 1 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
 """.format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)

@@ -6,8 +6,8 @@
 	<tspan x='95' dy='1em'>深圳市电</tspan>
 </text>
 
-<path d="M20 172
-		A 5 5 0 0 1 20 182"
+<path d="M20 167
+		A 10 10 0 0 1 20 187"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='32' y1='140' x2='32' y2='135' stroke='red' stroke-width='2' />

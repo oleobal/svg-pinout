@@ -6,8 +6,8 @@
 	<tspan x='170' dy='1em'>YM2612</tspan>
 </text>
 
-<path d="M20 108
-		A 5 5 0 0 1 20 118"
+<path d="M20 103
+		A 10 10 0 0 1 20 123"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
 <line x1='32' y1='76' x2='32' y2='71' stroke='black' stroke-width='2' />
