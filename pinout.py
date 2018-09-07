@@ -71,6 +71,10 @@ def processWord(word):
 		
 		if sym == "/":
 			features.append("not")
+		elif sym == ">":
+			features.append("arrow-out")
+		elif sym == "<":
+			features.append("arrow-in")
 			
 	return (word, features)
 
@@ -358,86 +362,108 @@ def labelPinCommon(pin, color=None):
 	
 	return t
 
-i = 0
-while i < len(pins["top"]):
-	x1 = basex+widthPerPin//2 + i*(widthPerPin)
-	y1 = basey
-	x2 = x1
-	y2 = y1-5
-	color = pins["top"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color=color, add="")
-	result+=labelPinCommon(pins["top"][i]).format(x=x1,y=y1-5, angle=-45, add="")
-	
-	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["top"][i], color="white").format(x=x1,y=y1-5, angle=-45, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-	
-	i+=1
-
-i=0
-while i < len(pins["bottom"]):
-	x1 = basex+widthPerPin//2 + i*(widthPerPin)
-	y1 = basey+rectHeight
-	x2 = x1
-	y2 = y1+5
-	color = pins["bottom"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color=color, add="")
-	result+=labelPinCommon(pins["bottom"][i]).format(x=x1,y=y1+12, angle=45, add="")
-	
-	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["bottom"][i], color="white").format(x=x1,y=y1+12, angle=45, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-	i+=1
-
-i=0
-while i < len(pins["right"]):
-	x1 = basex+rectWidth
-	y1 = basey+(heightPerPin//2)+ i*heightPerPin
-	if len(pins["top"]) > 0:
-		y1+=heightPerPin
-	x2 = x1+5
-	y2 = y1
-	color = pins["right"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	if pins["right"][i][0] < 10 :
-		result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
-	else:
-		result+=textNumber.format(x=x1-2*charWidth-3          , y=y1+5, text=pins["right"][i][0], font=fontFamily, color=color, add="")
-	result+=labelPinCommon(pins["right"][i]).format(x=x1+6, y=y1+(charHeight//2), angle=0, add="")
-	
-	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		if pins["right"][i][0] < 10 :
-			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
+def getPinsTop(pins, font, add="", forceColor=None):
+	i = 0
+	result=""
+	while i < len(pins["top"]):
+		x1 = basex+widthPerPin//2 + i*(widthPerPin)
+		y1 = basey
+		x2 = x1
+		y2 = y1-5
+		if forceColor is not None:
+			color=forceColor
 		else:
-			result+=textNumber.format(x=x1-2*charWidth-3, y=y1+5, text=pins["right"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["right"][i], color="white").format(x=x1+6, y=y1+(charHeight//2), angle=0, add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-	
-	i+=1
+			color = pins["top"][i][2]
+		
+		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=font, color=color, add=add)
+		result+=labelPinCommon(pins["top"][i], color=color).format(x=x1,y=y1-5, angle=-45, add=add)
+		
+		i+=1
+	return result
 
-i=0
-while i < len(pins["left"]):
-	x1 = basex
-	y1 = basey+(heightPerPin//2)+ i*heightPerPin
-	if len(pins["top"]) > 0:
-		y1+=heightPerPin
-	x2 = x1-5
-	y2 = y1
-	color = pins["left"][i][2]
-	result+=textLine.format(x1,y1,x2,y2, color, add="")
-	result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color=color, add="")
-	result+=labelPinCommon(pins["left"][i]).format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end'")
-	
-	if args.lighten and color!= "white" :
-		result+=textLine.format(x1,y1,x2,y2, "white", add="opacity='0.8' class='pinout-lighten-overlay'")
-		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=fontFamily, color="white", add="fill-opacity='0.8' class='pinout-lighten-overlay'")
-		result+=labelPinCommon(pins["left"][i], color="white").format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end'"+"' fill-opacity='0.8' class='pinout-lighten-overlay'")
-	
-	i+=1
+def getPinsBottom(pins, font, add="", forceColor=None):
+	i=0
+	result=""
+	while i < len(pins["bottom"]):
+		x1 = basex+widthPerPin//2 + i*(widthPerPin)
+		y1 = basey+rectHeight
+		x2 = x1
+		y2 = y1+5
+		if forceColor is not None:
+			color=forceColor
+		else:
+			color = pins["bottom"][i][2]
+		
+		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=font, color=color, add=add)
+		result+=labelPinCommon(pins["bottom"][i], color=color).format(x=x1,y=y1+12, angle=45, add=add)
+		i+=1
+	return result
+
+
+def getPinsRight(pins, font, add="", forceColor=None):
+	i=0
+	result=""
+	while i < len(pins["right"]):
+		x1 = basex+rectWidth
+		y1 = basey+(heightPerPin//2)+ i*heightPerPin
+		if len(pins["top"]) > 0:
+			y1+=heightPerPin
+		x2 = x1+5
+		y2 = y1
+		if forceColor is not None:
+			color=forceColor
+		else:
+			color = pins["right"][i][2]
+		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+		
+		if pins["right"][i][0] < 10 :
+			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=font, color=color, add=add)
+		else:
+			result+=textNumber.format(x=x1-2*charWidth-3          , y=y1+5, text=pins["right"][i][0], font=font, color=color, add=add)
+		result+=labelPinCommon(pins["right"][i], color=color).format(x=x1+6, y=y1+(charHeight//2), angle=0, add=add)
+		i+=1
+		
+	return result
+
+
+def getPinsLeft(pins, font, add="", forceColor=None):
+	i=0
+	result=""
+	while i < len(pins["left"]):
+		x1 = basex
+		y1 = basey+(heightPerPin//2)+ i*heightPerPin
+		if len(pins["top"]) > 0:
+			y1+=heightPerPin
+		x2 = x1-5
+		y2 = y1
+		if forceColor is not None:
+			color=forceColor
+		else:
+			color = pins["left"][i][2]
+		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=font, color=color, add=add)
+		result+=labelPinCommon(pins["left"][i], color=color).format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end' "+add)
+		i+=1
+	return result
+
+
+result+=getPinsTop(pins, fontFamily)
+if args.lighten :
+	result+=getPinsTop(pins, fontFamily, add="opacity='0.8' class='pinout-lighten-overlay'", forceColor="white")
+
+result+=getPinsBottom(pins, fontFamily)
+if args.lighten :
+	result+=getPinsBottom(pins, fontFamily, add="opacity='0.8' class='pinout-lighten-overlay'", forceColor="white")
+
+result+=getPinsRight(pins, fontFamily)
+if args.lighten :
+	result+=getPinsRight(pins, fontFamily, add="opacity='0.8' class='pinout-lighten-overlay'", forceColor="white")
+
+result+=getPinsLeft(pins, fontFamily)
+if args.lighten :
+	result+=getPinsLeft(pins, fontFamily, add="opacity='0.8' class='pinout-lighten-overlay'", forceColor="white")
 
 
 

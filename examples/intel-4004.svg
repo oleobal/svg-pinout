@@ -43,35 +43,35 @@
 
 <line x1='84' y1='31' x2='79' y2='31' stroke='black' stroke-width='2' />
 <text x='87' y='36' font-family='monospace' fill='black' >1</text>
-<text x='78' y='38' transform='rotate(0 78 38)' font-family='monospace' fill='black'  text-anchor='end'>Data bus</text>
+<text x='78' y='38' transform='rotate(0 78 38)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
 <line x1='84' y1='53' x2='79' y2='53' stroke='black' stroke-width='2' />
 <text x='87' y='58' font-family='monospace' fill='black' >2</text>
-<text x='78' y='60' transform='rotate(0 78 60)' font-family='monospace' fill='black'  text-anchor='end'>Data bus</text>
+<text x='78' y='60' transform='rotate(0 78 60)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
 <line x1='84' y1='75' x2='79' y2='75' stroke='black' stroke-width='2' />
 <text x='87' y='80' font-family='monospace' fill='black' >3</text>
-<text x='78' y='82' transform='rotate(0 78 82)' font-family='monospace' fill='black'  text-anchor='end'>Data bus</text>
+<text x='78' y='82' transform='rotate(0 78 82)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
 <line x1='84' y1='97' x2='79' y2='97' stroke='black' stroke-width='2' />
 <text x='87' y='102' font-family='monospace' fill='black' >4</text>
-<text x='78' y='104' transform='rotate(0 78 104)' font-family='monospace' fill='black'  text-anchor='end'>Data bus</text>
+<text x='78' y='104' transform='rotate(0 78 104)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
 <line x1='84' y1='119' x2='79' y2='119' stroke='black' stroke-width='2' />
 <text x='87' y='124' font-family='monospace' fill='black' >5</text>
-<text x='78' y='126' transform='rotate(0 78 126)' font-family='monospace' fill='black'  text-anchor='end'>V<tspan dy='5'>SS</tspan></text>
+<text x='78' y='126' transform='rotate(0 78 126)' font-family='monospace' fill='black'  text-anchor='end' >V<tspan dy='5'>SS</tspan></text>
 
 <line x1='84' y1='141' x2='79' y2='141' stroke='black' stroke-width='2' />
 <text x='87' y='146' font-family='monospace' fill='black' >6</text>
-<text x='78' y='148' transform='rotate(0 78 148)' font-family='monospace' fill='black'  text-anchor='end'>Clock</text>
+<text x='78' y='148' transform='rotate(0 78 148)' font-family='monospace' fill='black'  text-anchor='end' >Clock</text>
 
 <line x1='84' y1='163' x2='79' y2='163' stroke='black' stroke-width='2' />
 <text x='87' y='168' font-family='monospace' fill='black' >7</text>
-<text x='78' y='170' transform='rotate(0 78 170)' font-family='monospace' fill='black'  text-anchor='end'>Clock</text>
+<text x='78' y='170' transform='rotate(0 78 170)' font-family='monospace' fill='black'  text-anchor='end' >Clock</text>
 
 <line x1='84' y1='185' x2='79' y2='185' stroke='black' stroke-width='2' />
 <text x='87' y='190' font-family='monospace' fill='black' >8</text>
-<text x='78' y='192' transform='rotate(0 78 192)' font-family='monospace' fill='black'  text-anchor='end'>Sync</text>
+<text x='78' y='192' transform='rotate(0 78 192)' font-family='monospace' fill='black'  text-anchor='end' >Sync</text>
 
 
 </svg>

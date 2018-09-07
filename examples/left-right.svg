@@ -19,19 +19,19 @@
 
 <line x1='44' y1='31' x2='39' y2='31' stroke='black' stroke-width='2' />
 <text x='47' y='36' font-family='monospace' fill='black' >0</text>
-<text x='38' y='38' transform='rotate(0 38 38)' font-family='monospace' fill='black'  text-anchor='end'>USB</text>
+<text x='38' y='38' transform='rotate(0 38 38)' font-family='monospace' fill='black'  text-anchor='end' >USB</text>
 
 <line x1='44' y1='53' x2='39' y2='53' stroke='black' stroke-width='2' />
 <text x='47' y='58' font-family='monospace' fill='black' >1</text>
-<text x='38' y='60' transform='rotate(0 38 60)' font-family='monospace' fill='black'  text-anchor='end'>USB</text>
+<text x='38' y='60' transform='rotate(0 38 60)' font-family='monospace' fill='black'  text-anchor='end' >USB</text>
 
 <line x1='44' y1='75' x2='39' y2='75' stroke='black' stroke-width='2' />
 <text x='47' y='80' font-family='monospace' fill='black' >2</text>
-<text x='38' y='82' transform='rotate(0 38 82)' font-family='monospace' fill='black'  text-anchor='end'>USB</text>
+<text x='38' y='82' transform='rotate(0 38 82)' font-family='monospace' fill='black'  text-anchor='end' >USB</text>
 
 <line x1='44' y1='97' x2='39' y2='97' stroke='black' stroke-width='2' />
 <text x='47' y='102' font-family='monospace' fill='black' >3</text>
-<text x='38' y='104' transform='rotate(0 38 104)' font-family='monospace' fill='black'  text-anchor='end'>USB</text>
+<text x='38' y='104' transform='rotate(0 38 104)' font-family='monospace' fill='black'  text-anchor='end' >USB</text>
 
 
 </svg>
