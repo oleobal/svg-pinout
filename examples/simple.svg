@@ -1,62 +1,75 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='30' y='150' width='150' height='74' fill='none' stroke-width='2' stroke='black'/>
+<rect x='30' y='126' width='150' height='74' fill='none' stroke-width='2' stroke='black'/>
 
-<text x='105' y='187' transform='rotate(0 105 187)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+<text x='105' y='163' transform='rotate(0 105 163)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
 	<tspan x='105' dy='-0.3em'>Example chip</tspan>
 	<tspan x='105' dy='1em'>深圳市电</tspan>
 </text>
 
-<path d="M30 180
-		A 7 7 0 0 1 30 194"
+<path d="M30 156
+		A 7 7 0 0 1 30 170"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
-<text x='37' y='162' font-family='monospace' fill='red' >12</text>
-<line x1='42' y1='150' x2='42' y2='145' stroke='red' stroke-width='2' />
-<text x='42' y='144' transform='rotate(-45 42 144)' font-family='monospace' fill='red'  >USB</text>
+<text x='37' y='138' font-family='monospace' fill='red' >12</text>
+<polygon points='37 121 47 121 42 126' fill='red' />
+<line x1='42' y1='121' x2='42' y2='116' stroke='red' stroke-width='2' />
+<polygon points='37 116 47 116 42 111' fill='red' />
+<text x='42' y='110' transform='rotate(-45 42 110)' font-family='monospace' fill='red'  >USB</text>
 
-<text x='62' y='162' font-family='monospace' fill='red' >11</text>
-<line x1='67' y1='150' x2='67' y2='145' stroke='red' stroke-width='2' />
-<text x='67' y='144' transform='rotate(-45 67 144)' font-family='monospace' fill='red'  >USB</text>
+<text x='62' y='138' font-family='monospace' fill='red' >11</text>
+<polygon points='62 121 72 121 67 126' fill='red' />
+<line x1='67' y1='121' x2='67' y2='116' stroke='red' stroke-width='2' />
+<polygon points='62 116 72 116 67 111' fill='red' />
+<text x='67' y='110' transform='rotate(-45 67 110)' font-family='monospace' fill='red'  >USB</text>
 
-<text x='87' y='162' font-family='monospace' fill='red' >10</text>
-<line x1='92' y1='150' x2='92' y2='145' stroke='red' stroke-width='2' />
-<text x='92' y='144' transform='rotate(-45 92 144)' font-family='monospace' fill='red'  >USB</text>
+<text x='87' y='138' font-family='monospace' fill='red' >10</text>
+<polygon points='87 121 97 121 92 126' fill='red' />
+<line x1='92' y1='121' x2='92' y2='116' stroke='red' stroke-width='2' />
+<polygon points='87 116 97 116 92 111' fill='red' />
+<text x='92' y='110' transform='rotate(-45 92 110)' font-family='monospace' fill='red'  >USB</text>
 
-<text x='112' y='162' font-family='monospace' fill='red' >9</text>
-<line x1='117' y1='150' x2='117' y2='145' stroke='red' stroke-width='2' />
-<text x='117' y='144' transform='rotate(-45 117 144)' font-family='monospace' fill='red'  >USB</text>
+<text x='112' y='138' font-family='monospace' fill='red' >9</text>
+<polygon points='112 121 122 121 117 126' fill='red' />
+<line x1='117' y1='121' x2='117' y2='116' stroke='red' stroke-width='2' />
+<polygon points='112 116 122 116 117 111' fill='red' />
+<text x='117' y='110' transform='rotate(-45 117 110)' font-family='monospace' fill='red'  >USB</text>
 
-<text x='137' y='162' font-family='monospace' fill='black' >8</text>
-<line x1='142' y1='150' x2='142' y2='145' stroke='black' stroke-width='2' />
-<text x='142' y='144' transform='rotate(-45 142 144)' font-family='monospace' fill='black' style='text-decoration: overline' >Sensor</text>
+<text x='137' y='138' font-family='monospace' fill='black' >8</text>
+<polygon points='137 121 147 121 142 126' fill='black' />
+<line x1='142' y1='121' x2='142' y2='116' stroke='black' stroke-width='2' />
+<text x='142' y='115' transform='rotate(-45 142 115)' font-family='monospace' fill='black' style='text-decoration: overline' >Sensor</text>
 
-<text x='162' y='162' font-family='monospace' fill='black' >7</text>
-<line x1='167' y1='150' x2='167' y2='145' stroke='black' stroke-width='2' />
-<text x='167' y='144' transform='rotate(-45 167 144)' font-family='monospace' fill='black'  >Sensor (better)</text>
+<text x='162' y='138' font-family='monospace' fill='black' >7</text>
+<polygon points='162 121 172 121 167 126' fill='black' />
+<line x1='167' y1='121' x2='167' y2='116' stroke='black' stroke-width='2' />
+<text x='167' y='115' transform='rotate(-45 167 115)' font-family='monospace' fill='black'  >Other sensor</text>
 
-<text x='37' y='219' font-family='monospace' fill='black' >1</text>
-<line x1='42' y1='224' x2='42' y2='229' stroke='black' stroke-width='2' />
-<text x='42' y='235' transform='rotate(45 42 235)' font-family='monospace' fill='black'  >Status LED (W)</text>
+<text x='37' y='195' font-family='monospace' fill='black' >1</text>
+<line x1='42' y1='200' x2='42' y2='205' stroke='black' stroke-width='2' />
+<polygon points='37 205 47 205 42 210' fill='black' />
+<text x='42' y='216' transform='rotate(45 42 216)' font-family='monospace' fill='black'  >Status LED (W)</text>
 
-<text x='62' y='219' font-family='monospace' fill='black' >2</text>
-<line x1='67' y1='224' x2='67' y2='229' stroke='black' stroke-width='2' />
-<text x='67' y='235' transform='rotate(45 67 235)' font-family='monospace' fill='black'  >Status LED (R)</text>
+<text x='62' y='195' font-family='monospace' fill='black' >2</text>
+<line x1='67' y1='200' x2='67' y2='205' stroke='black' stroke-width='2' />
+<polygon points='62 205 72 205 67 210' fill='black' />
+<text x='67' y='216' transform='rotate(45 67 216)' font-family='monospace' fill='black'  >Status LED (R)</text>
 
-<text x='87' y='219' font-family='monospace' fill='black' >3</text>
-<line x1='92' y1='224' x2='92' y2='229' stroke='black' stroke-width='2' />
-<text x='92' y='235' transform='rotate(45 92 235)' font-family='monospace' fill='black'  >Clock</text>
+<text x='87' y='195' font-family='monospace' fill='black' >3</text>
+<polygon points='87 205 97 205 92 200' fill='black' />
+<line x1='92' y1='205' x2='92' y2='210' stroke='black' stroke-width='2' />
+<text x='92' y='216' transform='rotate(45 92 216)' font-family='monospace' fill='black'  >Clock</text>
 
-<text x='112' y='219' font-family='monospace' fill='blue' >4</text>
-<line x1='117' y1='224' x2='117' y2='229' stroke='blue' stroke-width='2' />
-<text x='117' y='235' transform='rotate(45 117 235)' font-family='monospace' fill='blue'  >V<tspan dy='5'>SS</tspan></text>
+<text x='112' y='195' font-family='monospace' fill='blue' >4</text>
+<line x1='117' y1='200' x2='117' y2='205' stroke='blue' stroke-width='2' />
+<text x='117' y='211' transform='rotate(45 117 211)' font-family='monospace' fill='blue'  >V<tspan dy='5'>SS</tspan></text>
 
-<text x='137' y='219' font-family='monospace' fill='blue' >5</text>
-<line x1='142' y1='224' x2='142' y2='229' stroke='blue' stroke-width='2' />
-<text x='142' y='235' transform='rotate(45 142 235)' font-family='monospace' fill='blue'  >V<tspan dy='5'>DD</tspan></text>
+<text x='137' y='195' font-family='monospace' fill='blue' >5</text>
+<line x1='142' y1='200' x2='142' y2='205' stroke='blue' stroke-width='2' />
+<text x='142' y='211' transform='rotate(45 142 211)' font-family='monospace' fill='blue'  >V<tspan dy='5'>DD</tspan></text>
 
-<text x='162' y='219' font-family='monospace' fill='blue' >6</text>
-<line x1='167' y1='224' x2='167' y2='229' stroke='blue' stroke-width='2' />
-<text x='167' y='235' transform='rotate(45 167 235)' font-family='monospace' fill='blue'  >GND</text>
+<text x='162' y='195' font-family='monospace' fill='blue' >6</text>
+<line x1='167' y1='200' x2='167' y2='205' stroke='blue' stroke-width='2' />
+<text x='167' y='211' transform='rotate(45 167 211)' font-family='monospace' fill='blue'  >GND</text>
 
 
 </svg>
