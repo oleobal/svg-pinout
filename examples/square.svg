@@ -1,69 +1,90 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='92' y='44' width='100' height='132' fill='none' stroke-width='2' stroke='black'/>
+<rect x='102' y='54' width='100' height='132' fill='none' stroke-width='2' stroke='black'/>
 
-<line x1='104' y1='44' x2='104' y2='39' stroke='black' stroke-width='2' />
-<text x='99' y='56' font-family='monospace' fill='black' >0</text>
-<text x='104' y='39' transform='rotate(-45 104 39)' font-family='monospace' fill='black'  >USB</text>
+<text x='109' y='66' font-family='monospace' fill='#990' >16</text>
+<polygon points='109 49 119 49 114 54' fill='#990' />
+<line x1='114' y1='49' x2='114' y2='44' stroke='#990' stroke-width='2' />
+<polygon points='109 44 119 44 114 39' fill='#990' />
+<text x='114' y='38' transform='rotate(-45 114 38)' font-family='monospace' fill='#990'  >USB</text>
 
-<line x1='129' y1='44' x2='129' y2='39' stroke='black' stroke-width='2' />
-<text x='124' y='56' font-family='monospace' fill='black' >1</text>
-<text x='129' y='39' transform='rotate(-45 129 39)' font-family='monospace' fill='black'  >USB</text>
+<text x='134' y='66' font-family='monospace' fill='#990' >15</text>
+<polygon points='134 49 144 49 139 54' fill='#990' />
+<line x1='139' y1='49' x2='139' y2='44' stroke='#990' stroke-width='2' />
+<polygon points='134 44 144 44 139 39' fill='#990' />
+<text x='139' y='38' transform='rotate(-45 139 38)' font-family='monospace' fill='#990'  >USB</text>
 
-<line x1='154' y1='44' x2='154' y2='39' stroke='black' stroke-width='2' />
-<text x='149' y='56' font-family='monospace' fill='black' >2</text>
-<text x='154' y='39' transform='rotate(-45 154 39)' font-family='monospace' fill='black'  >USB</text>
+<text x='159' y='66' font-family='monospace' fill='#990' >14</text>
+<polygon points='159 49 169 49 164 54' fill='#990' />
+<line x1='164' y1='49' x2='164' y2='44' stroke='#990' stroke-width='2' />
+<polygon points='159 44 169 44 164 39' fill='#990' />
+<text x='164' y='38' transform='rotate(-45 164 38)' font-family='monospace' fill='#990'  >USB</text>
 
-<line x1='179' y1='44' x2='179' y2='39' stroke='black' stroke-width='2' />
-<text x='174' y='56' font-family='monospace' fill='black' >3</text>
-<text x='179' y='39' transform='rotate(-45 179 39)' font-family='monospace' fill='black'  >USB</text>
+<text x='184' y='66' font-family='monospace' fill='#990' >13</text>
+<polygon points='184 49 194 49 189 54' fill='#990' />
+<line x1='189' y1='49' x2='189' y2='44' stroke='#990' stroke-width='2' />
+<polygon points='184 44 194 44 189 39' fill='#990' />
+<text x='189' y='38' transform='rotate(-45 189 38)' font-family='monospace' fill='#990'  >USB</text>
 
-<line x1='104' y1='176' x2='104' y2='181' stroke='black' stroke-width='2' />
-<text x='99' y='171' font-family='monospace' fill='black' >4</text>
-<text x='104' y='188' transform='rotate(45 104 188)' font-family='monospace' fill='black'  >Clock</text>
+<text x='109' y='181' font-family='monospace' fill='green' >5</text>
+<polygon points='109 191 119 191 114 186' fill='green' />
+<line x1='114' y1='191' x2='114' y2='196' stroke='green' stroke-width='2' />
+<polygon points='109 196 119 196 114 201' fill='green' />
+<text x='114' y='207' transform='rotate(45 114 207)' font-family='monospace' fill='green'  >Ready</text>
 
-<line x1='129' y1='176' x2='129' y2='181' stroke='black' stroke-width='2' />
-<text x='124' y='171' font-family='monospace' fill='black' >5</text>
-<text x='129' y='188' transform='rotate(45 129 188)' font-family='monospace' fill='black'  >VSS</text>
+<text x='134' y='181' font-family='monospace' fill='blue' >6</text>
+<line x1='139' y1='186' x2='139' y2='191' stroke='blue' stroke-width='2' />
+<polygon points='134 191 144 191 139 196' fill='blue' />
+<text x='139' y='202' transform='rotate(45 139 202)' font-family='monospace' fill='blue'  >Reading</text>
 
-<line x1='154' y1='176' x2='154' y2='181' stroke='black' stroke-width='2' />
-<text x='149' y='171' font-family='monospace' fill='black' >6</text>
-<text x='154' y='188' transform='rotate(45 154 188)' font-family='monospace' fill='black'  >VDD</text>
+<text x='159' y='181' font-family='monospace' fill='black' >7</text>
+<line x1='164' y1='186' x2='164' y2='191' stroke='black' stroke-width='2' />
+<polygon points='159 191 169 191 164 196' fill='black' />
+<text x='164' y='202' transform='rotate(45 164 202)' font-family='monospace' fill='black'  >V<tspan dy='5'>DD</tspan></text>
 
-<line x1='179' y1='176' x2='179' y2='181' stroke='black' stroke-width='2' />
-<text x='174' y='171' font-family='monospace' fill='black' >7</text>
-<text x='179' y='188' transform='rotate(45 179 188)' font-family='monospace' fill='black'  >GND</text>
+<text x='184' y='181' font-family='monospace' fill='black' >8</text>
+<line x1='189' y1='186' x2='189' y2='191' stroke='black' stroke-width='2' />
+<text x='189' y='197' transform='rotate(45 189 197)' font-family='monospace' fill='black'  >GND</text>
 
-<line x1='192' y1='77' x2='197' y2='77' stroke='blue' stroke-width='2' />
-<text x='181' y='82' font-family='monospace' fill='blue' >8</text>
-<text x='198' y='84' transform='rotate(0 198 84)' font-family='monospace' fill='blue'  >Ready</text>
+<text x='183' y='92' font-family='monospace' fill='black' >12</text>
+<polygon points='207 82 207 92 202 87' fill='black' />
+<line x1='207' y1='87' x2='212' y2='87' stroke='black' stroke-width='2' />
+<text x='213' y='94' transform='rotate(0 213 94)' font-family='monospace' fill='black'  >Clock</text>
 
-<line x1='192' y1='99' x2='197' y2='99' stroke='green' stroke-width='2' />
-<text x='181' y='104' font-family='monospace' fill='green' >9</text>
-<text x='198' y='106' transform='rotate(0 198 106)' font-family='monospace' fill='green'  >Reading</text>
+<text x='183' y='114' font-family='monospace' fill='black' >11</text>
+<polygon points='207 104 207 114 202 109' fill='black' />
+<line x1='207' y1='109' x2='212' y2='109' stroke='black' stroke-width='2' />
+<text x='213' y='116' transform='rotate(0 213 116)' font-family='monospace' fill='black'  >V<tspan dy='5'>SS</tspan></text>
 
-<line x1='192' y1='121' x2='197' y2='121' stroke='green' stroke-width='2' />
-<text x='173' y='126' font-family='monospace' fill='green' >10</text>
-<text x='198' y='128' transform='rotate(0 198 128)' font-family='monospace' fill='green'  >Writing</text>
+<text x='183' y='136' font-family='monospace' fill='blue' >10</text>
+<line x1='202' y1='131' x2='207' y2='131' stroke='blue' stroke-width='2' />
+<polygon points='207 126 207 136 212 131' fill='blue' />
+<text x='213' y='138' transform='rotate(0 213 138)' font-family='monospace' fill='blue'  >Writing</text>
 
-<line x1='192' y1='143' x2='197' y2='143' stroke='red' stroke-width='2' />
-<text x='173' y='148' font-family='monospace' fill='red' >11</text>
-<text x='198' y='150' transform='rotate(0 198 150)' font-family='monospace' fill='red'  >Error</text>
+<text x='191' y='158' font-family='monospace' fill='red' >9</text>
+<polygon points='207 148 207 158 202 153' fill='red' />
+<line x1='207' y1='153' x2='212' y2='153' stroke='red' stroke-width='2' />
+<polygon points='212 148 212 158 217 153' fill='red' />
+<text x='218' y='160' transform='rotate(0 218 160)' font-family='monospace' fill='red'  >Error</text>
 
-<line x1='92' y1='77' x2='87' y2='77' stroke='black' stroke-width='2' />
-<text x='95' y='82' font-family='monospace' fill='black' >12</text>
-<text x='86' y='84' transform='rotate(0 86 84)' font-family='monospace' fill='black'  text-anchor='end' >Interrupt</text>
+<text x='105' y='92' font-family='monospace' fill='black' >1</text>
+<polygon points='97 82 97 92 102 87' fill='black' />
+<line x1='97' y1='87' x2='92' y2='87' stroke='black' stroke-width='2' />
+<text x='91' y='94' transform='rotate(0 91 94)' font-family='monospace' fill='black'  text-anchor='end' >Interrupt</text>
 
-<line x1='92' y1='99' x2='87' y2='99' stroke='black' stroke-width='2' />
-<text x='95' y='104' font-family='monospace' fill='black' >13</text>
-<text x='86' y='106' transform='rotate(0 86 106)' font-family='monospace' fill='black'  text-anchor='end' >Reset</text>
+<text x='105' y='114' font-family='monospace' fill='black' >2</text>
+<polygon points='97 104 97 114 102 109' fill='black' />
+<line x1='97' y1='109' x2='92' y2='109' stroke='black' stroke-width='2' />
+<text x='91' y='116' transform='rotate(0 91 116)' font-family='monospace' fill='black'  text-anchor='end' >Reset</text>
 
-<line x1='92' y1='121' x2='87' y2='121' stroke='black' stroke-width='2' />
-<text x='95' y='126' font-family='monospace' fill='black' >14</text>
-<text x='86' y='128' transform='rotate(0 86 128)' font-family='monospace' fill='black'  text-anchor='end' >Hold</text>
+<text x='105' y='136' font-family='monospace' fill='black' >3</text>
+<line x1='102' y1='131' x2='97' y2='131' stroke='black' stroke-width='2' />
+<text x='96' y='138' transform='rotate(0 96 138)' font-family='monospace' fill='black'  text-anchor='end' >Hold</text>
 
-<line x1='92' y1='143' x2='87' y2='143' stroke='black' stroke-width='2' />
-<text x='95' y='148' font-family='monospace' fill='black' >15</text>
-<text x='86' y='150' transform='rotate(0 86 150)' font-family='monospace' fill='black'  text-anchor='end' >Test</text>
+<text x='105' y='158' font-family='monospace' fill='black' >4</text>
+<polygon points='97 148 97 158 102 153' fill='black' />
+<line x1='97' y1='153' x2='92' y2='153' stroke='black' stroke-width='2' />
+<polygon points='92 148 92 158 87 153' fill='black' />
+<text x='86' y='160' transform='rotate(0 86 160)' font-family='monospace' fill='black'  text-anchor='end' >Test</text>
 
 
 </svg>

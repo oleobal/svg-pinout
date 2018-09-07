@@ -1,11 +1,6 @@
 #!/usr/bin/python3
 """
 produces a SVG file with described pinout
-
-Default is not done yet.
-Pins above 99 will run into one another.
-
-It would be nice to group pins.
 """
 import argparse
 import sys
@@ -26,7 +21,6 @@ argparser.add_argument('-l', '--lighten', action='store_true', help='automatical
 """
 Stupid method (overlaying with a transparent white element)
 Only used on pins and their labels
-Skipped if already white
 Given class='pinout-lighten-overlay' for easier stripping
 """
 argparser.add_argument('infile', help='what file to read a pinout description in', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
@@ -63,19 +57,29 @@ def processWord(word):
 	"""
 	features = []
 	
-	leadingSymbols = ["/"]
+	leadingSymbols = ["\\","/", ">", "<"]
 	
 	while word[0] in leadingSymbols:
 		sym = word[0]
 		word = word[1:]
 		
-		if sym == "/":
+		if sym == "\\":
+			break
+		
+		elif sym == "/":
 			features.append("not")
 		elif sym == ">":
 			features.append("arrow-out")
 		elif sym == "<":
 			features.append("arrow-in")
-			
+	
+	# escape things that could confuse SVG parsers
+	word = word.translate({
+		ord("&") : "&amp;",
+		ord("<") : "&lt;",
+		ord(">") : "&gt;"
+	})
+	
 	return (word, features)
 
 currentSection="top"
@@ -158,7 +162,7 @@ for line in args.infile:
 if args.verbose:
 	import pprint
 	print("== TITLE ==", file=sys.stderr)
-	print(pprint.pformat(title), file=sys.stderr)
+	print(pprint.pformat(title["text"]), file=sys.stderr)
 	print("== MARKS ==", file=sys.stderr)
 	print(marks, file=sys.stderr)
 	print("== PINS  ==", file=sys.stderr)
@@ -171,7 +175,7 @@ fontFamily = "monospace"
 # best heuristics
 # for the uneducated, this means guesses
 
-# on MS EDge I measured 10 pt height letters
+# on MS EDge I measured 10 pt high letters
 # with 15pt em
 charHeight=15
 charWidth = 8
@@ -180,7 +184,7 @@ widthPerPin = 25
 heightPerPin = 22
 
 
-basex = 20
+basex = 30
 
 longestLeftWordLen = 0
 for i in pins["left"]:
@@ -188,14 +192,19 @@ for i in pins["left"]:
 		longestLeftWordLen = len(i[1])
 basex += longestLeftWordLen*charWidth
 
-basey = 20
+basey = 30
 
 # a  bit more complicated, because diagonals
 # trigonometry, tho
 longestUpWordLen = 0
+import re
 for i in pins["top"]:
-	if len(i[1]) > longestUpWordLen:
-		longestUpWordLen = len(i[1])
+	wcp = re.sub("&.*?;", "_", i[1])
+	# this is to avoid substitution characters like '&quot;' counting as
+	# multiple characters
+	# a bit heavy, though.
+	if len(wcp) > longestUpWordLen:
+		longestUpWordLen = len(wcp)
 
 from math import tan, ceil
 basey+=ceil(tan(3.14/4)*(longestUpWordLen*charWidth))
@@ -258,54 +267,54 @@ if len(title["text"]) > 0 :
 
 ## marks
 
-
+markSize = 7
 if "top" in marks:
-	startx = basex+(rectWidth//2)-10
+	startx = basex+(rectWidth//2)-markSize
 	starty = basey
-	endx = basex+(rectWidth//2)+10
+	endx = basex+(rectWidth//2)+markSize
 	endy = basey
 	result+="""\
 <path d="M{sx} {sy}
-		A 10 10 0 0 0 {ex} {ey}"
+		A {size} {size} 0 0 0 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy,color=strokeColor)
+""".format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy,color=strokeColor)
 
 if "bottom" in marks:
-	startx = basex+(rectWidth//2)-10
+	startx = basex+(rectWidth//2)-markSize
 	starty = basey+rectHeight
-	endx = basex+(rectWidth//2)+10
+	endx = basex+(rectWidth//2)+markSize
 	endy = basey+rectHeight
 	result+="""\
 <path d="M{sx} {sy}
-		A 10 10 0 0 1 {ex} {ey}"
+		A {size} {size} 0 0 1 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
+""".format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "right" in marks:
 	startx = basex+rectWidth
-	starty = basey+(rectHeight//2) - 10
+	starty = basey+(rectHeight//2) - markSize
 	endx = basex+rectWidth
-	endy = basey+(rectHeight//2) + 10
+	endy = basey+(rectHeight//2) + markSize
 	result+="""\
 <path d="M{sx} {sy}
-		A 10 10 0 0 0 {ex} {ey}"
+		A {size} {size} 0 0 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
+""".format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 if "left" in marks:
 	startx = basex
-	starty = basey+(rectHeight//2) - 10
+	starty = basey+(rectHeight//2) - markSize
 	endx = basex
-	endy = basey+(rectHeight//2) + 10
+	endy = basey+(rectHeight//2) + markSize
 	result+="""\
 <path d="M{sx} {sy}
-		A 10 10 0 0 1 {ex} {ey}"
+		A {size} {size} 0 0 1 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
-""".format(sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
+""".format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
 ## pins 
 
@@ -315,7 +324,8 @@ if "left" in marks:
 textLine = "<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2' {add}/>\n"
 textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{text}</text>\n"
 textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}' {add}>{text}</text>\n\n"
-
+textArrow = "<polygon points='{x1} {y1} {x2} {y2} {x3} {y3}' fill='{color}' {add}/>\n"
+arrowD=5 #how big the arrows are
 
 def labelPinCommon(pin, color=None):
 	"""
@@ -366,6 +376,7 @@ def getPinsTop(pins, font, add="", forceColor=None):
 	i = 0
 	result=""
 	while i < len(pins["top"]):
+		p = pins["top"][i]
 		x1 = basex+widthPerPin//2 + i*(widthPerPin)
 		y1 = basey
 		x2 = x1
@@ -373,11 +384,23 @@ def getPinsTop(pins, font, add="", forceColor=None):
 		if forceColor is not None:
 			color=forceColor
 		else:
-			color = pins["top"][i][2]
+			color = p[2]
+		
+		result+=textNumber.format(x=x1-5, y=y1+12, text=p[0], font=font, color=color, add=add)
+		
+		if "arrow-in" in p[3]:
+			result+=textArrow.format(x1=x1-arrowD,y1=y1-arrowD, x2=x1+arrowD, y2=y1-arrowD, x3=x1, y3=y1, color=color, add=add)
+			y1-=arrowD
+			y2-=arrowD
 		
 		result+=textLine.format(x1,y1,x2,y2, color, add=add)
-		result+=textNumber.format(x=x1-5, y=y1+12, text=pins["top"][i][0], font=font, color=color, add=add)
-		result+=labelPinCommon(pins["top"][i], color=color).format(x=x1,y=y1-5, angle=-45, add=add)
+		
+		
+		if "arrow-out" in p[3]:
+			result+=textArrow.format(x1=x2-arrowD,y1=y2, x2=x2+arrowD, y2=y2, x3=x2, y3=y2-arrowD, color=color, add=add)
+			y2-=arrowD
+		
+		result+=labelPinCommon(p, color=color).format(x=x1,y=y2-1, angle=-45, add=add)
 		
 		i+=1
 	return result
@@ -386,6 +409,7 @@ def getPinsBottom(pins, font, add="", forceColor=None):
 	i=0
 	result=""
 	while i < len(pins["bottom"]):
+		p=pins["bottom"][i]
 		x1 = basex+widthPerPin//2 + i*(widthPerPin)
 		y1 = basey+rectHeight
 		x2 = x1
@@ -393,11 +417,24 @@ def getPinsBottom(pins, font, add="", forceColor=None):
 		if forceColor is not None:
 			color=forceColor
 		else:
-			color = pins["bottom"][i][2]
+			color = p[2]
+		
+		result+=textNumber.format(x=x1-5, y=y1-5, text=p[0], font=font, color=color, add=add)
+		
+		if "arrow-in" in p[3]:
+			result+=textArrow.format(x1=x1-arrowD,y1=y1+arrowD, x2=x1+arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
+			y1+=arrowD
+			y2+=arrowD
 		
 		result+=textLine.format(x1,y1,x2,y2, color, add=add)
-		result+=textNumber.format(x=x1-5, y=y1-5, text=pins["bottom"][i][0], font=font, color=color, add=add)
-		result+=labelPinCommon(pins["bottom"][i], color=color).format(x=x1,y=y1+12, angle=45, add=add)
+		
+		
+		if "arrow-out" in p[3]:
+			result+=textArrow.format(x1=x2-arrowD,y1=y2, x2=x2+arrowD, y2=y2, x3=x2, y3=y2+arrowD, color=color, add=add)
+			y2+=arrowD
+		
+		
+		result+=labelPinCommon(p, color=color).format(x=x1,y=y2+6, angle=45, add=add)
 		i+=1
 	return result
 
@@ -406,6 +443,7 @@ def getPinsRight(pins, font, add="", forceColor=None):
 	i=0
 	result=""
 	while i < len(pins["right"]):
+		p=pins["right"][i]
 		x1 = basex+rectWidth
 		y1 = basey+(heightPerPin//2)+ i*heightPerPin
 		if len(pins["top"]) > 0:
@@ -415,14 +453,26 @@ def getPinsRight(pins, font, add="", forceColor=None):
 		if forceColor is not None:
 			color=forceColor
 		else:
-			color = pins["right"][i][2]
-		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+			color = p[2]
+		
 		
 		if pins["right"][i][0] < 10 :
-			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=pins["right"][i][0], font=font, color=color, add=add)
+			result+=textNumber.format(x=x1-charWidth-3, y=y1+5, text=p[0], font=font, color=color, add=add)
 		else:
-			result+=textNumber.format(x=x1-2*charWidth-3          , y=y1+5, text=pins["right"][i][0], font=font, color=color, add=add)
-		result+=labelPinCommon(pins["right"][i], color=color).format(x=x1+6, y=y1+(charHeight//2), angle=0, add=add)
+			result+=textNumber.format(x=x1-2*charWidth-3, y=y1+5, text=p[0], font=font, color=color, add=add)
+		
+		if "arrow-in" in p[3]:
+			result+=textArrow.format(x1=x1+arrowD,y1=y1-arrowD, x2=x1+arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
+			x1+=arrowD
+			x2+=arrowD
+		
+		result+=textLine.format(x1,y1,x2,y2, color, add=add)
+		
+		if "arrow-out" in p[3]:
+			result+=textArrow.format(x1=x2,y1=y2-arrowD, x2=x2, y2=y2+arrowD, x3=x2+arrowD, y3=y2, color=color, add=add)
+			x2+=arrowD
+		
+		result+=labelPinCommon(p, color=color).format(x=x2+1, y=y2+(charHeight//2), angle=0, add=add)
 		i+=1
 		
 	return result
@@ -432,6 +482,7 @@ def getPinsLeft(pins, font, add="", forceColor=None):
 	i=0
 	result=""
 	while i < len(pins["left"]):
+		p=pins["left"][i]
 		x1 = basex
 		y1 = basey+(heightPerPin//2)+ i*heightPerPin
 		if len(pins["top"]) > 0:
@@ -441,10 +492,21 @@ def getPinsLeft(pins, font, add="", forceColor=None):
 		if forceColor is not None:
 			color=forceColor
 		else:
-			color = pins["left"][i][2]
+			color = p[2]
+		
+		result+=textNumber.format(x=x1+3, y=y1+5, text=p[0], font=font, color=color, add=add)
+		if "arrow-in" in p[3]:
+			result+=textArrow.format(x1=x1-arrowD,y1=y1-arrowD, x2=x1-arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
+			x1-=arrowD
+			x2-=arrowD
+		
 		result+=textLine.format(x1,y1,x2,y2, color, add=add)
-		result+=textNumber.format(x=x1+3, y=y1+5, text=pins["left"][i][0], font=font, color=color, add=add)
-		result+=labelPinCommon(pins["left"][i], color=color).format(x=x1-6, y=y1+(charHeight//2), angle=0, add="text-anchor='end' "+add)
+		
+		if "arrow-out" in p[3]:
+			result+=textArrow.format(x1=x2,y1=y2-arrowD, x2=x2, y2=y2+arrowD, x3=x2-arrowD, y3=y2, color=color, add=add)
+			x2-=arrowD
+		
+		result+=labelPinCommon(p, color=color).format(x=x2-1, y=y1+(charHeight//2), angle=0, add="text-anchor='end' "+add)
 		i+=1
 	return result
 

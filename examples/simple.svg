@@ -1,62 +1,62 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='20' y='140' width='150' height='74' fill='none' stroke-width='2' stroke='black'/>
+<rect x='30' y='150' width='150' height='74' fill='none' stroke-width='2' stroke='black'/>
 
-<text x='95' y='177' transform='rotate(0 95 177)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
-	<tspan x='95' dy='-0.3em'>Example chip</tspan>
-	<tspan x='95' dy='1em'>深圳市电</tspan>
+<text x='105' y='187' transform='rotate(0 105 187)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+	<tspan x='105' dy='-0.3em'>Example chip</tspan>
+	<tspan x='105' dy='1em'>深圳市电</tspan>
 </text>
 
-<path d="M20 167
-		A 10 10 0 0 1 20 187"
+<path d="M30 180
+		A 7 7 0 0 1 30 194"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
-<line x1='32' y1='140' x2='32' y2='135' stroke='red' stroke-width='2' />
-<text x='27' y='152' font-family='monospace' fill='red' >12</text>
-<text x='32' y='135' transform='rotate(-45 32 135)' font-family='monospace' fill='red'  >USB</text>
+<text x='37' y='162' font-family='monospace' fill='red' >12</text>
+<line x1='42' y1='150' x2='42' y2='145' stroke='red' stroke-width='2' />
+<text x='42' y='144' transform='rotate(-45 42 144)' font-family='monospace' fill='red'  >USB</text>
 
-<line x1='57' y1='140' x2='57' y2='135' stroke='red' stroke-width='2' />
-<text x='52' y='152' font-family='monospace' fill='red' >11</text>
-<text x='57' y='135' transform='rotate(-45 57 135)' font-family='monospace' fill='red'  >USB</text>
+<text x='62' y='162' font-family='monospace' fill='red' >11</text>
+<line x1='67' y1='150' x2='67' y2='145' stroke='red' stroke-width='2' />
+<text x='67' y='144' transform='rotate(-45 67 144)' font-family='monospace' fill='red'  >USB</text>
 
-<line x1='82' y1='140' x2='82' y2='135' stroke='red' stroke-width='2' />
-<text x='77' y='152' font-family='monospace' fill='red' >10</text>
-<text x='82' y='135' transform='rotate(-45 82 135)' font-family='monospace' fill='red'  >USB</text>
+<text x='87' y='162' font-family='monospace' fill='red' >10</text>
+<line x1='92' y1='150' x2='92' y2='145' stroke='red' stroke-width='2' />
+<text x='92' y='144' transform='rotate(-45 92 144)' font-family='monospace' fill='red'  >USB</text>
 
-<line x1='107' y1='140' x2='107' y2='135' stroke='red' stroke-width='2' />
-<text x='102' y='152' font-family='monospace' fill='red' >9</text>
-<text x='107' y='135' transform='rotate(-45 107 135)' font-family='monospace' fill='red'  >USB</text>
+<text x='112' y='162' font-family='monospace' fill='red' >9</text>
+<line x1='117' y1='150' x2='117' y2='145' stroke='red' stroke-width='2' />
+<text x='117' y='144' transform='rotate(-45 117 144)' font-family='monospace' fill='red'  >USB</text>
 
-<line x1='132' y1='140' x2='132' y2='135' stroke='black' stroke-width='2' />
-<text x='127' y='152' font-family='monospace' fill='black' >8</text>
-<text x='132' y='135' transform='rotate(-45 132 135)' font-family='monospace' fill='black' style='text-decoration: overline' >Sensor</text>
+<text x='137' y='162' font-family='monospace' fill='black' >8</text>
+<line x1='142' y1='150' x2='142' y2='145' stroke='black' stroke-width='2' />
+<text x='142' y='144' transform='rotate(-45 142 144)' font-family='monospace' fill='black' style='text-decoration: overline' >Sensor</text>
 
-<line x1='157' y1='140' x2='157' y2='135' stroke='black' stroke-width='2' />
-<text x='152' y='152' font-family='monospace' fill='black' >7</text>
-<text x='157' y='135' transform='rotate(-45 157 135)' font-family='monospace' fill='black'  >Sensor (better)</text>
+<text x='162' y='162' font-family='monospace' fill='black' >7</text>
+<line x1='167' y1='150' x2='167' y2='145' stroke='black' stroke-width='2' />
+<text x='167' y='144' transform='rotate(-45 167 144)' font-family='monospace' fill='black'  >Sensor (better)</text>
 
-<line x1='32' y1='214' x2='32' y2='219' stroke='black' stroke-width='2' />
-<text x='27' y='209' font-family='monospace' fill='black' >1</text>
-<text x='32' y='226' transform='rotate(45 32 226)' font-family='monospace' fill='black'  >Status LED (W)</text>
+<text x='37' y='219' font-family='monospace' fill='black' >1</text>
+<line x1='42' y1='224' x2='42' y2='229' stroke='black' stroke-width='2' />
+<text x='42' y='235' transform='rotate(45 42 235)' font-family='monospace' fill='black'  >Status LED (W)</text>
 
-<line x1='57' y1='214' x2='57' y2='219' stroke='black' stroke-width='2' />
-<text x='52' y='209' font-family='monospace' fill='black' >2</text>
-<text x='57' y='226' transform='rotate(45 57 226)' font-family='monospace' fill='black'  >Status LED (R)</text>
+<text x='62' y='219' font-family='monospace' fill='black' >2</text>
+<line x1='67' y1='224' x2='67' y2='229' stroke='black' stroke-width='2' />
+<text x='67' y='235' transform='rotate(45 67 235)' font-family='monospace' fill='black'  >Status LED (R)</text>
 
-<line x1='82' y1='214' x2='82' y2='219' stroke='black' stroke-width='2' />
-<text x='77' y='209' font-family='monospace' fill='black' >3</text>
-<text x='82' y='226' transform='rotate(45 82 226)' font-family='monospace' fill='black'  >Clock</text>
+<text x='87' y='219' font-family='monospace' fill='black' >3</text>
+<line x1='92' y1='224' x2='92' y2='229' stroke='black' stroke-width='2' />
+<text x='92' y='235' transform='rotate(45 92 235)' font-family='monospace' fill='black'  >Clock</text>
 
-<line x1='107' y1='214' x2='107' y2='219' stroke='blue' stroke-width='2' />
-<text x='102' y='209' font-family='monospace' fill='blue' >4</text>
-<text x='107' y='226' transform='rotate(45 107 226)' font-family='monospace' fill='blue'  >V<tspan dy='5'>SS</tspan></text>
+<text x='112' y='219' font-family='monospace' fill='blue' >4</text>
+<line x1='117' y1='224' x2='117' y2='229' stroke='blue' stroke-width='2' />
+<text x='117' y='235' transform='rotate(45 117 235)' font-family='monospace' fill='blue'  >V<tspan dy='5'>SS</tspan></text>
 
-<line x1='132' y1='214' x2='132' y2='219' stroke='blue' stroke-width='2' />
-<text x='127' y='209' font-family='monospace' fill='blue' >5</text>
-<text x='132' y='226' transform='rotate(45 132 226)' font-family='monospace' fill='blue'  >V<tspan dy='5'>DD</tspan></text>
+<text x='137' y='219' font-family='monospace' fill='blue' >5</text>
+<line x1='142' y1='224' x2='142' y2='229' stroke='blue' stroke-width='2' />
+<text x='142' y='235' transform='rotate(45 142 235)' font-family='monospace' fill='blue'  >V<tspan dy='5'>DD</tspan></text>
 
-<line x1='157' y1='214' x2='157' y2='219' stroke='blue' stroke-width='2' />
-<text x='152' y='209' font-family='monospace' fill='blue' >6</text>
-<text x='157' y='226' transform='rotate(45 157 226)' font-family='monospace' fill='blue'  >GND</text>
+<text x='162' y='219' font-family='monospace' fill='blue' >6</text>
+<line x1='167' y1='224' x2='167' y2='229' stroke='blue' stroke-width='2' />
+<text x='167' y='235' transform='rotate(45 167 235)' font-family='monospace' fill='blue'  >GND</text>
 
 
 </svg>

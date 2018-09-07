@@ -26,55 +26,55 @@ Zilog Z80
 # System control
 
 # blue
-1 A_11
-2 A_12
-3 A_13
-4 A_14
-5 A_15
+1 >A_11
+2 >A_12
+3 >A_13
+4 >A_14
+5 >A_15
 
 # nocolor
-6 CLK
+6 <CLK
 # darkgreen
-7 D_4
-8 D_3
-9 D_5
-10 D_6
+7  <>D_4
+8  <>D_3
+9  <>D_5
+10 <>D_6
 # nocolor
-11 +5V
+11 <+5V
 # darkgreen
-12 D_2
-13 D_7
-14 D_0
-15 D_1
+12 <>D_2
+13 <>D_7
+14 <>D_0
+15 <>D_1
 #nocolor
-16 /INT
-17 /NMI
-18 /HALT
-19 /MREQ
-20 /IORQ
+16 </INT
+17 </NMI
+18 >/HALT
+19 >/MREQ
+20 >/IORQ
 
 
 # RIGHT
 
 # blue
-40 A_10
-39 A_9
-38 A_6
-37 A_7
-36 A_6
-35 A_5
-34 A_4
-33 A_3
-32 A_2
-31 A_1
-30 A_0
+40 >A_10
+39 >A_9
+38 >A_6
+37 >A_7
+36 >A_6
+35 >A_5
+34 >A_4
+33 >A_3
+32 >A_2
+31 >A_1
+30 >A_0
 #nocolor
-29 GND
-28 /RFSH
-27 /M1
-26 /RESET
-25 /BUSREQ
-24 /WAIT
-23 /BUSACK
-22 /WR
-21 /RD
+29 <GND
+28 >/RFSH
+27 >/M1
+26 </RESET
+25 </BUSREQ
+24 </WAIT
+23 >/BUSACK
+22 >/WR
+21 >/RD

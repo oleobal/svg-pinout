@@ -1,69 +1,81 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='20' y='52' width='175' height='59' fill='none' stroke-width='2' stroke='black'/>
+<rect x='30' y='62' width='175' height='59' fill='none' stroke-width='2' stroke='black'/>
 
-<text x='107' y='81' transform='rotate(0 107 81)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
-	<tspan x='107' dy='0.2em'>TI LM324N</tspan>
+<text x='117' y='91' transform='rotate(0 117 91)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+	<tspan x='117' dy='0.2em'>TI LM324N</tspan>
 </text>
 
-<path d="M20 71
-		A 10 10 0 0 1 20 91"
+<path d="M30 84
+		A 7 7 0 0 1 30 98"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
-<line x1='32' y1='52' x2='32' y2='47' stroke='darkred' stroke-width='2' />
-<text x='27' y='64' font-family='monospace' fill='darkred' >14</text>
-<text x='32' y='47' transform='rotate(-45 32 47)' font-family='monospace' fill='darkred'  >4OUT</text>
+<text x='37' y='74' font-family='monospace' fill='darkred' >14</text>
+<line x1='42' y1='62' x2='42' y2='57' stroke='darkred' stroke-width='2' />
+<polygon points='37 57 47 57 42 52' fill='darkred' />
+<text x='42' y='51' transform='rotate(-45 42 51)' font-family='monospace' fill='darkred'  >4OUT</text>
 
-<line x1='57' y1='52' x2='57' y2='47' stroke='darkred' stroke-width='2' />
-<text x='52' y='64' font-family='monospace' fill='darkred' >13</text>
-<text x='57' y='47' transform='rotate(-45 57 47)' font-family='monospace' fill='darkred'  >4IN-</text>
+<text x='62' y='74' font-family='monospace' fill='darkred' >13</text>
+<polygon points='62 57 72 57 67 62' fill='darkred' />
+<line x1='67' y1='57' x2='67' y2='52' stroke='darkred' stroke-width='2' />
+<text x='67' y='51' transform='rotate(-45 67 51)' font-family='monospace' fill='darkred'  >4IN-</text>
 
-<line x1='82' y1='52' x2='82' y2='47' stroke='darkred' stroke-width='2' />
-<text x='77' y='64' font-family='monospace' fill='darkred' >12</text>
-<text x='82' y='47' transform='rotate(-45 82 47)' font-family='monospace' fill='darkred'  >4IN+</text>
+<text x='87' y='74' font-family='monospace' fill='darkred' >12</text>
+<polygon points='87 57 97 57 92 62' fill='darkred' />
+<line x1='92' y1='57' x2='92' y2='52' stroke='darkred' stroke-width='2' />
+<text x='92' y='51' transform='rotate(-45 92 51)' font-family='monospace' fill='darkred'  >4IN+</text>
 
-<line x1='107' y1='52' x2='107' y2='47' stroke='black' stroke-width='2' />
-<text x='102' y='64' font-family='monospace' fill='black' >11</text>
-<text x='107' y='47' transform='rotate(-45 107 47)' font-family='monospace' fill='black'  >GND</text>
+<text x='112' y='74' font-family='monospace' fill='black' >11</text>
+<line x1='117' y1='62' x2='117' y2='57' stroke='black' stroke-width='2' />
+<text x='117' y='56' transform='rotate(-45 117 56)' font-family='monospace' fill='black'  >GND</text>
 
-<line x1='132' y1='52' x2='132' y2='47' stroke='darkorange' stroke-width='2' />
-<text x='127' y='64' font-family='monospace' fill='darkorange' >10</text>
-<text x='132' y='47' transform='rotate(-45 132 47)' font-family='monospace' fill='darkorange'  >3IN+</text>
+<text x='137' y='74' font-family='monospace' fill='darkorange' >10</text>
+<polygon points='137 57 147 57 142 62' fill='darkorange' />
+<line x1='142' y1='57' x2='142' y2='52' stroke='darkorange' stroke-width='2' />
+<text x='142' y='51' transform='rotate(-45 142 51)' font-family='monospace' fill='darkorange'  >3IN+</text>
 
-<line x1='157' y1='52' x2='157' y2='47' stroke='darkorange' stroke-width='2' />
-<text x='152' y='64' font-family='monospace' fill='darkorange' >9</text>
-<text x='157' y='47' transform='rotate(-45 157 47)' font-family='monospace' fill='darkorange'  >3IN-</text>
+<text x='162' y='74' font-family='monospace' fill='darkorange' >9</text>
+<polygon points='162 57 172 57 167 62' fill='darkorange' />
+<line x1='167' y1='57' x2='167' y2='52' stroke='darkorange' stroke-width='2' />
+<text x='167' y='51' transform='rotate(-45 167 51)' font-family='monospace' fill='darkorange'  >3IN-</text>
 
-<line x1='182' y1='52' x2='182' y2='47' stroke='darkorange' stroke-width='2' />
-<text x='177' y='64' font-family='monospace' fill='darkorange' >8</text>
-<text x='182' y='47' transform='rotate(-45 182 47)' font-family='monospace' fill='darkorange'  >3OUT</text>
+<text x='187' y='74' font-family='monospace' fill='darkorange' >8</text>
+<line x1='192' y1='62' x2='192' y2='57' stroke='darkorange' stroke-width='2' />
+<polygon points='187 57 197 57 192 52' fill='darkorange' />
+<text x='192' y='51' transform='rotate(-45 192 51)' font-family='monospace' fill='darkorange'  >3OUT</text>
 
-<line x1='32' y1='111' x2='32' y2='116' stroke='blue' stroke-width='2' />
-<text x='27' y='106' font-family='monospace' fill='blue' >1</text>
-<text x='32' y='123' transform='rotate(45 32 123)' font-family='monospace' fill='blue'  >1OUT</text>
+<text x='37' y='116' font-family='monospace' fill='blue' >1</text>
+<line x1='42' y1='121' x2='42' y2='126' stroke='blue' stroke-width='2' />
+<polygon points='37 126 47 126 42 131' fill='blue' />
+<text x='42' y='137' transform='rotate(45 42 137)' font-family='monospace' fill='blue'  >1OUT</text>
 
-<line x1='57' y1='111' x2='57' y2='116' stroke='blue' stroke-width='2' />
-<text x='52' y='106' font-family='monospace' fill='blue' >2</text>
-<text x='57' y='123' transform='rotate(45 57 123)' font-family='monospace' fill='blue'  >1IN-</text>
+<text x='62' y='116' font-family='monospace' fill='blue' >2</text>
+<polygon points='62 126 72 126 67 121' fill='blue' />
+<line x1='67' y1='126' x2='67' y2='131' stroke='blue' stroke-width='2' />
+<text x='67' y='137' transform='rotate(45 67 137)' font-family='monospace' fill='blue'  >1IN-</text>
 
-<line x1='82' y1='111' x2='82' y2='116' stroke='blue' stroke-width='2' />
-<text x='77' y='106' font-family='monospace' fill='blue' >3</text>
-<text x='82' y='123' transform='rotate(45 82 123)' font-family='monospace' fill='blue'  >1IN+</text>
+<text x='87' y='116' font-family='monospace' fill='blue' >3</text>
+<polygon points='87 126 97 126 92 121' fill='blue' />
+<line x1='92' y1='126' x2='92' y2='131' stroke='blue' stroke-width='2' />
+<text x='92' y='137' transform='rotate(45 92 137)' font-family='monospace' fill='blue'  >1IN+</text>
 
-<line x1='107' y1='111' x2='107' y2='116' stroke='black' stroke-width='2' />
-<text x='102' y='106' font-family='monospace' fill='black' >4</text>
-<text x='107' y='123' transform='rotate(45 107 123)' font-family='monospace' fill='black'  >Vcc</text>
+<text x='112' y='116' font-family='monospace' fill='black' >4</text>
+<line x1='117' y1='121' x2='117' y2='126' stroke='black' stroke-width='2' />
+<text x='117' y='132' transform='rotate(45 117 132)' font-family='monospace' fill='black'  >V<tspan dy='5'>CC</tspan></text>
 
-<line x1='132' y1='111' x2='132' y2='116' stroke='darkgreen' stroke-width='2' />
-<text x='127' y='106' font-family='monospace' fill='darkgreen' >5</text>
-<text x='132' y='123' transform='rotate(45 132 123)' font-family='monospace' fill='darkgreen'  >2IN+</text>
+<text x='137' y='116' font-family='monospace' fill='darkgreen' >5</text>
+<polygon points='137 126 147 126 142 121' fill='darkgreen' />
+<line x1='142' y1='126' x2='142' y2='131' stroke='darkgreen' stroke-width='2' />
+<text x='142' y='137' transform='rotate(45 142 137)' font-family='monospace' fill='darkgreen'  >2IN+</text>
 
-<line x1='157' y1='111' x2='157' y2='116' stroke='darkgreen' stroke-width='2' />
-<text x='152' y='106' font-family='monospace' fill='darkgreen' >6</text>
-<text x='157' y='123' transform='rotate(45 157 123)' font-family='monospace' fill='darkgreen'  >2IN-</text>
+<text x='162' y='116' font-family='monospace' fill='darkgreen' >6</text>
+<polygon points='162 126 172 126 167 121' fill='darkgreen' />
+<line x1='167' y1='126' x2='167' y2='131' stroke='darkgreen' stroke-width='2' />
+<text x='167' y='137' transform='rotate(45 167 137)' font-family='monospace' fill='darkgreen'  >2IN-</text>
 
-<line x1='182' y1='111' x2='182' y2='116' stroke='darkgreen' stroke-width='2' />
-<text x='177' y='106' font-family='monospace' fill='darkgreen' >7</text>
-<text x='182' y='123' transform='rotate(45 182 123)' font-family='monospace' fill='darkgreen'  >2OUT</text>
+<text x='187' y='116' font-family='monospace' fill='darkgreen' >7</text>
+<line x1='192' y1='121' x2='192' y2='126' stroke='darkgreen' stroke-width='2' />
+<polygon points='187 126 197 126 192 131' fill='darkgreen' />
+<text x='192' y='137' transform='rotate(45 192 137)' font-family='monospace' fill='darkgreen'  >2OUT</text>
 
 
 </svg>

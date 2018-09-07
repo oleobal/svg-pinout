@@ -30,12 +30,13 @@ You can add an alignment mark to a section by calling `# mark`.
 You can also add a title with `# title`, just write it on the following lines.
 
 It is possible to add formatting to pin names :
-  `12 /RESET` will be represented with an overline (active on low).
-  `14 V_SS` will represent SS as subscript
-  `16 10e^15` will represent 15 as superscript
+  `3 /RESET` will be represented with an overline (active on low).
+  `4 <CLK` : `<` adds an arrow going in and `>` one going out
+  `7 V_SS` will represent SS as subscript
+  `8 10e^15` will represent 15 as superscript
 The backslash escapes the special characters :
   `14 V\_SS` will print 'V_SS'
- 
+
 
 
 Empty lines and lines starting with # that are more than one word (whitespace
