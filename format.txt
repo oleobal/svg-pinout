@@ -14,8 +14,8 @@ Instead of a number, you can also specify an (inclusive) range, like this :
   0-7 I/O
 Alternatively, specify a number of pins, like this :
   8x I/O
-They'll be numbered automatically.
-(for now, auto numbering is always left to right and top to bottom)
+They'll be numbered and placed automatically. This, as of now, works counter-
+-clockwise, starting from the side with the (last) alignment mark.
 
 Pins with no number are automatically assigned one.
 Pins with no section are on the top.

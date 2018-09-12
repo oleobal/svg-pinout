@@ -32,8 +32,8 @@ Example chip
 深圳市电
 
 # bottom
-1 >Status LED (W)
-2 >Status LED (R)
+>Status LED (W)
+>Status LED (R)
 
 <Clock
 # blue
@@ -41,13 +41,14 @@ V_SS
 V_DD
 GND
 
+
 # top
 
-# red
-12-9 <>USB
 # nocolor
-8 </Sensor
-7 <Other sensor
+<Other sensor
+</Sensor
+# red
+4x <>USB
 
 # left
 # mark
