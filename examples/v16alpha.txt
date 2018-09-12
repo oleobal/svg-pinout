@@ -1,37 +1,32 @@
 # The (fictional) v16alpha processor pinout
 
-# TOP
+
+# left
 
 # front = cycle
-0 Clock
+Clock
 
 # error code
-1-5 Error
+5x Error
 
 # controls for the program data bus
-6-7 Program load control
+2x Program load control
 
 # program data bus
-8-15 Program load
+8x Program load
 
-# BOTTOM
+# right
 
 16x I/O
 
-# As you can see, single word 'comments' are also instructions, either
-# sequences or colors.
-# To avoid this for sure, I can use
-## double
-## hash
-## signs
-# which prevent any processing and are 'true' comments.
 
+# TODO take care of this
 
 # blue
 
 # top
-Alimentation
+##Alimentation
 
 # bottom
-Ground
+##Ground
 

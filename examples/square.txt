@@ -1,29 +1,30 @@
 # left
 
-1 <Interrupt
-2 <Reset
-3 Hold
-4 <>Test
+<Interrupt
+<Reset
+Hold
+<>Test
 
 # BOTTOM
 
 # green
-5 <>Ready
+<>Ready
 # blue
-6 >Reading
+>Reading
 # nocolor
-7 >V_DD
-8 GND
+>V_DD
+GND
 
 # RIGHT
 
-12 <Clock
-11 <V_SS
-# blue
-10 >Writing
-# red
-9  <>Error
+#red 
+<>Error
+#blue
+>Writing
+#nocolor
+<V_SS
+<Clock
 
 # TOP
 # #990
-16-13 <>USB
+4x <>USB

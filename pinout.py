@@ -82,8 +82,48 @@ def processWord(word):
 	
 	return (word, features)
 
+
+def getNextSideCCW(side):
+	"""
+	returns the side that follows the given side, counter-clockwise
+	"""
+	if side == "left":
+		return "bottom"
+	if side == "bottom":
+		return "right"
+	if side == "right":
+		return "top"
+	if side == "top":
+		return "left"
+
+def getOppositeSide(side):
+	"""
+	returns the side that opposite
+	"""
+	if side == "left":
+		return "right"
+	if side == "bottom":
+		return "top"
+	if side == "right":
+		return "left"
+	if side == "top":
+		return "bottom"
+
+def getNextSide(side, params):
+	"""
+	returns the side that follows, according to params
+	"""
+	# TODO
+	if params in ("quad", "qfp", "carrier", "square") :
+		return getNextSideCCW(side)
+	
+	if params in ("dip", "parallel") :
+		return getOppositeSide(side)
+	
+	return getNextSideCCW(side)
+
 currentSection="top"
-currentHighestNumberPlusOne=0
+currentHighestNumberPlusOne=1
 currentColor=strokeColor
 for line in args.infile:
 	line = line.strip()
@@ -96,12 +136,15 @@ for line in args.infile:
 			continue
 		words = line[1:].split()
 		if len(words) == 1 :
-			if words[0].lower() in ("top", "bottom", "left", "right", "title"):
-				currentSection = words[0].lower()
-			elif words[0].lower() == "mark" :
+			inst = words[0].lower()
+			if inst in ("top", "bottom", "left", "right", "title"):
+				currentSection = inst
+			elif inst == "mark" :
 				marks.append(currentSection)
-			elif words[0].lower() == "nocolor" :
+			elif inst == "nocolor" :
 				currentColor = strokeColor
+			elif inst == "nextside":
+				currentSection = getNextSide(currentSection, "")
 			else:
 				currentColor = words[0]
 		continue
@@ -159,6 +202,31 @@ for line in args.infile:
 			
 
 
+# reorder pins according to mark position
+
+if len(marks) == 0:
+	if max(len(pins["top"]), len(pins["bottom"])) > max(len(pins["left"]), len(pins["right"])):
+		refSide = "left"
+	else:
+		refSide = "top"
+else:
+	refSide = marks[-1]
+
+
+if refSide == "top" :
+	pins["right"].reverse()
+	pins["top"].reverse()
+elif refSide == "bottom" :
+	pins["top"].reverse()
+	pins["right"].reverse()
+elif refSide == "left" :
+	pins["right"].reverse()
+	pins["top"].reverse()
+elif refSide == "right" :
+	pins["right"].reverse()
+	pins["top"].reverse()
+
+
 if args.verbose:
 	import pprint
 	print("== TITLE ==", file=sys.stderr)
@@ -171,10 +239,8 @@ if args.verbose:
  
 fontFamily = "monospace"
 
-# yeah, sucks, doesn't it
 # best heuristics
 # for the uneducated, this means guesses
-
 # on MS EDge I measured 10 pt high letters
 # with 15pt em
 charHeight=15

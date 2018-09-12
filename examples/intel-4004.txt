@@ -22,14 +22,14 @@ Intel 4004
 # left
 
 1-4 Data bus
-5 V_SS
+5   V_SS
 6-7 Clock
-8 Sync
+8   Sync
 
 # right
 
-16 Reset
-15 Test
-14 CM-ROM
-13 V_DD
-12-9 CM-RAM
+9-12 CM-RAM
+13   V_DD
+14   CM-ROM
+15   Test
+16   Reset

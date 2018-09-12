@@ -37,32 +37,34 @@ Motorola 6800
 18 A_9
 19 A_10
 20 A_11
-#nocolor
 
 # right
-40 Reset
-39 TSC
-# #A00
-38 Not connected
-# nocolor
-37 Clock phase 2
-36 DBE
-# #A00
-35 Not connected
+
+#nocolor
+21 V_SS
+# #0A0
+22 A_12
+23 A_13
+24 A_14
+25 A_15
+# #00A
+26 D_7
+27 D_6
+28 D_5
+29 D_4
+30 D_3
+31 D_2
+32 D_1
+33 D_0
 #nocolor
 34 R/W
-# #00A
-33 D_0
-32 D_1
-31 D_2
-30 D_3
-29 D_4
-28 D_5
-27 D_6
-26 D_7
-# #0A0
-25 A_15
-24 A_14
-23 A_13
-22 A_12
-21 V_SS
+# #A00
+35 Not connected
+# nocolor
+36 DBE
+37 Clock phase 2
+# #A00
+38 Not connected
+#nocolor
+39 TSC
+40 Reset

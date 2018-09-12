@@ -9,24 +9,24 @@ TI LM324N
 
 # bottom
 # blue
-1 >1OUT
-2 <1IN-
-3 <1IN+
+>1OUT
+<1IN-
+<1IN+
 # nocolor
-4 V_CC
+V_CC
 # darkgreen
-5 <2IN+
-6 <2IN-
-7 >2OUT
+<2IN+
+<2IN-
+>2OUT
 
 # top
-# darkred
-14 >4OUT
-13 <4IN-
-12 <4IN+
-#nocolor
-11 GND
 # darkorange
-10 <3IN+
-9  <3IN-
-8  >3OUT
+>3OUT
+<3IN-
+<3IN+
+#nocolor
+GND
+# darkred
+<4IN+
+<4IN-
+>4OUT

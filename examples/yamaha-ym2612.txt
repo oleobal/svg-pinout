@@ -31,21 +31,22 @@ YM2612
 12 GND
 
 # top
-24 CLK
-23 V_CC
-# analog Vcc
-22 A. V_CC
-# left analog output
-21 MOL
-# right analog output
-20 MOR
-# analog ground
-19 A. GND
-18 A_1
-17 A_0
-16 /RD
-15 /WR
-# chip select
-14 /CS
+
 # interrupt request
 13 /IRQ
+# chip select
+14 /CS
+15 /WR
+16 /RD
+17 A_0
+18 A_1
+# analog ground
+19 A. GND
+# right analog output
+20 MOR
+# left analog output
+21 MOL
+# analog Vcc
+22 A. V_CC
+23 V_CC
+24 CLK

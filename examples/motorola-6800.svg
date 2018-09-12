@@ -85,9 +85,9 @@
 <line x1='199' y1='437' x2='204' y2='437' stroke='#0A0' stroke-width='2' />
 <text x='205' y='444' transform='rotate(0 205 444)' font-family='monospace' fill='#0A0'  >A<tspan dy='5'>12</tspan></text>
 
-<text x='180' y='464' font-family='monospace' fill='#0A0' >21</text>
-<line x1='199' y1='459' x2='204' y2='459' stroke='#0A0' stroke-width='2' />
-<text x='205' y='466' transform='rotate(0 205 466)' font-family='monospace' fill='#0A0'  >V<tspan dy='5'>SS</tspan></text>
+<text x='180' y='464' font-family='monospace' fill='black' >21</text>
+<line x1='199' y1='459' x2='204' y2='459' stroke='black' stroke-width='2' />
+<text x='205' y='466' transform='rotate(0 205 466)' font-family='monospace' fill='black'  >V<tspan dy='5'>SS</tspan></text>
 
 <text x='137' y='46' font-family='monospace' fill='black' >1</text>
 <line x1='134' y1='41' x2='129' y2='41' stroke='black' stroke-width='2' />
