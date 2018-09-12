@@ -23,8 +23,8 @@ Stupid method (overlaying with a transparent white element)
 Only used on pins and their labels
 Given class='pinout-lighten-overlay' for easier stripping
 """
-argparser.add_argument('infile', help='what file to read a pinout description in', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
-argparser.add_argument('outfile', help='what file to write the SVG output in', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
+argparser.add_argument('infile', help='file to read the pinout description ("-" is stdin, the default)', nargs='?', type=argparse.FileType('r'),  default=sys.stdin)
+argparser.add_argument('outfile', help='file to write the SVG output in ("-" is stdout, the default)', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
 
 args = argparser.parse_args()
 
@@ -33,6 +33,11 @@ if args.describeFormat:
 	with open("format.txt", "r") as f:
 		print(f.read())
 	sys.exit()
+
+if args.infile == "-" :
+	args.infile = sys.stdin
+if args.outfile == "-" :
+	args.outfile = sys.stdout
 
 pins = {"top":[], "bottom":[], "left":[], "right":[]}
 
