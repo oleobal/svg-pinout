@@ -1,5 +1,5 @@
-# Texas Instruments LM324N quad operational amplifier
-# (14-pin package)
+// Texas Instruments LM324N quad operational amplifier
+// (14-pin package)
 
 # title
 TI LM324N

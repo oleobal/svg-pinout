@@ -1,13 +1,13 @@
-# Motorola 6800
+// Motorola 6800
 
-# The 6800 was similar to the Intel 8080.
-# Unfortunately for both of them, Federico Faggin quit Intel
-# around the same time to found Zilog, and released
-# the Z80 soon after, which was better than both.
+// The 6800 was similar to the Intel 8080.
+// Unfortunately for both of them, Federico Faggin quit Intel
+// around the same time to found Zilog, and released
+// the Z80 soon after, which was better than both.
 
-# It is still the obvious and significant predecessor
-# to the Motorola 68000, which was and still is widely
-# used in various devices.
+// It is still the obvious and significant predecessor
+// to the Motorola 68000, which was and still is widely
+// used in various devices.
 
 # title
 Motorola 6800
@@ -40,7 +40,7 @@ Motorola 6800
 
 # right
 
-#nocolor
+# no color
 21 V_SS
 # #0A0
 22 A_12
@@ -56,15 +56,15 @@ Motorola 6800
 31 D_2
 32 D_1
 33 D_0
-#nocolor
+# no color
 34 R/W
 # #A00
 35 Not connected
-# nocolor
+# no color
 36 DBE
 37 Clock phase 2
 # #A00
 38 Not connected
-#nocolor
+# no color
 39 TSC
 40 Reset

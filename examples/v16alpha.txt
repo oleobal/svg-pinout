@@ -1,4 +1,4 @@
-# The (fictional) v16alpha processor pinout
+// The (fictional) v16alpha processor pinout
 
 
 # left
@@ -6,13 +6,13 @@
 # front = cycle
 Clock
 
-# error code
+// error code
 5x Error
 
-# controls for the program data bus
+// controls for the program data bus
 2x Program load control
 
-# program data bus
+// program data bus
 8x Program load
 
 # right
@@ -20,13 +20,13 @@ Clock
 16x I/O
 
 
-# TODO take care of this
+// TODO take care of this
 
 # blue
 
 # top
-##Alimentation
+//Alimentation
 
 # bottom
-##Ground
+//Ground
 

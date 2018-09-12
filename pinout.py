@@ -129,24 +129,22 @@ for line in args.infile:
 	line = line.strip()
 	if line == "":
 		continue
+	if len(line)>1 and line[0] == "/" and line[1]== "/":
+		continue
 	if line[0] == "#":
 		if len(line) == 1:
 			continue
-		if line[1] == "#":
-			continue
-		words = line[1:].split()
-		if len(words) == 1 :
-			inst = words[0].lower()
-			if inst in ("top", "bottom", "left", "right", "title"):
-				currentSection = inst
-			elif inst == "mark" :
-				marks.append(currentSection)
-			elif inst == "nocolor" :
-				currentColor = strokeColor
-			elif inst == "nextside":
-				currentSection = getNextSide(currentSection, "")
-			else:
-				currentColor = words[0]
+		inst = "".join(line[1:].split()).lower()
+		if inst in ("top", "bottom", "left", "right", "title"):
+			currentSection = inst
+		elif inst == "mark" :
+			marks.append(currentSection)
+		elif inst == "nocolor" :
+			currentColor = strokeColor
+		elif inst == "nextside":
+			currentSection = getNextSide(currentSection, "")
+		else:
+			currentColor = inst
 		continue
 	
 	if currentSection == "title":

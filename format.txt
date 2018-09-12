@@ -17,7 +17,6 @@ Alternatively, specify a number of pins, like this :
 They'll be numbered and placed automatically. This, as of now, works counter-
 -clockwise, starting from the side with the (last) alignment mark.
 
-Pins with no number are automatically assigned one.
 Pins with no section are on the top.
 Pins with no color are black.
 
@@ -36,8 +35,12 @@ It is possible to add formatting to pin names :
   `8 10e^15` will represent 15 as superscript
 The backslash escapes the special characters :
   `14 V\_SS` will print 'V_SS'
+Backslash escaping also works outside of pin names, so you can name a pin
+`# Hello` by writing `\# Hello`.
 
 
 
-Empty lines and lines starting with # that are more than one word (whitespace
-after and before notwithstanding) are ignored.
+Empty lines and lines starting with `//` (C++ style comments, although really
+this syntax comes from BCPL.) are ignored.
+Control sequences (starting with `#`) have their whitespace and case ignored,
+so `#NOCOLOR` is the same as `# no color`.

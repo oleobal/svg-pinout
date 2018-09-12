@@ -44,7 +44,7 @@ GND
 
 # top
 
-# nocolor
+# no color
 <Other sensor
 </Sensor
 # red

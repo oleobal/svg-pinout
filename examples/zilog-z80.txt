@@ -1,19 +1,19 @@
-# Zilog Z80
-# original DIP40 packaging
+// Zilog Z80
+// original DIP40 packaging
 
-# In 1974, Federico Faggin quits Intel to found Zilog,
-# because Intel didn't seem to care enough about
-# microprocessors at the time.
-# He names his new company Zilog.
+// In 1974, Federico Faggin quits Intel to found Zilog,
+// because Intel didn't seem to care enough about
+// microprocessors at the time.
+// He names his new company Zilog.
 
-# His first product is essentially an improved Intel 8080:
-# the Z80.
+// His first product is essentially an improved Intel 8080:
+// the Z80.
 
-# Notable uses include the Osborne 1, the Sinclar ZX80,
-# the Amstrad CPC.. or the Pac-Man arcade, the Colecovision,
-# the Sega Master System and Megadrive, and the Nintendo
-# Game Boy (kind of).
-# And Texas Instruments calculators TI-81 to 86.
+// Notable uses include the Osborne 1, the Sinclar ZX80,
+// the Amstrad CPC.. or the Pac-Man arcade, the Colecovision,
+// the Sega Master System and Megadrive, and the Nintendo
+// Game Boy (kind of).
+// And Texas Instruments calculators TI-81 to 86.
 
 # title
 Zilog Z80
