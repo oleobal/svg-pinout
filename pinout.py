@@ -163,8 +163,8 @@ for line in args.infile:
 		inst = "".join(words)
 		if inst in ("top", "bottom", "left", "right", "title"):
 			currentSection = inst
-		elif inst == "mark" :
-			marks.append(currentSection)
+		elif inst in ("mark", "notch") :
+			marks.append((inst,currentSection))
 		elif inst == "nocolor" :
 			currentColor = strokeColor
 		elif inst in ( "side", "nextside") :
@@ -250,7 +250,7 @@ if len(marks) == 0:
 	else:
 		refSide = "top"
 else:
-	refSide = marks[-1]
+	refSide = marks[-1][1]
 
 # if there are pins in default section, distribute them.
 
@@ -400,12 +400,19 @@ if len(title["text"]) > 0 :
 
 ## marks
 
+# round marks
+
+roundMarks = []
+for i in marks :
+	if i[0] == "mark":
+		roundMarks.append(i[1])
+
 markSize = 7
-if "top" in marks:
+if "top" in roundMarks:
 	startx = basex+(rectWidth//2)-markSize
 	starty = basey
-	endx = basex+(rectWidth//2)+markSize
-	endy = basey
+	endx   = basex+(rectWidth//2)+markSize
+	endy   = basey
 	result+="""\
 <path d="M{sx} {sy}
 		A {size} {size} 0 0 0 {ex} {ey}"
@@ -413,11 +420,11 @@ if "top" in marks:
 
 """.format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy,color=strokeColor)
 
-if "bottom" in marks:
+if "bottom" in roundMarks:
 	startx = basex+(rectWidth//2)-markSize
 	starty = basey+rectHeight
-	endx = basex+(rectWidth//2)+markSize
-	endy = basey+rectHeight
+	endx   = basex+(rectWidth//2)+markSize
+	endy   = basey+rectHeight
 	result+="""\
 <path d="M{sx} {sy}
 		A {size} {size} 0 0 1 {ex} {ey}"
@@ -425,11 +432,11 @@ if "bottom" in marks:
 
 """.format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
-if "right" in marks:
+if "right" in roundMarks:
 	startx = basex+rectWidth
 	starty = basey+(rectHeight//2) - markSize
-	endx =   basex+rectWidth
-	endy =   basey+(rectHeight//2) + markSize
+	endx   = basex+rectWidth
+	endy   = basey+(rectHeight//2) + markSize
 	result+="""\
 <path d="M{sx} {sy}
 		A {size} {size} 0 0 0 {ex} {ey}"
@@ -437,11 +444,11 @@ if "right" in marks:
 
 """.format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
-if "left" in marks:
+if "left" in roundMarks:
 	startx = basex
 	starty = basey+(rectHeight//2) - markSize
-	endx = basex
-	endy = basey+(rectHeight//2) + markSize
+	endx   = basex
+	endy   = basey+(rectHeight//2) + markSize
 	result+="""\
 <path d="M{sx} {sy}
 		A {size} {size} 0 0 1 {ex} {ey}"
@@ -449,6 +456,42 @@ if "left" in marks:
 
 """.format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)
 
+# corner notches
+
+cornerNotches = []
+for i in marks :
+	if i[0] == "notch":
+		cornerNotches.append(i[1])
+
+notchSize = 10
+
+if "top" in cornerNotches :
+	startx = basex
+	starty = basey+notchSize
+	endx   = basex+notchSize
+	endy   = basey
+	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(startx,starty, endx, endy, strokeColor)
+
+if "bottom" in cornerNotches :
+	startx = basex+rectWidth
+	starty = basey+rectHeight-notchSize
+	endx   = basex+rectWidth-notchSize
+	endy   = basey+rectHeight
+	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(startx,starty, endx, endy, strokeColor)
+
+if "right" in cornerNotches :
+	startx = basex+rectWidth
+	starty = basey+notchSize
+	endx   = basex+rectWidth-notchSize
+	endy   = basey
+	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(startx,starty, endx, endy, strokeColor)
+
+if "left" in cornerNotches :
+	startx = basex
+	starty = basey+rectHeight-notchSize
+	endx   = basex+notchSize
+	endy   = basey+rectHeight
+	result+="<line x1='{}' y1='{}' x2='{}' y2='{}' stroke='{}' stroke-width='2'/>\n".format(startx,starty, endx, endy, strokeColor)
 ## pins 
 
 # yeah I know it's disgusting

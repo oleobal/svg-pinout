@@ -14,18 +14,22 @@ Instead of a number, you can also specify an (inclusive) range, like this :
   0-7 I/O
 Alternatively, specify a number of pins, like this :
   8x I/O
-They'll be numbered and placed automatically. This, as of now, works counter-
--clockwise, starting from the side with the (last) alignment mark.
+They'll be numbered and placed automatically. This works counter-clockwise,
+starting from the side with the (last) alignment mark.
 
-Pins with no section are on the top.
-Pins with no color are black.
+Automatic numbering and placement works better if you specify the packaging,
+like this :
+  # package DIP
+There are two choices, parallel (`parallel`, `dip`) or square (`square`, `quad`,
+`qfp`, `carrier`).
 
-That's right, you can specify color. It works like sections :
+You can specify color. It works like sections :
   # blue
 will color everything after it blue. You can use any CSS color name or code.
 You can go back to the default color (likely black or white) with `# nocolor`.
 
 You can add an alignment mark to a section by calling `# mark`.
+You can also add a corner notch on the left corner of a section with `# notch`.
 You can also add a title with `# title`, just write it on the following lines.
 
 It is possible to add formatting to pin names :
@@ -40,7 +44,7 @@ Backslash escaping also works outside of pin names, so you can name a pin
 
 
 Empty lines and lines starting with `//` (C++ style comments) are ignored.
-Control sequences (starting with `#`) have their whitespace and case ignored,
-so `#NOCOLOR` is the same as `# no color`.
+Instructions (starting with `#`) have their case ignored, and single-word
+instructions also ignore whitespace, so `#NOCOLOR` is the same as `# no color`.
 
 A more formal description of the syntax is in the file `reference.md`

@@ -1,6 +1,7 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
 <rect x='102' y='54' width='100' height='132' fill='none' stroke-width='2' stroke='black'/>
 
+<line x1='102' y1='64' x2='112' y2='54' stroke='black' stroke-width='2'/>
 <text x='109' y='66' font-family='monospace' fill='#990' >16</text>
 <polygon points='109 49 119 49 114 54' fill='#990' />
 <line x1='114' y1='49' x2='114' y2='44' stroke='#990' stroke-width='2' />

@@ -67,8 +67,8 @@ support formatting through :
 These can be escaped with backslash `\` (they'll be read as normal characters).
 
 
-Instruction
------------
+Instructions
+------------
 
 Any line that starts with `#` is an instruction, although the `#` can be
 escaped with a backslash `\` to be read as a normal character.
@@ -123,7 +123,11 @@ Sections can be ended with the `end` and `endsection` instructions.
 #### Marks
 
 The `mark` instruction adds a circular alignment mark to the current section.
-It also sets the reference side for pin placement (see `Placement of pins`).
+
+The `notch` instruction does the same, with a notch onto the left corner of
+the section (when looking outwards).
+
+Both also sets the reference side for pin placement (see `Placement of pins`).
 
 It does not affect following pins at all.
 
@@ -162,15 +166,15 @@ some pins will be placed right to left or bottom to top.
 The reference side is picked depending on number of pin per side : if the chip
 is taller than it is wide, it is the top. Else, it is the left side.
 
-The reference side can be overriden with the `mark` instruction, in which
-case it is set to side of the last `mark` used.
+The reference side can be overriden with the `mark` (or `notch`)instruction,
+in which case it is set to side of the last `mark` (or `notch`) used.
 
 ### Automatic sides
 
 #### Automatic side switching (side/nextside)
 
 The `side` or `nextside` instruction will put the following pins in the section
-that befits them. Its behavior depends on set packaging : If it is `parallel`
+that befits them. Its behavior depends on set packaging : if it is `parallel`
 (the default), then `nextside` goes to the side opposite of the current side.
 If it is `square`, then `nextside` goes counter-clockwise.
 

@@ -4,7 +4,6 @@
 <Reset
 Hold
 <>Test
-
 # BOTTOM
 
 # green
@@ -28,3 +27,5 @@ GND
 # TOP
 # #990
 4x <>USB
+
+# notch
