@@ -16,20 +16,21 @@
 
 # title
 Intel 4004
+
 # top
 # mark
 
-# left
+# end
 
-1-4 Data bus
-5   V_SS
-6-7 Clock
-8   Sync
+// The numbering and partitioning of sides here is automatic
 
-# right
+4x Data bus
+   V_SS
+2x Clock
+   Sync
 
-9-12 CM-RAM
-13   V_DD
-14   CM-ROM
-15   Test
-16   Reset
+4x CM-RAM
+   V_DD
+   CM-ROM
+   Test
+   Reset

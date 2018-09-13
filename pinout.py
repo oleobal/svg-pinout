@@ -39,7 +39,10 @@ if args.infile == "-" :
 if args.outfile == "-" :
 	args.outfile = sys.stdout
 
-pins = {"top":[], "bottom":[], "left":[], "right":[]}
+
+package = "parallel"
+
+pins = {"default":[], "top":[], "bottom":[], "left":[], "right":[]}
 
 marks = []
 
@@ -54,6 +57,11 @@ if args.background is not None :
 	bgColor = args.background
 else:
 	bgColor = "none"
+
+
+def warn(message):
+	print(message, file=sys.stderr)
+
 
 def processWord(word):
 	"""
@@ -88,6 +96,7 @@ def processWord(word):
 	return (word, features)
 
 
+
 def getNextSideCCW(side):
 	"""
 	returns the side that follows the given side, counter-clockwise
@@ -113,21 +122,24 @@ def getOppositeSide(side):
 		return "left"
 	if side == "top":
 		return "bottom"
+		
 
-def getNextSide(side, params):
+def getNextSide(side, package):
 	"""
 	returns the side that follows, according to params
 	"""
-	# TODO
-	if params in ("quad", "qfp", "carrier", "square") :
-		return getNextSideCCW(side)
+	if side == "title" :
+		return "default"
+		
 	
-	if params in ("dip", "parallel") :
+	if package == "square" :
+		return getNextSideCCW(side)
+	if package == "parallel" :
 		return getOppositeSide(side)
 	
-	return getNextSideCCW(side)
+	return getOppositeSide(side)
 
-currentSection="top"
+currentSection="default"
 currentHighestNumberPlusOne=1
 currentColor=strokeColor
 for line in args.infile:
@@ -139,15 +151,42 @@ for line in args.infile:
 	if line[0] == "#":
 		if len(line) == 1:
 			continue
-		inst = "".join(line[1:].split()).lower()
+		words = line[1:].lower().split()
+		if words[0] == "package":
+			if words[1] in ("quad", "qfp", "carrier", "square") :
+				package="square"
+			elif words[1] in ("dip", "parallel"):
+				package="parallel"
+			else:
+				warn("Ignoring unrecognized package type '{}'".format(words[1]))
+
+		inst = "".join(words)
 		if inst in ("top", "bottom", "left", "right", "title"):
 			currentSection = inst
 		elif inst == "mark" :
 			marks.append(currentSection)
 		elif inst == "nocolor" :
 			currentColor = strokeColor
-		elif inst == "nextside":
-			currentSection = getNextSide(currentSection, "")
+		elif inst in ( "side", "nextside") :
+			# special trigger for default section
+			# when nextside is used, default is copied to left, and becomes
+			# a pointer to left
+			if currentSection == "default":
+				pins["left"]+=pins["default"]
+				pins["default"] = pins["left"]
+				currentSection = getNextSide("left", package)
+			else:
+				currentSection = getNextSide(currentSection, package)
+		
+		elif inst == "end" :
+			# no argument : end section and color
+			currentSection = "default"
+			currentColor = strokeColor
+		elif inst == "endsection" :
+			currentSection = "default"
+		elif inst == "endcolor" : # so basically a synonym for nocolor
+			currentColor = strokeColor
+		
 		else:
 			currentColor = inst
 		continue
@@ -204,9 +243,7 @@ for line in args.infile:
 				currentHighestNumberPlusOne+=1
 			
 
-
-# reorder pins according to mark position
-
+# determine reference side from mark position
 if len(marks) == 0:
 	if max(len(pins["top"]), len(pins["bottom"])) > max(len(pins["left"]), len(pins["right"])):
 		refSide = "left"
@@ -215,7 +252,33 @@ if len(marks) == 0:
 else:
 	refSide = marks[-1]
 
+# if there are pins in default section, distribute them.
 
+if len(pins["default"]) > 0 and pins["default"] != pins["left"] :
+	if len(pins["top"]) ==  len(pins["bottom"]) ==  len(pins["left"]) ==  len(pins["right"]) == 0 :
+		if package == "parallel":
+			cutoff = len(pins["default"])//2
+			curSide = getNextSideCCW(refSide)
+			for i in range(len(pins["default"])):
+				if i == cutoff :
+					curSide = getOppositeSide(curSide)
+				pins[curSide].append(pins["default"][i])
+		
+		elif package == "square":
+			cutoff = len(pins["default"])//4
+			curSide = getNextSideCCW(refSide)
+			for i in range(len(pins["default"])):
+				if i == cutoff or i == cutoff*2 or i == cutoff*3 :
+					# pretty sure I could do cleverer with modulo, but tired
+					curSide = getNextSideCCW(curSide)
+				pins[curSide].append(pins["default"][i])
+	
+	else:
+		pass
+		#TODO case with mixed things
+
+
+# reorder pins according to reference side
 if refSide == "top" :
 	pins["right"].reverse()
 	pins["top"].reverse()
@@ -234,6 +297,7 @@ if args.verbose:
 	import pprint
 	print("== TITLE ==", file=sys.stderr)
 	print(pprint.pformat(title["text"]), file=sys.stderr)
+	print("Package: "+str(package), file=sys.stderr)
 	print("== MARKS ==", file=sys.stderr)
 	print(marks, file=sys.stderr)
 	print("== PINS  ==", file=sys.stderr)
@@ -364,11 +428,11 @@ if "bottom" in marks:
 if "right" in marks:
 	startx = basex+rectWidth
 	starty = basey+(rectHeight//2) - markSize
-	endx = basex+rectWidth
-	endy = basey+(rectHeight//2) + markSize
+	endx =   basex+rectWidth
+	endy =   basey+(rectHeight//2) + markSize
 	result+="""\
 <path d="M{sx} {sy}
-		A {size} {size} 0 0 {ex} {ey}"
+		A {size} {size} 0 0 0 {ex} {ey}"
 		stroke="{color}" fill="{color}" fill-opacity="0" stroke-width="2"/>
 
 """.format(size=markSize, sx=startx, sy=starty, ex=endx, ey=endy, color=strokeColor)

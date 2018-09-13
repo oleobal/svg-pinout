@@ -1,0 +1,53 @@
+<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<rect x='30' y='70' width='125' height='59' fill='none' stroke-width='2' stroke='black'/>
+
+<text x='92' y='99' transform='rotate(0 92 99)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+	<tspan x='92' dy='0.2em'>Auto DIP</tspan>
+</text>
+
+<path d="M155 92
+		A 7 7 0 0 0 155 106"
+		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
+
+<text x='37' y='82' font-family='monospace' fill='black' >5</text>
+<line x1='42' y1='70' x2='42' y2='65' stroke='black' stroke-width='2' />
+<text x='42' y='64' transform='rotate(-45 42 64)' font-family='monospace' fill='black'  >side</text>
+
+<text x='62' y='82' font-family='monospace' fill='black' >4</text>
+<line x1='67' y1='70' x2='67' y2='65' stroke='black' stroke-width='2' />
+<text x='67' y='64' transform='rotate(-45 67 64)' font-family='monospace' fill='black'  >a</text>
+
+<text x='87' y='82' font-family='monospace' fill='black' >3</text>
+<line x1='92' y1='70' x2='92' y2='65' stroke='black' stroke-width='2' />
+<text x='92' y='64' transform='rotate(-45 92 64)' font-family='monospace' fill='black'  >am</text>
+
+<text x='112' y='82' font-family='monospace' fill='black' >2</text>
+<line x1='117' y1='70' x2='117' y2='65' stroke='black' stroke-width='2' />
+<text x='117' y='64' transform='rotate(-45 117 64)' font-family='monospace' fill='black'  >I</text>
+
+<text x='137' y='82' font-family='monospace' fill='black' >1</text>
+<line x1='142' y1='70' x2='142' y2='65' stroke='black' stroke-width='2' />
+<text x='142' y='64' transform='rotate(-45 142 64)' font-family='monospace' fill='black'  >hello</text>
+
+<text x='37' y='124' font-family='monospace' fill='black' >6</text>
+<line x1='42' y1='129' x2='42' y2='134' stroke='black' stroke-width='2' />
+<text x='42' y='140' transform='rotate(45 42 140)' font-family='monospace' fill='black'  >I</text>
+
+<text x='62' y='124' font-family='monospace' fill='black' >7</text>
+<line x1='67' y1='129' x2='67' y2='134' stroke='black' stroke-width='2' />
+<text x='67' y='140' transform='rotate(45 67 140)' font-family='monospace' fill='black'  >am</text>
+
+<text x='87' y='124' font-family='monospace' fill='black' >8</text>
+<line x1='92' y1='129' x2='92' y2='134' stroke='black' stroke-width='2' />
+<text x='92' y='140' transform='rotate(45 92 140)' font-family='monospace' fill='black'  >the</text>
+
+<text x='112' y='124' font-family='monospace' fill='black' >9</text>
+<line x1='117' y1='129' x2='117' y2='134' stroke='black' stroke-width='2' />
+<text x='117' y='140' transform='rotate(45 117 140)' font-family='monospace' fill='black'  >other</text>
+
+<text x='137' y='124' font-family='monospace' fill='black' >10</text>
+<line x1='142' y1='129' x2='142' y2='134' stroke='black' stroke-width='2' />
+<text x='142' y='140' transform='rotate(45 142 140)' font-family='monospace' fill='black'  >side</text>
+
+
+</svg>

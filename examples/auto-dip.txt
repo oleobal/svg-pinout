@@ -1,0 +1,22 @@
+# title
+Auto DIP
+
+// For testing automatic sides
+
+# right
+# mark
+
+# end
+
+hello
+I
+am
+a
+side
+
+I
+am
+the
+other
+side
+

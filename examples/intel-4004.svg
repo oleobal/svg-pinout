@@ -9,69 +9,69 @@
 		A 7 7 0 0 0 133 30"
 		stroke="black" fill="black" fill-opacity="0" stroke-width="2"/>
 
-<text x='140' y='46' font-family='monospace' fill='intel'swebsite.' >16</text>
-<line x1='159' y1='41' x2='164' y2='41' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='48' transform='rotate(0 165 48)' font-family='monospace' fill='intel'swebsite.'  >Reset</text>
+<text x='140' y='46' font-family='monospace' fill='black' >16</text>
+<line x1='159' y1='41' x2='164' y2='41' stroke='black' stroke-width='2' />
+<text x='165' y='48' transform='rotate(0 165 48)' font-family='monospace' fill='black'  >Reset</text>
 
-<text x='140' y='68' font-family='monospace' fill='intel'swebsite.' >15</text>
-<line x1='159' y1='63' x2='164' y2='63' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='70' transform='rotate(0 165 70)' font-family='monospace' fill='intel'swebsite.'  >Test</text>
+<text x='140' y='68' font-family='monospace' fill='black' >15</text>
+<line x1='159' y1='63' x2='164' y2='63' stroke='black' stroke-width='2' />
+<text x='165' y='70' transform='rotate(0 165 70)' font-family='monospace' fill='black'  >Test</text>
 
-<text x='140' y='90' font-family='monospace' fill='intel'swebsite.' >14</text>
-<line x1='159' y1='85' x2='164' y2='85' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='92' transform='rotate(0 165 92)' font-family='monospace' fill='intel'swebsite.'  >CM-ROM</text>
+<text x='140' y='90' font-family='monospace' fill='black' >14</text>
+<line x1='159' y1='85' x2='164' y2='85' stroke='black' stroke-width='2' />
+<text x='165' y='92' transform='rotate(0 165 92)' font-family='monospace' fill='black'  >CM-ROM</text>
 
-<text x='140' y='112' font-family='monospace' fill='intel'swebsite.' >13</text>
-<line x1='159' y1='107' x2='164' y2='107' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='114' transform='rotate(0 165 114)' font-family='monospace' fill='intel'swebsite.'  >V<tspan dy='5'>DD</tspan></text>
+<text x='140' y='112' font-family='monospace' fill='black' >13</text>
+<line x1='159' y1='107' x2='164' y2='107' stroke='black' stroke-width='2' />
+<text x='165' y='114' transform='rotate(0 165 114)' font-family='monospace' fill='black'  >V<tspan dy='5'>DD</tspan></text>
 
-<text x='140' y='134' font-family='monospace' fill='intel'swebsite.' >12</text>
-<line x1='159' y1='129' x2='164' y2='129' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='136' transform='rotate(0 165 136)' font-family='monospace' fill='intel'swebsite.'  >CM-RAM</text>
+<text x='140' y='134' font-family='monospace' fill='black' >12</text>
+<line x1='159' y1='129' x2='164' y2='129' stroke='black' stroke-width='2' />
+<text x='165' y='136' transform='rotate(0 165 136)' font-family='monospace' fill='black'  >CM-RAM</text>
 
-<text x='140' y='156' font-family='monospace' fill='intel'swebsite.' >11</text>
-<line x1='159' y1='151' x2='164' y2='151' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='158' transform='rotate(0 165 158)' font-family='monospace' fill='intel'swebsite.'  >CM-RAM</text>
+<text x='140' y='156' font-family='monospace' fill='black' >11</text>
+<line x1='159' y1='151' x2='164' y2='151' stroke='black' stroke-width='2' />
+<text x='165' y='158' transform='rotate(0 165 158)' font-family='monospace' fill='black'  >CM-RAM</text>
 
-<text x='140' y='178' font-family='monospace' fill='intel'swebsite.' >10</text>
-<line x1='159' y1='173' x2='164' y2='173' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='180' transform='rotate(0 165 180)' font-family='monospace' fill='intel'swebsite.'  >CM-RAM</text>
+<text x='140' y='178' font-family='monospace' fill='black' >10</text>
+<line x1='159' y1='173' x2='164' y2='173' stroke='black' stroke-width='2' />
+<text x='165' y='180' transform='rotate(0 165 180)' font-family='monospace' fill='black'  >CM-RAM</text>
 
-<text x='148' y='200' font-family='monospace' fill='intel'swebsite.' >9</text>
-<line x1='159' y1='195' x2='164' y2='195' stroke='intel'swebsite.' stroke-width='2' />
-<text x='165' y='202' transform='rotate(0 165 202)' font-family='monospace' fill='intel'swebsite.'  >CM-RAM</text>
+<text x='148' y='200' font-family='monospace' fill='black' >9</text>
+<line x1='159' y1='195' x2='164' y2='195' stroke='black' stroke-width='2' />
+<text x='165' y='202' transform='rotate(0 165 202)' font-family='monospace' fill='black'  >CM-RAM</text>
 
-<text x='97' y='46' font-family='monospace' fill='intel'swebsite.' >1</text>
-<line x1='94' y1='41' x2='89' y2='41' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='48' transform='rotate(0 88 48)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Data bus</text>
+<text x='97' y='46' font-family='monospace' fill='black' >1</text>
+<line x1='94' y1='41' x2='89' y2='41' stroke='black' stroke-width='2' />
+<text x='88' y='48' transform='rotate(0 88 48)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
-<text x='97' y='68' font-family='monospace' fill='intel'swebsite.' >2</text>
-<line x1='94' y1='63' x2='89' y2='63' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='70' transform='rotate(0 88 70)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Data bus</text>
+<text x='97' y='68' font-family='monospace' fill='black' >2</text>
+<line x1='94' y1='63' x2='89' y2='63' stroke='black' stroke-width='2' />
+<text x='88' y='70' transform='rotate(0 88 70)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
-<text x='97' y='90' font-family='monospace' fill='intel'swebsite.' >3</text>
-<line x1='94' y1='85' x2='89' y2='85' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='92' transform='rotate(0 88 92)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Data bus</text>
+<text x='97' y='90' font-family='monospace' fill='black' >3</text>
+<line x1='94' y1='85' x2='89' y2='85' stroke='black' stroke-width='2' />
+<text x='88' y='92' transform='rotate(0 88 92)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
-<text x='97' y='112' font-family='monospace' fill='intel'swebsite.' >4</text>
-<line x1='94' y1='107' x2='89' y2='107' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='114' transform='rotate(0 88 114)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Data bus</text>
+<text x='97' y='112' font-family='monospace' fill='black' >4</text>
+<line x1='94' y1='107' x2='89' y2='107' stroke='black' stroke-width='2' />
+<text x='88' y='114' transform='rotate(0 88 114)' font-family='monospace' fill='black'  text-anchor='end' >Data bus</text>
 
-<text x='97' y='134' font-family='monospace' fill='intel'swebsite.' >5</text>
-<line x1='94' y1='129' x2='89' y2='129' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='136' transform='rotate(0 88 136)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >V<tspan dy='5'>SS</tspan></text>
+<text x='97' y='134' font-family='monospace' fill='black' >5</text>
+<line x1='94' y1='129' x2='89' y2='129' stroke='black' stroke-width='2' />
+<text x='88' y='136' transform='rotate(0 88 136)' font-family='monospace' fill='black'  text-anchor='end' >V<tspan dy='5'>SS</tspan></text>
 
-<text x='97' y='156' font-family='monospace' fill='intel'swebsite.' >6</text>
-<line x1='94' y1='151' x2='89' y2='151' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='158' transform='rotate(0 88 158)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Clock</text>
+<text x='97' y='156' font-family='monospace' fill='black' >6</text>
+<line x1='94' y1='151' x2='89' y2='151' stroke='black' stroke-width='2' />
+<text x='88' y='158' transform='rotate(0 88 158)' font-family='monospace' fill='black'  text-anchor='end' >Clock</text>
 
-<text x='97' y='178' font-family='monospace' fill='intel'swebsite.' >7</text>
-<line x1='94' y1='173' x2='89' y2='173' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='180' transform='rotate(0 88 180)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Clock</text>
+<text x='97' y='178' font-family='monospace' fill='black' >7</text>
+<line x1='94' y1='173' x2='89' y2='173' stroke='black' stroke-width='2' />
+<text x='88' y='180' transform='rotate(0 88 180)' font-family='monospace' fill='black'  text-anchor='end' >Clock</text>
 
-<text x='97' y='200' font-family='monospace' fill='intel'swebsite.' >8</text>
-<line x1='94' y1='195' x2='89' y2='195' stroke='intel'swebsite.' stroke-width='2' />
-<text x='88' y='202' transform='rotate(0 88 202)' font-family='monospace' fill='intel'swebsite.'  text-anchor='end' >Sync</text>
+<text x='97' y='200' font-family='monospace' fill='black' >8</text>
+<line x1='94' y1='195' x2='89' y2='195' stroke='black' stroke-width='2' />
+<text x='88' y='202' transform='rotate(0 88 202)' font-family='monospace' fill='black'  text-anchor='end' >Sync</text>
 
 
 </svg>

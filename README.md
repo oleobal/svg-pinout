@@ -56,11 +56,13 @@ GND
 
 You can find out the details with the `-d` option or by reading
 [this file](format.txt).
+A more formal description is available [here](reference.md).
 
 ### Usage
 
-As noted earlier, a version is available online. To run your own, you'll just
-needs Python 3.
+As noted earlier, a version is available online.
+To run it on your own computer, you'll just need
+[Python 3](https://www.python.org/downloads/). It is a command line application.
 
 The command that produced the earlier diagram was :
 `python.exe .\pinout.py .\examples\simple.txt .\examples\simple.svg`

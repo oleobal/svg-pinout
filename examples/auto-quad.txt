@@ -1,0 +1,25 @@
+# title
+Auto Quad
+
+// For testing automatic sides
+# package quad
+
+# end
+
+
+
+a
+cool
+side
+
+an
+other
+side
+
+a
+third
+side
+
+and the
+last
+side

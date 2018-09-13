@@ -1,0 +1,57 @@
+<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<rect x='62' y='86' width='90' height='110' fill='none' stroke-width='2' stroke='black'/>
+
+<text x='107' y='141' transform='rotate(-90 107 141)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+	<tspan x='107' dy='0.5em'>Auto Quad</tspan>
+</text>
+
+<text x='69' y='98' font-family='monospace' fill='black' >12</text>
+<line x1='74' y1='86' x2='74' y2='81' stroke='black' stroke-width='2' />
+<text x='74' y='80' transform='rotate(-45 74 80)' font-family='monospace' fill='black'  >side</text>
+
+<text x='94' y='98' font-family='monospace' fill='black' >11</text>
+<line x1='99' y1='86' x2='99' y2='81' stroke='black' stroke-width='2' />
+<text x='99' y='80' transform='rotate(-45 99 80)' font-family='monospace' fill='black'  >last</text>
+
+<text x='119' y='98' font-family='monospace' fill='black' >10</text>
+<line x1='124' y1='86' x2='124' y2='81' stroke='black' stroke-width='2' />
+<text x='124' y='80' transform='rotate(-45 124 80)' font-family='monospace' fill='black'  >and the</text>
+
+<text x='69' y='191' font-family='monospace' fill='black' >4</text>
+<line x1='74' y1='196' x2='74' y2='201' stroke='black' stroke-width='2' />
+<text x='74' y='207' transform='rotate(45 74 207)' font-family='monospace' fill='black'  >an</text>
+
+<text x='94' y='191' font-family='monospace' fill='black' >5</text>
+<line x1='99' y1='196' x2='99' y2='201' stroke='black' stroke-width='2' />
+<text x='99' y='207' transform='rotate(45 99 207)' font-family='monospace' fill='black'  >other</text>
+
+<text x='119' y='191' font-family='monospace' fill='black' >6</text>
+<line x1='124' y1='196' x2='124' y2='201' stroke='black' stroke-width='2' />
+<text x='124' y='207' transform='rotate(45 124 207)' font-family='monospace' fill='black'  >side</text>
+
+<text x='141' y='124' font-family='monospace' fill='black' >9</text>
+<line x1='152' y1='119' x2='157' y2='119' stroke='black' stroke-width='2' />
+<text x='158' y='126' transform='rotate(0 158 126)' font-family='monospace' fill='black'  >side</text>
+
+<text x='141' y='146' font-family='monospace' fill='black' >8</text>
+<line x1='152' y1='141' x2='157' y2='141' stroke='black' stroke-width='2' />
+<text x='158' y='148' transform='rotate(0 158 148)' font-family='monospace' fill='black'  >third</text>
+
+<text x='141' y='168' font-family='monospace' fill='black' >7</text>
+<line x1='152' y1='163' x2='157' y2='163' stroke='black' stroke-width='2' />
+<text x='158' y='170' transform='rotate(0 158 170)' font-family='monospace' fill='black'  >a</text>
+
+<text x='65' y='124' font-family='monospace' fill='black' >1</text>
+<line x1='62' y1='119' x2='57' y2='119' stroke='black' stroke-width='2' />
+<text x='56' y='126' transform='rotate(0 56 126)' font-family='monospace' fill='black'  text-anchor='end' >a</text>
+
+<text x='65' y='146' font-family='monospace' fill='black' >2</text>
+<line x1='62' y1='141' x2='57' y2='141' stroke='black' stroke-width='2' />
+<text x='56' y='148' transform='rotate(0 56 148)' font-family='monospace' fill='black'  text-anchor='end' >cool</text>
+
+<text x='65' y='168' font-family='monospace' fill='black' >3</text>
+<line x1='62' y1='163' x2='57' y2='163' stroke='black' stroke-width='2' />
+<text x='56' y='170' transform='rotate(0 56 170)' font-family='monospace' fill='black'  text-anchor='end' >side</text>
+
+
+</svg>

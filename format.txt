@@ -39,8 +39,8 @@ Backslash escaping also works outside of pin names, so you can name a pin
 `# Hello` by writing `\# Hello`.
 
 
-
-Empty lines and lines starting with `//` (C++ style comments, although really
-this syntax comes from BCPL.) are ignored.
+Empty lines and lines starting with `//` (C++ style comments) are ignored.
 Control sequences (starting with `#`) have their whitespace and case ignored,
 so `#NOCOLOR` is the same as `# no color`.
+
+A more formal description of the syntax is in the file `reference.md`

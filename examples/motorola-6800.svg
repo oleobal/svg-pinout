@@ -1,7 +1,7 @@
 <svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
-<rect x='134' y='30' width='65' height='462' fill='none' stroke-width='2' stroke='black'/>
+<rect x='134' y='30' width='65' height='440' fill='none' stroke-width='2' stroke='black'/>
 
-<text x='166' y='261' transform='rotate(-90 166 261)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
+<text x='166' y='250' transform='rotate(-90 166 250)' alignment-baseline='central' text-anchor='middle' font-family='monospace'>
 	<tspan x='166' dy='0.5em'>Motorola 6800</tspan>
 </text>
 
@@ -69,29 +69,25 @@
 <line x1='199' y1='349' x2='204' y2='349' stroke='#00a' stroke-width='2' />
 <text x='205' y='356' transform='rotate(0 205 356)' font-family='monospace' fill='#00a'  >D<tspan dy='5'>7</tspan></text>
 
-<text x='180' y='376' font-family='monospace' fill='black' >25</text>
-<line x1='199' y1='371' x2='204' y2='371' stroke='black' stroke-width='2' />
-<text x='205' y='378' transform='rotate(0 205 378)' font-family='monospace' fill='black'  >A<tspan dy='5'>15</tspan></text>
+<text x='180' y='376' font-family='monospace' fill='#0a0' >25</text>
+<line x1='199' y1='371' x2='204' y2='371' stroke='#0a0' stroke-width='2' />
+<text x='205' y='378' transform='rotate(0 205 378)' font-family='monospace' fill='#0a0'  >A<tspan dy='5'>15</tspan></text>
 
-<text x='180' y='398' font-family='monospace' fill='black' >24</text>
-<line x1='199' y1='393' x2='204' y2='393' stroke='black' stroke-width='2' />
-<text x='205' y='400' transform='rotate(0 205 400)' font-family='monospace' fill='black'  >A<tspan dy='5'>14</tspan></text>
+<text x='180' y='398' font-family='monospace' fill='#0a0' >24</text>
+<line x1='199' y1='393' x2='204' y2='393' stroke='#0a0' stroke-width='2' />
+<text x='205' y='400' transform='rotate(0 205 400)' font-family='monospace' fill='#0a0'  >A<tspan dy='5'>14</tspan></text>
 
-<text x='180' y='420' font-family='monospace' fill='black' >23</text>
-<line x1='199' y1='415' x2='204' y2='415' stroke='black' stroke-width='2' />
-<text x='205' y='422' transform='rotate(0 205 422)' font-family='monospace' fill='black'  >A<tspan dy='5'>13</tspan></text>
+<text x='180' y='420' font-family='monospace' fill='#0a0' >23</text>
+<line x1='199' y1='415' x2='204' y2='415' stroke='#0a0' stroke-width='2' />
+<text x='205' y='422' transform='rotate(0 205 422)' font-family='monospace' fill='#0a0'  >A<tspan dy='5'>13</tspan></text>
 
-<text x='180' y='442' font-family='monospace' fill='black' >22</text>
-<line x1='199' y1='437' x2='204' y2='437' stroke='black' stroke-width='2' />
-<text x='205' y='444' transform='rotate(0 205 444)' font-family='monospace' fill='black'  >A<tspan dy='5'>12</tspan></text>
+<text x='180' y='442' font-family='monospace' fill='#0a0' >22</text>
+<line x1='199' y1='437' x2='204' y2='437' stroke='#0a0' stroke-width='2' />
+<text x='205' y='444' transform='rotate(0 205 444)' font-family='monospace' fill='#0a0'  >A<tspan dy='5'>12</tspan></text>
 
-<text x='180' y='464' font-family='monospace' fill='black' >22</text>
+<text x='180' y='464' font-family='monospace' fill='black' >21</text>
 <line x1='199' y1='459' x2='204' y2='459' stroke='black' stroke-width='2' />
-<text x='205' y='466' transform='rotate(0 205 466)' font-family='monospace' fill='black'  >// #0A0</text>
-
-<text x='180' y='486' font-family='monospace' fill='black' >21</text>
-<line x1='199' y1='481' x2='204' y2='481' stroke='black' stroke-width='2' />
-<text x='205' y='488' transform='rotate(0 205 488)' font-family='monospace' fill='black'  >V<tspan dy='5'>SS</tspan></text>
+<text x='205' y='466' transform='rotate(0 205 466)' font-family='monospace' fill='black'  >V<tspan dy='5'>SS</tspan></text>
 
 <text x='137' y='46' font-family='monospace' fill='black' >1</text>
 <line x1='134' y1='41' x2='129' y2='41' stroke='black' stroke-width='2' />
