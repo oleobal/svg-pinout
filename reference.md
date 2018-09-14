@@ -18,11 +18,11 @@ feeds) from its start and end, before any processing is done.
 Pin description
 ---------------
 
-Pin description take the form : `[numbering] <<decoration><pin name>>`.
+Pin description take the form : `[numbering] [decoration]<pin name>`.
 It is a single line (a new line starts another description).
 
 Here is an example of a description using a lot of features :
-`4x <>/V_SS RESET^2 `
+`4x <>./V_SS RESET^2 `
 
 ### Numbering
 Whatever is before the first space is considered numbering, unless it fails
