@@ -35,7 +35,8 @@ Instructions (the things starting with `#`) can be chained with `;`, like this :
   # package DIP ; left ; mark ; blue
 
 It is possible to add formatting to pin names :
-  `3 /RESET` will be represented with an overline (active on low).
+  `1 .Data` adds a dot next to the number (for identification)
+  `3 /RESET` adds an overline (active on low).
   `4 <CLK` : `<` adds an arrow going in and `>` one going out
   `7 V_SS` will represent SS as subscript
   `8 10e^15` will represent 15 as superscript

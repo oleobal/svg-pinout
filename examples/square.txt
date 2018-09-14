@@ -1,6 +1,6 @@
 # left
 
-<Interrupt
+.<Interrupt
 <Reset
 Hold
 <>Test

@@ -7,46 +7,48 @@
 # title
 Yamaha
 YM2612
-# left
-# mark
 
 
 # bottom
-1 GND
+1 .<GND
 // bidirectional data bus
 # blue
-2 D_0
-3 D_1
-4 D_2
-5 D_3
-6 D_4
-7 D_5
-8 D_6
-9 D_7
+2 <>D_0
+3 <>D_1
+4 <>D_2
+5 <>D_3
+6 <>D_4
+7 <>D_5
+8 <>D_6
+9 <>D_7
+
 # nocolor
-// not connected
-10 NC
+// 'Not connected' on some pinouts,
+// but test in the reference manual.
+// There's an explanation there,
+// but it's in japanese.
+10 <>/TEST
 // reset pin
-11 /IC
-12 GND
+11 </IC
+12 <GND
 
 # top
 
 // interrupt request
-13 /IRQ
+13 >/IRQ
 // chip select
-14 /CS
-15 /WR
-16 /RD
-17 A_0
-18 A_1
+14 </CS
+15 </WR
+16 </RD
+17 <A_0
+18 <A_1
 // analog ground
-19 A. GND
+19 <AGND
 // right analog output
-20 MOR
+20 >MOR
 // left analog output
-21 MOL
+21 >MOL
 // analog Vcc
-22 A. V_CC
-23 V_CC
-24 CLK
+22 <AV_CC
+23 <V_CC
+24 <CLK

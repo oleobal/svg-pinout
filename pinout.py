@@ -70,7 +70,7 @@ def processWord(word):
 	"""
 	features = []
 	
-	leadingSymbols = ["\\","/", ">", "<"]
+	leadingSymbols = ["\\","/", ">", "<", "."]
 	
 	while word[0] in leadingSymbols:
 		sym = word[0]
@@ -85,6 +85,8 @@ def processWord(word):
 			features.append("arrow-out")
 		elif sym == "<":
 			features.append("arrow-in")
+		elif sym == ".":
+			features.append("dot")
 	
 	# escape things that could confuse SVG parsers
 	word = word.translate({
@@ -151,9 +153,9 @@ for line in args.infile:
 	if line[0] == "#":
 		if len(line) == 1:
 			continue
-		instructions =  line[1:].split(";")
+		instructions = line[1:].split(";")
 		for i in instructions :
-			words = i[1:].lower().split()
+			words = i.lower().split()
 			if words[0] == "package":
 				if words[1] in ("quad", "qfp", "carrier", "square") :
 					package="square"
@@ -504,6 +506,8 @@ textNumber = "<text x='{x}' y='{y}' font-family='{font}' fill='{color}' {add}>{t
 textLabel = "<text x='{x}' y='{y}' transform='rotate({angle} {x} {y})' font-family='{font}' fill='{color}' {add}>{text}</text>\n\n"
 textArrow = "<polygon points='{x1} {y1} {x2} {y2} {x3} {y3}' fill='{color}' {add}/>\n"
 arrowD=5 #how big the arrows are
+dotRadius = 3
+textDot = "<circle cx='{x}' cy='{y}' r='"+str(dotRadius)+"' fill='{color}' {add}/>"
 
 def labelPinCommon(pin, color=None):
 	"""
@@ -566,6 +570,9 @@ def getPinsTop(pins, font, add="", forceColor=None):
 		
 		result+=textNumber.format(x=x1-5, y=y1+12, text=p[0], font=font, color=color, add=add)
 		
+		if "dot" in p[3]:
+			result += textDot.format(x=x1,y=y1+(3+dotRadius)+charHeight,color=color, add=add)
+		
 		if "arrow-in" in p[3]:
 			result+=textArrow.format(x1=x1-arrowD,y1=y1-arrowD, x2=x1+arrowD, y2=y1-arrowD, x3=x1, y3=y1, color=color, add=add)
 			y1-=arrowD
@@ -598,6 +605,9 @@ def getPinsBottom(pins, font, add="", forceColor=None):
 			color = p[2]
 		
 		result+=textNumber.format(x=x1-5, y=y1-5, text=p[0], font=font, color=color, add=add)
+		
+		if "dot" in p[3]:
+			result += textDot.format(x=x1,y=y1-(3+dotRadius)-charHeight,color=color, add=add)
 		
 		if "arrow-in" in p[3]:
 			result+=textArrow.format(x1=x1-arrowD,y1=y1+arrowD, x2=x1+arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
@@ -639,6 +649,9 @@ def getPinsRight(pins, font, add="", forceColor=None):
 		else:
 			result+=textNumber.format(x=x1-2*charWidth-3, y=y1+5, text=p[0], font=font, color=color, add=add)
 		
+		if "dot" in p[3]:
+			result += textDot.format(x=x1-(3+dotRadius)-len(str(p[0]))*charWidth,y=y1,color=color, add=add)
+		
 		if "arrow-in" in p[3]:
 			result+=textArrow.format(x1=x1+arrowD,y1=y1-arrowD, x2=x1+arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
 			x1+=arrowD
@@ -673,6 +686,10 @@ def getPinsLeft(pins, font, add="", forceColor=None):
 			color = p[2]
 		
 		result+=textNumber.format(x=x1+3, y=y1+5, text=p[0], font=font, color=color, add=add)
+		
+		if "dot" in p[3]:
+			result += textDot.format(x=x1+(3+dotRadius)+len(str(p[0]))*charWidth,y=y1,color=color, add=add)
+		
 		if "arrow-in" in p[3]:
 			result+=textArrow.format(x1=x1-arrowD,y1=y1-arrowD, x2=x1-arrowD, y2=y1+arrowD, x3=x1, y3=y1, color=color, add=add)
 			x1-=arrowD

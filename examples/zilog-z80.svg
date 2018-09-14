@@ -64,50 +64,50 @@
 <polygon points='132 256 132 266 137 261' fill='blue' />
 <text x='138' y='268' transform='rotate(0 138 268)' font-family='monospace' fill='blue'  >A<tspan dy='5'>0</tspan></text>
 
-<text x='108' y='288' font-family='monospace' fill='ocolor' >29</text>
-<polygon points='132 278 132 288 127 283' fill='ocolor' />
-<line x1='132' y1='283' x2='137' y2='283' stroke='ocolor' stroke-width='2' />
-<text x='138' y='290' transform='rotate(0 138 290)' font-family='monospace' fill='ocolor'  >GND</text>
+<text x='108' y='288' font-family='monospace' fill='black' >29</text>
+<polygon points='132 278 132 288 127 283' fill='black' />
+<line x1='132' y1='283' x2='137' y2='283' stroke='black' stroke-width='2' />
+<text x='138' y='290' transform='rotate(0 138 290)' font-family='monospace' fill='black'  >GND</text>
 
-<text x='108' y='310' font-family='monospace' fill='ocolor' >28</text>
-<line x1='127' y1='305' x2='132' y2='305' stroke='ocolor' stroke-width='2' />
-<polygon points='132 300 132 310 137 305' fill='ocolor' />
-<text x='138' y='312' transform='rotate(0 138 312)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >RFSH</text>
+<text x='108' y='310' font-family='monospace' fill='black' >28</text>
+<line x1='127' y1='305' x2='132' y2='305' stroke='black' stroke-width='2' />
+<polygon points='132 300 132 310 137 305' fill='black' />
+<text x='138' y='312' transform='rotate(0 138 312)' font-family='monospace' fill='black' style='text-decoration: overline' >RFSH</text>
 
-<text x='108' y='332' font-family='monospace' fill='ocolor' >27</text>
-<line x1='127' y1='327' x2='132' y2='327' stroke='ocolor' stroke-width='2' />
-<polygon points='132 322 132 332 137 327' fill='ocolor' />
-<text x='138' y='334' transform='rotate(0 138 334)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >M1</text>
+<text x='108' y='332' font-family='monospace' fill='black' >27</text>
+<line x1='127' y1='327' x2='132' y2='327' stroke='black' stroke-width='2' />
+<polygon points='132 322 132 332 137 327' fill='black' />
+<text x='138' y='334' transform='rotate(0 138 334)' font-family='monospace' fill='black' style='text-decoration: overline' >M1</text>
 
-<text x='108' y='354' font-family='monospace' fill='ocolor' >26</text>
-<polygon points='132 344 132 354 127 349' fill='ocolor' />
-<line x1='132' y1='349' x2='137' y2='349' stroke='ocolor' stroke-width='2' />
-<text x='138' y='356' transform='rotate(0 138 356)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >RESET</text>
+<text x='108' y='354' font-family='monospace' fill='black' >26</text>
+<polygon points='132 344 132 354 127 349' fill='black' />
+<line x1='132' y1='349' x2='137' y2='349' stroke='black' stroke-width='2' />
+<text x='138' y='356' transform='rotate(0 138 356)' font-family='monospace' fill='black' style='text-decoration: overline' >RESET</text>
 
-<text x='108' y='376' font-family='monospace' fill='ocolor' >25</text>
-<polygon points='132 366 132 376 127 371' fill='ocolor' />
-<line x1='132' y1='371' x2='137' y2='371' stroke='ocolor' stroke-width='2' />
-<text x='138' y='378' transform='rotate(0 138 378)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >BUSREQ</text>
+<text x='108' y='376' font-family='monospace' fill='black' >25</text>
+<polygon points='132 366 132 376 127 371' fill='black' />
+<line x1='132' y1='371' x2='137' y2='371' stroke='black' stroke-width='2' />
+<text x='138' y='378' transform='rotate(0 138 378)' font-family='monospace' fill='black' style='text-decoration: overline' >BUSREQ</text>
 
-<text x='108' y='398' font-family='monospace' fill='ocolor' >24</text>
-<polygon points='132 388 132 398 127 393' fill='ocolor' />
-<line x1='132' y1='393' x2='137' y2='393' stroke='ocolor' stroke-width='2' />
-<text x='138' y='400' transform='rotate(0 138 400)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >WAIT</text>
+<text x='108' y='398' font-family='monospace' fill='black' >24</text>
+<polygon points='132 388 132 398 127 393' fill='black' />
+<line x1='132' y1='393' x2='137' y2='393' stroke='black' stroke-width='2' />
+<text x='138' y='400' transform='rotate(0 138 400)' font-family='monospace' fill='black' style='text-decoration: overline' >WAIT</text>
 
-<text x='108' y='420' font-family='monospace' fill='ocolor' >23</text>
-<line x1='127' y1='415' x2='132' y2='415' stroke='ocolor' stroke-width='2' />
-<polygon points='132 410 132 420 137 415' fill='ocolor' />
-<text x='138' y='422' transform='rotate(0 138 422)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >BUSACK</text>
+<text x='108' y='420' font-family='monospace' fill='black' >23</text>
+<line x1='127' y1='415' x2='132' y2='415' stroke='black' stroke-width='2' />
+<polygon points='132 410 132 420 137 415' fill='black' />
+<text x='138' y='422' transform='rotate(0 138 422)' font-family='monospace' fill='black' style='text-decoration: overline' >BUSACK</text>
 
-<text x='108' y='442' font-family='monospace' fill='ocolor' >22</text>
-<line x1='127' y1='437' x2='132' y2='437' stroke='ocolor' stroke-width='2' />
-<polygon points='132 432 132 442 137 437' fill='ocolor' />
-<text x='138' y='444' transform='rotate(0 138 444)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >WR</text>
+<text x='108' y='442' font-family='monospace' fill='black' >22</text>
+<line x1='127' y1='437' x2='132' y2='437' stroke='black' stroke-width='2' />
+<polygon points='132 432 132 442 137 437' fill='black' />
+<text x='138' y='444' transform='rotate(0 138 444)' font-family='monospace' fill='black' style='text-decoration: overline' >WR</text>
 
-<text x='108' y='464' font-family='monospace' fill='ocolor' >21</text>
-<line x1='127' y1='459' x2='132' y2='459' stroke='ocolor' stroke-width='2' />
-<polygon points='132 454 132 464 137 459' fill='ocolor' />
-<text x='138' y='466' transform='rotate(0 138 466)' font-family='monospace' fill='ocolor' style='text-decoration: overline' >RD</text>
+<text x='108' y='464' font-family='monospace' fill='black' >21</text>
+<line x1='127' y1='459' x2='132' y2='459' stroke='black' stroke-width='2' />
+<polygon points='132 454 132 464 137 459' fill='black' />
+<text x='138' y='466' transform='rotate(0 138 466)' font-family='monospace' fill='black' style='text-decoration: overline' >RD</text>
 
 <text x='65' y='46' font-family='monospace' fill='blue' >1</text>
 <line x1='62' y1='41' x2='57' y2='41' stroke='blue' stroke-width='2' />
@@ -192,30 +192,30 @@
 <polygon points='52 344 52 354 47 349' fill='darkgreen' />
 <text x='46' y='356' transform='rotate(0 46 356)' font-family='monospace' fill='darkgreen'  text-anchor='end' >D<tspan dy='5'>1</tspan></text>
 
-<text x='65' y='376' font-family='monospace' fill='ocolor' >16</text>
-<polygon points='57 366 57 376 62 371' fill='ocolor' />
-<line x1='57' y1='371' x2='52' y2='371' stroke='ocolor' stroke-width='2' />
-<text x='51' y='378' transform='rotate(0 51 378)' font-family='monospace' fill='ocolor' style='text-decoration: overline' text-anchor='end' >INT</text>
+<text x='65' y='376' font-family='monospace' fill='black' >16</text>
+<polygon points='57 366 57 376 62 371' fill='black' />
+<line x1='57' y1='371' x2='52' y2='371' stroke='black' stroke-width='2' />
+<text x='51' y='378' transform='rotate(0 51 378)' font-family='monospace' fill='black' style='text-decoration: overline' text-anchor='end' >INT</text>
 
-<text x='65' y='398' font-family='monospace' fill='ocolor' >17</text>
-<polygon points='57 388 57 398 62 393' fill='ocolor' />
-<line x1='57' y1='393' x2='52' y2='393' stroke='ocolor' stroke-width='2' />
-<text x='51' y='400' transform='rotate(0 51 400)' font-family='monospace' fill='ocolor' style='text-decoration: overline' text-anchor='end' >NMI</text>
+<text x='65' y='398' font-family='monospace' fill='black' >17</text>
+<polygon points='57 388 57 398 62 393' fill='black' />
+<line x1='57' y1='393' x2='52' y2='393' stroke='black' stroke-width='2' />
+<text x='51' y='400' transform='rotate(0 51 400)' font-family='monospace' fill='black' style='text-decoration: overline' text-anchor='end' >NMI</text>
 
-<text x='65' y='420' font-family='monospace' fill='ocolor' >18</text>
-<line x1='62' y1='415' x2='57' y2='415' stroke='ocolor' stroke-width='2' />
-<polygon points='57 410 57 420 52 415' fill='ocolor' />
-<text x='51' y='422' transform='rotate(0 51 422)' font-family='monospace' fill='ocolor' style='text-decoration: overline' text-anchor='end' >HALT</text>
+<text x='65' y='420' font-family='monospace' fill='black' >18</text>
+<line x1='62' y1='415' x2='57' y2='415' stroke='black' stroke-width='2' />
+<polygon points='57 410 57 420 52 415' fill='black' />
+<text x='51' y='422' transform='rotate(0 51 422)' font-family='monospace' fill='black' style='text-decoration: overline' text-anchor='end' >HALT</text>
 
-<text x='65' y='442' font-family='monospace' fill='ocolor' >19</text>
-<line x1='62' y1='437' x2='57' y2='437' stroke='ocolor' stroke-width='2' />
-<polygon points='57 432 57 442 52 437' fill='ocolor' />
-<text x='51' y='444' transform='rotate(0 51 444)' font-family='monospace' fill='ocolor' style='text-decoration: overline' text-anchor='end' >MREQ</text>
+<text x='65' y='442' font-family='monospace' fill='black' >19</text>
+<line x1='62' y1='437' x2='57' y2='437' stroke='black' stroke-width='2' />
+<polygon points='57 432 57 442 52 437' fill='black' />
+<text x='51' y='444' transform='rotate(0 51 444)' font-family='monospace' fill='black' style='text-decoration: overline' text-anchor='end' >MREQ</text>
 
-<text x='65' y='464' font-family='monospace' fill='ocolor' >20</text>
-<line x1='62' y1='459' x2='57' y2='459' stroke='ocolor' stroke-width='2' />
-<polygon points='57 454 57 464 52 459' fill='ocolor' />
-<text x='51' y='466' transform='rotate(0 51 466)' font-family='monospace' fill='ocolor' style='text-decoration: overline' text-anchor='end' >IORQ</text>
+<text x='65' y='464' font-family='monospace' fill='black' >20</text>
+<line x1='62' y1='459' x2='57' y2='459' stroke='black' stroke-width='2' />
+<polygon points='57 454 57 464 52 459' fill='black' />
+<text x='51' y='466' transform='rotate(0 51 466)' font-family='monospace' fill='black' style='text-decoration: overline' text-anchor='end' >IORQ</text>
 
 
 </svg>

@@ -48,8 +48,9 @@ When a pin number is explicitely given, however, this variable is reset to that.
 ### Pin decoration
 
 Pin decoration are symbols before the pin name that add visual elements to the
-label. There are three :
- - `/` Adds a line over the label (typically used for active-on-low pins)
+label. There are :
+ - `.` Adds a dot after/before the number (typically for identification)
+ - `/` Adds a line over the label (typically for active-on-low pins)
  - `>` Adds an outgoing arrow to the pin (typically for output pins)
  - `<` Adds an ingoing arrow to the pin (typically for input pins)
 

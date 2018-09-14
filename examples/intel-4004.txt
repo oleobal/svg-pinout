@@ -17,10 +17,7 @@
 # title
 Intel 4004
 
-# top
-# mark
-
-# end
+# top ; mark ; end
 
 // The numbering and partitioning of sides here is automatic
 
