@@ -4,11 +4,7 @@
 # title
 TI LM324N
 
-# left
-# mark
-
-# bottom
-# blue
+# left ; mark ; bottom ; blue
 >1OUT
 <1IN-
 <1IN+
@@ -19,8 +15,7 @@ V_CC
 <2IN-
 >2OUT
 
-# top
-# darkorange
+# top ; darkorange
 >3OUT
 <3IN-
 <3IN+

@@ -151,44 +151,46 @@ for line in args.infile:
 	if line[0] == "#":
 		if len(line) == 1:
 			continue
-		words = line[1:].lower().split()
-		if words[0] == "package":
-			if words[1] in ("quad", "qfp", "carrier", "square") :
-				package="square"
-			elif words[1] in ("dip", "parallel"):
-				package="parallel"
-			else:
-				warn("Ignoring unrecognized package type '{}'".format(words[1]))
+		instructions =  line[1:].split(";")
+		for i in instructions :
+			words = i[1:].lower().split()
+			if words[0] == "package":
+				if words[1] in ("quad", "qfp", "carrier", "square") :
+					package="square"
+				elif words[1] in ("dip", "parallel"):
+					package="parallel"
+				else:
+					warn("Ignoring unrecognized package type '{}'".format(words[1]))
 
-		inst = "".join(words)
-		if inst in ("top", "bottom", "left", "right", "title"):
-			currentSection = inst
-		elif inst in ("mark", "notch") :
-			marks.append((inst,currentSection))
-		elif inst == "nocolor" :
-			currentColor = strokeColor
-		elif inst in ( "side", "nextside") :
-			# special trigger for default section
-			# when nextside is used, default is copied to left, and becomes
-			# a pointer to left
-			if currentSection == "default":
-				pins["left"]+=pins["default"]
-				pins["default"] = pins["left"]
-				currentSection = getNextSide("left", package)
+			inst = "".join(words)
+			if inst in ("top", "bottom", "left", "right", "title"):
+				currentSection = inst
+			elif inst in ("mark", "notch") :
+				marks.append((inst,currentSection))
+			elif inst == "nocolor" :
+				currentColor = strokeColor
+			elif inst in ( "side", "nextside") :
+				# special trigger for default section
+				# when nextside is used, default is copied to left, and becomes
+				# a pointer to left
+				if currentSection == "default":
+					pins["left"]+=pins["default"]
+					pins["default"] = pins["left"]
+					currentSection = getNextSide("left", package)
+				else:
+					currentSection = getNextSide(currentSection, package)
+			
+			elif inst == "end" :
+				# no argument : end section and color
+				currentSection = "default"
+				currentColor = strokeColor
+			elif inst == "endsection" :
+				currentSection = "default"
+			elif inst == "endcolor" : # so basically a synonym for nocolor
+				currentColor = strokeColor
+			
 			else:
-				currentSection = getNextSide(currentSection, package)
-		
-		elif inst == "end" :
-			# no argument : end section and color
-			currentSection = "default"
-			currentColor = strokeColor
-		elif inst == "endsection" :
-			currentSection = "default"
-		elif inst == "endcolor" : # so basically a synonym for nocolor
-			currentColor = strokeColor
-		
-		else:
-			currentColor = inst
+				currentColor = inst
 		continue
 	
 	if currentSection == "title":

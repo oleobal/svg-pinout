@@ -31,6 +31,8 @@ You can go back to the default color (likely black or white) with `# nocolor`.
 You can add an alignment mark to a section by calling `# mark`.
 You can also add a corner notch on the left corner of a section with `# notch`.
 You can also add a title with `# title`, just write it on the following lines.
+Instructions (the things starting with `#`) can be chained with `;`, like this :
+  # package DIP ; left ; mark ; blue
 
 It is possible to add formatting to pin names :
   `3 /RESET` will be represented with an overline (active on low).

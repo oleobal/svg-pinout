@@ -154,6 +154,13 @@ file goes. This includes :
  - 6-digits hex like `#FFFFFF`
  - 3-digits hex like `#FFF`
 
+### Instruction chaining
+
+Instructions can be written in the same line by separating them with `;`.
+
+They are executed sequentially, as if they had been written on different lines.
+
+
 
 Placement of pins
 -----------------
